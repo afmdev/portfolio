@@ -1,0 +1,263 @@
+.section {
+  width: 100%;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.875rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--text-tertiary);
+}
+
+/* Category Buttons */
+.categoryButtons {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.categoryBtn {
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 2px solid var(--border);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.categoryBtn:hover {
+  transform: scale(1.05);
+}
+
+.categoryBtn.active {
+  color: #ffffff;
+}
+
+/* Carousel Container */
+.carouselWrapper {
+  position: relative;
+  height: 34.375rem;
+}
+
+@media (min-width: 768px) {
+  .carouselWrapper {
+    height: 37.5rem;
+  }
+}
+
+/* Navigation Buttons */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  display: none;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+  border: 2px solid var(--border);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .navBtn {
+    display: flex;
+  }
+}
+
+.navBtnPrev {
+  left: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navBtnPrev {
+    left: 2rem;
+  }
+}
+
+.navBtnNext {
+  right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navBtnNext {
+    right: 2rem;
+  }
+}
+
+/* Perspective Container */
+.perspectiveContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+}
+
+/* Service Card */
+.card {
+  position: absolute;
+  width: 21.25rem;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 26.25rem;
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  min-height: 25rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .cardContent {
+    padding: 2rem;
+  }
+}
+
+.cardHeader {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cardIcon {
+  font-size: 3rem;
+}
+
+.cardTitleWrapper {
+  flex: 1;
+}
+
+.cardTitle {
+  margin-bottom: 0.25rem;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cardCategory {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Service Items List */
+.cardItems {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+.cardItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.cardItemIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.cardItemText {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+@media (min-width: 768px) {
+  .cardItemText {
+    font-size: 1rem;
+  }
+}
+
+/* CTA Button */
+.cardCta {
+  align-self: flex-start;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.cardCta:disabled {
+  pointer-events: none;
+}
+
+/* Indicators */
+.indicators {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.indicator {
+  height: 0.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  background-color: var(--border);
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+/* Card Transform Style */
+.cardInner {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
