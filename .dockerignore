@@ -1,0 +1,32 @@
+# Dependencies
+node_modules
+
+# Environment files - these should be passed via Docker build args, not copied
+.env
+.env.*
+!.env.example
+
+# Build outputs
+.output
+.vinxi
+dist
+
+# Development files
+.git
+.gitignore
+*.md
+!README.md
+
+# IDE
+.vscode
+.idea
+
+# Test files
+*.test.*
+*.spec.*
+__tests__
+coverage
+
+# Kamal
+.kamal
+config/deploy.yml

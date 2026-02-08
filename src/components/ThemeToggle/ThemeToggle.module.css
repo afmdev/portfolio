@@ -1,0 +1,71 @@
+.toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.toggle input {
+  display: none;
+}
+
+/* Moon icon (light mode) */
+.toggle input + div {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  box-shadow: inset 9px -9px 0 0 var(--text-primary);
+  transform: scale(1) rotate(-2deg);
+  transition: box-shadow 0.5s ease, transform 0.4s ease 0.1s;
+}
+
+.toggle input + div::before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.toggle input + div::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin: -2.5px 0 0 -2.5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow:
+    0 -16px 0 var(--accent),
+    0 16px 0 var(--accent),
+    16px 0 0 var(--accent),
+    -16px 0 0 var(--accent),
+    11px 11px 0 var(--accent),
+    -11px 11px 0 var(--accent),
+    11px -11px 0 var(--accent),
+    -11px -11px 0 var(--accent);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+/* Sun icon (dark mode) */
+.toggle input:checked + div {
+  box-shadow: inset 22px -22px 0 0 transparent;
+  transform: scale(0.55) rotate(0deg);
+}
+
+.toggle input:checked + div::before {
+  background: var(--accent);
+}
+
+.toggle input:checked + div::after {
+  transform: scale(1.4);
+}

@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.output
+.vinxi
+dist
+build
+
+# Cache
+.cache
+.solid
+.turbo
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
