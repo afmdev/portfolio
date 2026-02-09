@@ -20,9 +20,11 @@ src/
 ## Directory Breakdown
 
 ### `/src/components/`
+
 Contains reusable UI components used across the application.
 
 **Example structure:**
+
 ```
 components/
 ├── Header.tsx
@@ -35,9 +37,11 @@ components/
 ```
 
 ### `/src/routes/`
+
 SolidStart's file-based routing system. Each file maps to a route.
 
 **Example structure:**
+
 ```
 routes/
 ├── index.tsx         # Home page (/)
@@ -48,9 +52,11 @@ routes/
 ```
 
 ### `/src/stores/`
+
 Global state management using SolidJS stores.
 
 **Example structure:**
+
 ```
 stores/
 ├── theme.ts          # Theme state (dark/light mode)
@@ -59,9 +65,11 @@ stores/
 ```
 
 ### `/src/types/`
+
 TypeScript type definitions and interfaces.
 
 **Example structure:**
+
 ```
 types/
 ├── components.ts     # Component prop types
@@ -70,9 +78,11 @@ types/
 ```
 
 ### `/src/utils/`
+
 Utility functions and helper modules.
 
 **Example structure:**
+
 ```
 utils/
 ├── animations.ts     # GSAP animation utilities
@@ -82,9 +92,11 @@ utils/
 ```
 
 ### `/src/styles/`
+
 Design system and modular stylesheets providing a consistent visual language across the application.
 
 **File organization:**
+
 ```
 styles/
 ├── variables.css     # Spacing, shadows, z-index, breakpoints, transitions
@@ -96,6 +108,7 @@ styles/
 ```
 
 **Features:**
+
 - Comprehensive design tokens as CSS variables
 - Light and dark mode color variants
 - Semantic color naming (success, error, warning, etc.)
@@ -108,28 +121,33 @@ styles/
 ## Key Technologies
 
 ### SolidStart
+
 - Meta-framework built on SolidJS
 - File-based routing
 - Server-side rendering (SSR) capable
 - Built on Vite for fast builds
 
 ### SolidJS
+
 - Lightweight reactive library
 - Compiler-driven approach
 - Signals for reactivity
 - No virtual DOM
 
 ### Tailwind CSS v4
+
 - Utility-first CSS framework
 - Integrated via Vite plugin
 - Automatic class purging
 
 ### GSAP (GreenSock Animation Platform)
+
 - Advanced animation library
 - Timeline and tween support
 - Performance optimized
 
 ### Lenis
+
 - Smooth scrolling library
 - Hardware-accelerated
 - Adds elegant scroll experience
@@ -182,16 +200,19 @@ Styles are organized into separate modules in `/src/styles/`:
    - Print styles
 
 ### Global Styles
+
 - `src/app.css` imports all modular styles in correct order
 - Tailwind utilities applied via Vite plugin
 - Variables available everywhere via CSS custom properties
 
 ### Component Styles
+
 - Primarily use Tailwind CSS utility classes
 - Component-scoped CSS when needed
 - Access to all design tokens via `var(--token-name)`
 
 ### Custom Colors
+
 Since Tailwind doesn't include all custom colors, they're defined as CSS variables:
 
 ```css
@@ -205,17 +226,20 @@ class="bg-[color:var(--accent)]"
 ## Animation Architecture
 
 ### GSAP Usage
+
 Used for complex, timeline-based animations:
+
 ```typescript
 // Example: Entry animation
 gsap.to(element, {
   duration: 1,
   opacity: 1,
-  y: 0
+  y: 0,
 });
 ```
 
 ### Lenis Integration
+
 Manages smooth scrolling across the site with event callbacks for scroll-based animations.
 
 ## State Management
@@ -223,11 +247,11 @@ Manages smooth scrolling across the site with event callbacks for scroll-based a
 SolidJS stores are used for global state:
 
 ```typescript
-import { createStore } from 'solid-js/store';
+import { createStore } from "solid-js/store";
 
 export const [theme, setTheme] = createStore({
   isDark: false,
-  toggleDark: () => setTheme('isDark', isDark => !isDark)
+  toggleDark: () => setTheme("isDark", (isDark) => !isDark),
 });
 ```
 
@@ -243,10 +267,12 @@ File-based routing provided by SolidStart:
 ## Build and Deployment
 
 ### Development
+
 - `npm run dev` starts Vite dev server with HMR
 - Changes reflect instantly
 
 ### Production
+
 - `npm run build` creates optimized bundle
 - `npm start` runs production server
 - Builds are SSG/SSR capable

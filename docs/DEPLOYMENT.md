@@ -39,6 +39,7 @@ Visit `http://localhost:3001` and verify everything works correctly.
 
 1. **Install Heroku CLI** and login
 2. **Create Procfile**:
+
    ```
    web: npm start
    ```
@@ -74,6 +75,7 @@ Vercel has excellent support for Node.js applications and SolidStart.
 3. **Deploy**: Vercel automatically deploys on push to main
 
 **Advantages**:
+
 - Zero-config deployments
 - Automatic HTTPS
 - Global CDN
@@ -101,6 +103,7 @@ CMD ["npm", "start"]
 ```
 
 **Build and run**:
+
 ```bash
 docker build -t portfolio .
 docker run -p 3001:3001 portfolio
@@ -111,7 +114,7 @@ docker run -p 3001:3001 portfolio
 For more complex setups:
 
 ```yaml
-version: '3'
+version: "3"
 services:
   app:
     build: .
@@ -128,9 +131,10 @@ Run with: `docker-compose up`
 If you want fully static hosting (GitHub Pages, Netlify, etc.), you can modify the build to generate static HTML:
 
 1. **Update `app.config.ts`**:
+
 ```typescript
 export default defineConfig({
-  ssr: true,  // Enable SSR for static generation
+  ssr: true, // Enable SSR for static generation
   // ...
 });
 ```
@@ -148,8 +152,9 @@ VITE_PUBLIC_URL=https://portfolio.example.com
 ```
 
 In your code:
+
 ```typescript
-import.meta.env.VITE_API_URL
+import.meta.env.VITE_API_URL;
 ```
 
 ## Performance Optimization
@@ -158,7 +163,7 @@ import.meta.env.VITE_API_URL
 
 1. **Minification**: Automatically handled by Vite
 2. **Code Splitting**: Automatic for routes
-3. **Image Optimization**: 
+3. **Image Optimization**:
    - Use WebP format where possible
    - Optimize dimensions
    - Use lazy loading
@@ -168,6 +173,7 @@ import.meta.env.VITE_API_URL
 ### Monitoring
 
 Use services to monitor production:
+
 - **Sentry**: Error tracking
 - **LogRocket**: Session replay
 - **Vercel Analytics**: Built-in with Vercel
@@ -175,6 +181,7 @@ Use services to monitor production:
 ## SSL/HTTPS
 
 All modern hosting platforms provide free SSL:
+
 - Vercel: Automatic
 - Heroku: Automatic
 - Railway: Automatic
@@ -187,6 +194,7 @@ All modern hosting platforms provide free SSL:
 3. Configure SSL in your hosting dashboard
 
 **For Vercel**:
+
 - Go to Project Settings → Domains
 - Add your custom domain
 - Configure DNS records
@@ -212,11 +220,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 22
-      
+
       - run: npm ci
       - run: npm run format:check
       - run: npm run build
-      
+
       - name: Deploy to Vercel
         run: npm i -g vercel && vercel --prod
         env:
@@ -251,12 +259,14 @@ npm start
 ### Performance Metrics
 
 Track:
+
 - Page load time
 - Core Web Vitals
 - Error rate
 - User sessions
 
 Use:
+
 - Google Analytics
 - Vercel Analytics
 - Web Vitals library
@@ -264,6 +274,7 @@ Use:
 ## Troubleshooting Deployments
 
 ### Build Fails
+
 ```bash
 # Clear cache and reinstall
 rm -rf node_modules package-lock.json .vinxi
@@ -272,7 +283,9 @@ npm run build
 ```
 
 ### Port Already in Use
+
 The app expects port 3001. If unavailable, modify:
+
 ```typescript
 // app.config.ts
 export default defineConfig({
@@ -281,6 +294,7 @@ export default defineConfig({
 ```
 
 ### Environment Variables Not Loading
+
 - Ensure `.env.production` is in root
 - Check variable names match `VITE_*` prefix for frontend
 - Restart server after adding variables

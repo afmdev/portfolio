@@ -16,6 +16,7 @@ src/styles/
 ```
 
 And in the root:
+
 ```
 src/app.css          # Main stylesheet that imports everything
 ```
@@ -27,22 +28,26 @@ src/app.css          # Main stylesheet that imports everything
 Color tokens are defined in `styles/colors.css` and follow a semantic naming approach:
 
 **Primary Colors:**
+
 - `--bg-primary`: Main background
 - `--bg-secondary`: Secondary background
 - `--bg-tertiary`: Tertiary background
 
 **Text Colors:**
+
 - `--text-primary`: Main text
 - `--text-secondary`: Secondary text
 - `--text-tertiary`: Tertiary/hint text
 
 **Accent Colors:**
+
 - `--accent`: Primary accent (purple)
 - `--accent-light`: Light variant
 - `--accent-dark`: Dark variant
 - `--accent-50` through `--accent-900`: Full color scale
 
 **Semantic Colors:**
+
 - `--success`: Success/positive actions
 - `--warning`: Warning states
 - `--error`: Error/danger states
@@ -50,6 +55,7 @@ Color tokens are defined in `styles/colors.css` and follow a semantic naming app
 - `--secondary`: Secondary accent (orange)
 
 **Usage:**
+
 ```css
 button {
   background-color: var(--accent);
@@ -62,11 +68,13 @@ button {
 Typography tokens are in `styles/typography.css`:
 
 **Font Families:**
+
 - `--font-sans`: Default sans-serif stack
 - `--font-mono`: Monospace for code
 - `--font-serif`: Serif alternative
 
 **Font Sizes:**
+
 ```css
 --text-xs: 0.75rem;
 --text-sm: 0.875rem;
@@ -80,6 +88,7 @@ Typography tokens are in `styles/typography.css`:
 ```
 
 **Font Weights:**
+
 ```css
 --font-light: 300;
 --font-normal: 400;
@@ -89,6 +98,7 @@ Typography tokens are in `styles/typography.css`:
 ```
 
 **Line Heights:**
+
 ```css
 --leading-tight: 1.25;
 --leading-normal: 1.5;
@@ -97,14 +107,11 @@ Typography tokens are in `styles/typography.css`:
 ```
 
 **Usage:**
-```html
-<h1 style="font-size: var(--heading-h1); font-weight: var(--font-bold);">
-  Title
-</h1>
 
-<p style="font-size: var(--text-base); line-height: var(--leading-relaxed);">
-  Content
-</p>
+```html
+<h1 style="font-size: var(--heading-h1); font-weight: var(--font-bold);">Title</h1>
+
+<p style="font-size: var(--text-base); line-height: var(--leading-relaxed);">Content</p>
 ```
 
 ### Spacing
@@ -112,22 +119,22 @@ Typography tokens are in `styles/typography.css`:
 Spacing tokens in `styles/variables.css`:
 
 ```css
---spacing-1: 0.25rem;   /* 4px */
---spacing-2: 0.5rem;    /* 8px */
---spacing-4: 1rem;      /* 16px */
---spacing-8: 2rem;      /* 32px */
---spacing-16: 4rem;     /* 64px */
+--spacing-1: 0.25rem; /* 4px */
+--spacing-2: 0.5rem; /* 8px */
+--spacing-4: 1rem; /* 16px */
+--spacing-8: 2rem; /* 32px */
+--spacing-16: 4rem; /* 64px */
 /* ... and more */
 ```
 
 **Usage with Tailwind:**
+
 ```html
-<div class="p-4 gap-8 mb-16">
-  Content
-</div>
+<div class="mb-16 gap-8 p-4">Content</div>
 ```
 
 Or with CSS variables:
+
 ```css
 margin: var(--spacing-4);
 padding: var(--spacing-8);
@@ -146,6 +153,7 @@ Shadows in `styles/variables.css`:
 ```
 
 **Usage:**
+
 ```css
 box-shadow: var(--shadow-lg);
 ```
@@ -155,6 +163,7 @@ box-shadow: var(--shadow-lg);
 Animations are defined in `styles/animations.css` and include:
 
 **Keyframes Available:**
+
 - `fade-in`, `fade-out`
 - `slide-in-top`, `slide-in-bottom`, `slide-in-left`, `slide-in-right`
 - `scale-up`, `scale-down`
@@ -162,6 +171,7 @@ Animations are defined in `styles/animations.css` and include:
 - `float`, `glow`, `shimmer`
 
 **Usage with Classes:**
+
 ```html
 <div class="animate-fade-in">Fades in</div>
 <div class="animate-slide-in-bottom">Slides in from bottom</div>
@@ -169,14 +179,15 @@ Animations are defined in `styles/animations.css` and include:
 ```
 
 **Custom Animation with GSAP:**
+
 ```typescript
-import gsap from 'gsap';
+import gsap from "gsap";
 
 gsap.to(element, {
   duration: 1,
   opacity: 1,
   y: 0,
-  ease: 'power3.out'
+  ease: "power3.out",
 });
 ```
 
@@ -221,9 +232,7 @@ No need to use Tailwind's `dark:` prefix for CSS variables - they're already sem
 Use Tailwind breakpoints:
 
 ```html
-<div class="text-sm md:text-base lg:text-lg">
-  Text size changes responsively
-</div>
+<div class="text-sm md:text-base lg:text-lg">Text size changes responsively</div>
 ```
 
 CSS variables also adjust for mobile:
@@ -231,7 +240,7 @@ CSS variables also adjust for mobile:
 ```css
 @media (max-width: 640px) {
   :root {
-    --heading-h1: 2.25rem;  /* Smaller on mobile */
+    --heading-h1: 2.25rem; /* Smaller on mobile */
   }
 }
 ```
@@ -239,6 +248,7 @@ CSS variables also adjust for mobile:
 ## Global Styles
 
 `styles/global.css` includes:
+
 - Body and root element styles
 - Link and button defaults
 - Form element styling
@@ -267,16 +277,19 @@ Then import and test in your components.
 ## Troubleshooting
 
 **Colors not applying:**
+
 - Check if you're using `var(--color-name)` correctly
 - Verify the color is defined in the appropriate light/dark section
 - Ensure dark mode class is on `<html>` element
 
 **Animations not working:**
+
 - Use animation utility classes: `animate-fade-in`
 - For complex animations, use GSAP (already imported)
 - Check for `prefers-reduced-motion` media query
 
 **Custom breakpoints needed:**
+
 - Add to `styles/variables.css`
 - Define in Tailwind's `tailwind.config.js` if using Tailwind classes
 

@@ -25,21 +25,25 @@ export default function MyComponent(props: ComponentProps): JSX.Element {
 ## Component Guidelines
 
 ### Naming
+
 - Use PascalCase for component names
 - File name matches component name
 - One component per file (unless internal sub-components)
 
 ### Props
+
 - Define clear interfaces for component props
 - Use TypeScript for type safety
 - Document props with JSDoc comments
 
 ### Styling
+
 - Use Tailwind CSS utility classes
 - Keep component-specific styles in the component file when needed
 - Use global CSS variables for design tokens
 
 ### Accessibility
+
 - Use semantic HTML elements
 - Include proper ARIA attributes
 - Test with keyboard navigation
@@ -50,6 +54,7 @@ export default function MyComponent(props: ComponentProps): JSX.Element {
 Create these commonly needed components:
 
 ### Header/Navigation
+
 ```typescript
 // src/components/Header.tsx
 interface HeaderProps {
@@ -62,6 +67,7 @@ export default function Header(props: HeaderProps) {
 ```
 
 ### Footer
+
 ```typescript
 // src/components/Footer.tsx
 export default function Footer() {
@@ -70,6 +76,7 @@ export default function Footer() {
 ```
 
 ### Card
+
 ```typescript
 // src/components/Card.tsx
 interface CardProps {
@@ -84,11 +91,12 @@ export default function Card(props: CardProps) {
 ```
 
 ### Button
+
 ```typescript
 // src/components/Button.tsx
 interface ButtonProps {
-  variant?: 'primary' | 'secondary';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
   onClick?: () => void;
   children: any;
 }
@@ -103,15 +111,19 @@ export default function Button(props: ButtonProps) {
 Create specialized section components for different portfolio sections:
 
 ### HeroSection
+
 Landing section with introduction and call-to-action.
 
 ### ProjectsSection
+
 Grid or list of portfolio projects.
 
 ### SkillsSection
+
 Display of skills and expertise.
 
 ### ContactSection
+
 Contact information and contact form.
 
 ## Animated Components
@@ -124,7 +136,7 @@ import { onMount } from 'solid-js';
 
 export default function AnimatedComponent() {
   let element: HTMLDivElement;
-  
+
   onMount(() => {
     gsap.to(element, {
       duration: 1,
@@ -132,7 +144,7 @@ export default function AnimatedComponent() {
       y: 0
     });
   });
-  
+
   return <div ref={element} class="opacity-0 translate-y-4">Content</div>;
 }
 ```
@@ -150,7 +162,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollAnimatedComponent() {
   let element: HTMLDivElement;
-  
+
   onMount(() => {
     gsap.to(element, {
       scrollTrigger: {
@@ -163,7 +175,7 @@ export default function ScrollAnimatedComponent() {
       y: 0
     });
   });
-  
+
   return <div ref={element} class="opacity-0 translate-y-4">Content</div>;
 }
 ```
@@ -196,12 +208,12 @@ import { createSignal, JSX } from 'solid-js';
 
 export default function TabComponent(): JSX.Element {
   const [activeTab, setActiveTab] = createSignal('overview');
-  
+
   return (
     <div>
       <button onClick={() => setActiveTab('overview')}>Overview</button>
       <button onClick={() => setActiveTab('details')}>Details</button>
-      
+
       <Show when={activeTab() === 'overview'}>
         {/* Overview content */}
       </Show>
@@ -222,9 +234,9 @@ export default function TabComponent(): JSX.Element {
 5. **Code Splitting**: Use dynamic imports for large components
 
 ```typescript
-import { lazy } from 'solid-js';
+import { lazy } from "solid-js";
 
-const HeavyComponent = lazy(() => import('./HeavyComponent'));
+const HeavyComponent = lazy(() => import("./HeavyComponent"));
 ```
 
 ## Testing Components
