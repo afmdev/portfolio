@@ -148,12 +148,8 @@ export default function ServicesCarousel() {
     <section class={styles.section} ref={containerRef}>
       <div class={styles.container}>
         <div class={styles.header}>
-          <h2 class={styles.title}>
-            What I Do
-          </h2>
-          <p class={styles.subtitle}>
-            Select a service to learn more
-          </p>
+          <h2 class={styles.title}>What I Do</h2>
+          <p class={styles.subtitle}>Select a service to learn more</p>
         </div>
 
         <div class={styles.categoryButtons}>
@@ -163,8 +159,7 @@ export default function ServicesCarousel() {
                 onClick={() => goToSlide(index())}
                 class={`${styles.categoryBtn} ${activeIndex() === index() ? styles.active : ""}`}
                 style={{
-                  background:
-                    activeIndex() === index() ? service.color : "var(--bg-secondary)",
+                  background: activeIndex() === index() ? service.color : "var(--bg-secondary)",
                   color: activeIndex() === index() ? "#ffffff" : "var(--text-secondary)",
                   border: `2px solid ${
                     activeIndex() === index() ? service.color : "var(--border)"
@@ -225,13 +220,8 @@ export default function ServicesCarousel() {
                     <div class={styles.cardHeader}>
                       <div class={styles.cardIcon}>{service.icon}</div>
                       <div class={styles.cardTitleWrapper}>
-                        <h3 class={styles.cardTitle}>
-                          {service.title}
-                        </h3>
-                        <p
-                          class={styles.cardCategory}
-                          style={{ color: service.color }}
-                        >
+                        <h3 class={styles.cardTitle}>{service.title}</h3>
+                        <p class={styles.cardCategory} style={{ color: service.color }}>
                           {service.category}
                         </p>
                       </div>
@@ -257,9 +247,7 @@ export default function ServicesCarousel() {
                                 stroke-linejoin="round"
                               />
                             </svg>
-                            <span class={styles.cardItemText}>
-                              {item}
-                            </span>
+                            <span class={styles.cardItemText}>{item}</span>
                           </li>
                         )}
                       </For>

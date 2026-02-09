@@ -13,8 +13,9 @@
    ```bash
    npm install
    ```
-   
+
    Or with yarn/pnpm:
+
    ```bash
    yarn install
    # or
@@ -30,6 +31,7 @@
    The application will be available at `http://localhost:3001`
 
    To automatically open in your browser:
+
    ```bash
    npm run dev -- --open
    ```
@@ -49,6 +51,7 @@ npm run format:check
 ```
 
 Prettier is configured to work with:
+
 - JavaScript/JSX/TypeScript/TSX files
 - JSON
 - CSS
@@ -56,6 +59,7 @@ Prettier is configured to work with:
 ### File Structure
 
 When adding new features:
+
 - **Components**: Add reusable components in `src/components/`
 - **Routes**: Add new pages in `src/routes/`
 - **Stores**: Add global state in `src/stores/`
@@ -85,20 +89,26 @@ The server will run on `http://localhost:3001`
 ## Troubleshooting
 
 ### Port Already in Use
+
 If port 3001 is already in use, you can use a different port:
+
 ```bash
 npm run dev -- --port 3002
 ```
 
 ### Dependency Issues
+
 If you encounter dependency issues:
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 ### Clear Cache
+
 To clear Vite cache:
+
 ```bash
 rm -rf .vinxi
 npm run dev

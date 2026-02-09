@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LogoCarousel />
-      <ServicesV2 />      
-      <Services />
-      <ServicesCarousel />
+      {/* <LogoCarousel /> */}
+      <ServicesV2 />
+      {/* <Services /> */}
+      {/* <ServicesCarousel /> */}
     </>
   );
 }

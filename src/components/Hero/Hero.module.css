@@ -72,7 +72,9 @@
   background-color: var(--text-primary);
   color: var(--bg-primary);
   text-decoration: none;
-  transition: gap 0.2s ease, transform 0.2s ease;
+  transition:
+    gap 0.2s ease,
+    transform 0.2s ease;
 }
 
 .btnPrimary:hover {
@@ -105,7 +107,9 @@
   border: 1px solid var(--border-hover);
   color: var(--text-primary);
   text-decoration: none;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .btnSecondary:hover {

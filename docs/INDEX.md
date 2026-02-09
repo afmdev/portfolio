@@ -5,15 +5,18 @@ Complete documentation for the AFMDev Portfolio project.
 ## 📖 Quick Navigation
 
 ### Getting Started
+
 - **[README](./README.md)** - Project overview and quick start guide
 - **[Getting Started](./GETTING_STARTED.md)** - Installation, setup, and development workflow
 
 ### Architecture & Design
+
 - **[Architecture](./ARCHITECTURE.md)** - Project structure, design decisions, and patterns
 - **[Styling Guide](./STYLING.md)** - Complete style system, design tokens, and CSS variables
 - **[Components Documentation](./COMPONENTS.md)** - Component guidelines and patterns
 
 ### Deployment
+
 - **[Deployment Guide](./DEPLOYMENT.md)** - Deployment options, CI/CD, and production setup
 
 ---
@@ -76,22 +79,26 @@ npm run format:check     # Check formatting
 ## 📚 Key Documentation Topics
 
 ### For New Developers
+
 1. Start with [README.md](./README.md) for overview
 2. Follow [GETTING_STARTED.md](./GETTING_STARTED.md) for setup
 3. Read [ARCHITECTURE.md](./ARCHITECTURE.md) to understand structure
 4. Check [STYLING.md](./STYLING.md) to understand the style system
 
 ### For Component Development
+
 1. Review [COMPONENTS.md](./COMPONENTS.md) for patterns
 2. Check [ARCHITECTURE.md](./ARCHITECTURE.md#styling-strategy) for styling approach
 3. Use [STYLING.md](./STYLING.md) as reference for design tokens
 
 ### For Styling & Design
+
 1. Start with [STYLING.md](./STYLING.md)
 2. Reference `src/styles/README.css` for implementation details
 3. Check `src/styles/[filename].css` files for specific token definitions
 
 ### For Deployment
+
 1. Read [DEPLOYMENT.md](./DEPLOYMENT.md) for all options
 2. Choose platform (Vercel recommended)
 3. Follow platform-specific instructions
@@ -113,23 +120,27 @@ npm run format:check     # Check formatting
 ## 📝 Key Features
 
 ✨ **Modern Architecture**
+
 - File-based routing with SolidStart
 - Modular design system
 - Type-safe components with TypeScript
 
 🎨 **Styling System**
+
 - Comprehensive design tokens
 - Light & dark mode support
 - Custom colors beyond Tailwind
 - Pre-built animations
 
 ⚡ **Performance**
+
 - GPU-accelerated animations
 - Code splitting for routes
 - Tree-shaking in production
 - Hardware-accelerated scrolling (Lenis)
 
 ♿ **Accessibility**
+
 - Semantic HTML
 - ARIA attributes
 - Keyboard navigation support
@@ -151,16 +162,19 @@ When working on this project:
 ## 📖 Additional Resources
 
 ### SolidJS & SolidStart
+
 - [SolidJS Documentation](https://docs.solidjs.com)
 - [SolidStart Guide](https://start.solidjs.com)
 
 ### Styling & Design
+
 - [Tailwind CSS Documentation](https://tailwindcss.com)
 - [CSS Variables (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 - [GSAP Documentation](https://greensock.com/gsap)
 - [Lenis Smooth Scroll](https://lenis.studiofreight.com)
 
 ### Tooling
+
 - [Vite Guide](https://vitejs.dev)
 - [TypeScript Documentation](https://www.typescriptlang.org)
 - [Prettier Code Formatter](https://prettier.io)
@@ -189,6 +203,7 @@ A: Keep them in the component file or a sibling CSS file. Use Tailwind utilities
 ## 📞 Support
 
 For questions or issues:
+
 1. Check relevant documentation section above
 2. Review example code in components
 3. Check SolidJS/Tailwind documentation

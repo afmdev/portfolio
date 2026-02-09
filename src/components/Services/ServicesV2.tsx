@@ -182,11 +182,7 @@ export default function ServicesV2() {
   });
 
   return (
-    <section
-      ref={sectionRef}
-      class={styles.section}
-      aria-labelledby="services-v2-title"
-    >
+    <section ref={sectionRef} class={styles.section} aria-labelledby="services-v2-title">
       <div ref={servicesContainerRef} class={styles.servicesContainer}>
         <For each={services}>
           {(service, index) => (
