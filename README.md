@@ -1,40 +1,62 @@
-# 🚀 AFMDev Portfolio
+# Astro Starter Kit: Blog
 
-A modern, high-performance portfolio website built with **SolidStart**, **Tailwind CSS**, **GSAP**, and **Lenis**.
-
-## 📖 Documentation
-
-All documentation has been moved to the `/docs` folder for better organization:
-
-- **[📘 Full Documentation Index](./docs/INDEX.md)** - Complete navigation guide
-- **[🎯 README](./docs/README.md)** - Project overview and quick start
-- **[🚀 Getting Started](./docs/GETTING_STARTED.md)** - Installation and development setup
-- **[🏗️ Architecture](./docs/ARCHITECTURE.md)** - Project structure and design decisions
-- **[🎨 Styling Guide](./docs/STYLING.md)** - Design system, colors, typography, animations
-- **[💎 Components](./docs/COMPONENTS.md)** - Component documentation and guidelines
-- **[🌍 Deployment](./docs/DEPLOYMENT.md)** - Deployment to production
-
-## ⚡ Quick Start
-
-```bash
-npm install
-npm run dev
+```sh
+npm create astro@latest -- --template blog
 ```
 
-Server starts at `http://localhost:3001`
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🛠️ Available Commands
+Features:
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Run production server
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check formatting
+- ✅ Minimal styling (make it your own!)
+- ✅ 100/100 Lighthouse performance
+- ✅ SEO-friendly with canonical URLs and OpenGraph data
+- ✅ Sitemap support
+- ✅ RSS Feed support
+- ✅ Markdown & MDX support
 
-## 📋 Requirements
+## 🚀 Project Structure
 
-- Node.js >= v22
+Inside of your Astro project, you'll see the following folders and files:
 
----
+```text
+├── public/
+├── src/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   └── pages/
+├── astro.config.mjs
+├── README.md
+├── package.json
+└── tsconfig.json
+```
 
-**For complete documentation, see the [docs README](./docs/README.md)**
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Credit
+
+This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
