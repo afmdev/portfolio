@@ -1,3 +1,1228 @@
 ---
-return Astro.redirect('/home');
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<Header />
+
+		<div class="scroll-container">
+			<!-- Hero Section -->
+			<section class="snap-section hero-section">
+				<canvas id="gradient-canvas"></canvas>
+				<div class="section-content fade-in">
+					<h1>Bienvenido a Mi Portfolio</h1>
+					<p>Creando experiencias digitales increíbles</p>
+					<a href="#services" class="cta-button">Descubre Más</a>
+				</div>
+				<div class="scroll-indicator">
+					<span>Scroll</span>
+					<div class="arrow">↓</div>
+				</div>
+			</section>
+
+			<!-- Service 1: Website Audit & Technical SEO -->
+			<section class="snap-section service-detail-section service-1" id="services">
+				<div class="service-grid fade-in">
+					<div class="service-text">
+						<span class="service-number">01</span>
+						<h2>Website Audit & Technical SEO Review Services</h2>
+						<p class="service-intro">
+							Our website audit and technical SEO review services identify SEO, performance, and usability issues that
+							limit business growth. You receive clear, prioritized audit insights to improve rankings, speed, and
+							technical stability.
+						</p>
+						<div class="problems-section">
+							<h3>Common searches / problems users have:</h3>
+							<ul class="problems-list">
+								<li>Why is my website not ranking on Google despite good content?</li>
+								<li>How to identify technical SEO issues on a business website?</li>
+								<li>How do I know if my website has SEO or performance problems?</li>
+								<li>Why does my website traffic keep dropping over time?</li>
+							</ul>
+						</div>
+						<a href="/contact" class="service-cta">👉 Get Your Free Audit Report</a>
+					</div>
+					<div class="service-image">
+						<canvas id="three-canvas-1" class="three-canvas"></canvas>
+					</div>
+				</div>
+			</section>
+
+			<!-- Service 2: Performance Optimization -->
+			<section class="snap-section service-detail-section service-2 reverse-layout">
+				<div class="service-grid fade-in">
+					<div class="service-image">
+						<canvas id="three-canvas-2" class="three-canvas"></canvas>
+					</div>
+					<div class="service-text">
+						<span class="service-number">02</span>
+						<h2>Website Performance Optimization in Berlin</h2>
+						<p class="service-intro">
+							Our website performance and page speed optimization services in Berlin help businesses fix slow websites
+							and improve Core Web Vitals and Lighthouse scores. We optimize loading times, assets, and architecture to
+							deliver faster, SEO-friendly websites.
+						</p>
+						<div class="problems-section">
+							<h3>Search-type questions:</h3>
+							<ul class="problems-list">
+								<li>How to fix Core Web Vitals in Berlin?</li>
+								<li>Why is my website slow in Germany?</li>
+								<li>Who offers Lighthouse audits in Berlin?</li>
+								<li>How to speed up an existing website?</li>
+							</ul>
+						</div>
+						<a href="/contact" class="service-cta">👉 Fix My Website Speed</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Service 3: Custom Web Development -->
+			<section class="snap-section service-detail-section service-3" id="custom-dev">
+				<div class="service-grid fade-in">
+					<div class="service-text">
+						<span class="service-number">03</span>
+						<h2>Custom Web Development in Berlin</h2>
+						<p class="service-intro">
+							Our custom web development services in Berlin help startups and growing businesses build scalable,
+							SEO-optimized websites using React, Next.js, and modern architecture.
+						</p>
+						<div class="problems-section">
+							<h3>Search-type questions:</h3>
+							<ul class="problems-list">
+								<li>Who builds custom React websites in Berlin?</li>
+								<li>How to find a reliable web developer in Berlin?</li>
+								<li>What is the cost of custom web development in Berlin?</li>
+								<li>How to rebuild a company website in Berlin without losing SEO?</li>
+							</ul>
+						</div>
+						<a href="/contact" class="service-cta">👉 Start My Berlin Web Project</a>
+					</div>
+					<div class="service-image">
+						<canvas id="three-canvas-3" class="three-canvas"></canvas>
+					</div>
+				</div>
+			</section>
+
+			<!-- Service 4: WordPress Websites -->
+			<section class="snap-section service-detail-section service-4 reverse-layout">
+				<div class="service-grid fade-in">
+					<div class="service-image">
+						<canvas id="three-canvas-4" class="three-canvas"></canvas>
+					</div>
+					<div class="service-text">
+						<span class="service-number">04</span>
+						<h2>WordPress Websites in Berlin</h2>
+						<p class="service-intro">
+							Our WordPress development services in Berlin deliver custom, performance-optimized WordPress websites —
+							not bloated themes. We build scalable architectures, custom themes, and clean implementations tailored
+							to your business goals.
+						</p>
+						<div class="problems-section">
+							<h3>Search-type questions:</h3>
+							<ul class="problems-list">
+								<li>Who builds custom WordPress websites in Berlin?</li>
+								<li>How to make WordPress fast and SEO-friendly?</li>
+								<li>Best WordPress developer in Berlin for business sites?</li>
+								<li>How to customize WordPress without breaking updates?</li>
+							</ul>
+						</div>
+						<a href="/contact" class="service-cta">👉 Build My WordPress Site</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Service 5: Backend Integration & Headless CMS -->
+			<section class="snap-section service-detail-section service-5">
+				<div class="service-grid fade-in">
+					<div class="service-text">
+						<span class="service-number">05</span>
+						<h2>Backend Integration & Headless CMS in Berlin</h2>
+						<p class="service-intro">
+							We implement headless CMS solutions and backend integrations in Berlin using Contentful, Storyblok,
+							and Payload for flexible and scalable content workflows.
+						</p>
+						<div class="problems-section">
+							<h3>Search-type questions:</h3>
+							<ul class="problems-list">
+								<li>Best headless CMS developer in Berlin?</li>
+								<li>How to integrate Contentful with Next.js?</li>
+								<li>CMS setup for startups in Berlin?</li>
+								<li>How to improve content management without slowing the site?</li>
+							</ul>
+						</div>
+						<a href="/contact" class="service-cta">👉 Integrate My CMS</a>
+					</div>
+					<div class="service-image">
+						<canvas id="three-canvas-5" class="three-canvas"></canvas>
+					</div>
+				</div>
+			</section>
+
+			<!-- Service 6: Technical Consulting -->
+			<section class="snap-section service-detail-section service-6 reverse-layout">
+				<div class="service-grid fade-in">
+					<div class="service-image">
+						<canvas id="three-canvas-6" class="three-canvas"></canvas>
+					</div>
+					<div class="service-text">
+						<span class="service-number">06</span>
+						<h2>Technical Consulting for Digital Teams in Berlin</h2>
+						<p class="service-intro">
+							Our technical consulting services in Berlin support product teams with architecture decisions,
+							code reviews, and scalability planning.
+						</p>
+						<div class="problems-section">
+							<h3>Search-type questions:</h3>
+							<ul class="problems-list">
+								<li>Who offers web architecture consulting in Berlin?</li>
+								<li>Code review services for startups Berlin?</li>
+								<li>Should we refactor or rebuild our platform?</li>
+								<li>How to scale a React application properly?</li>
+							</ul>
+						</div>
+						<a href="/contact" class="service-cta">👉 Get Expert Advice</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Projects Section -->
+			<section class="snap-section projects-section">
+				<div class="section-content fade-in">
+					<h2>Proyectos Destacados</h2>
+					<div class="projects-showcase">
+						<div class="project-item">
+							<div class="project-preview">🛒</div>
+							<h3>E-Commerce Platform</h3>
+							<p>Plataforma de comercio electrónico completa</p>
+						</div>
+						<div class="project-item">
+							<div class="project-preview">📊</div>
+							<h3>Analytics Dashboard</h3>
+							<p>Dashboard de datos en tiempo real</p>
+						</div>
+					</div>
+					<a href="/projects" class="link-button">Ver todos los proyectos →</a>
+				</div>
+			</section>
+
+			<!-- About Section -->
+			<section class="snap-section about-section">
+				<div class="section-content fade-in">
+					<h2>Sobre Mí</h2>
+					<div class="about-content">
+						<div class="about-text">
+							<p>
+								Soy un desarrollador apasionado por crear experiencias web excepcionales.
+								Con años de experiencia en desarrollo frontend y backend, ayudo a empresas
+								a alcanzar sus objetivos digitales.
+							</p>
+							<p>
+								Especializado en tecnologías modernas como React, Astro, Node.js y más.
+							</p>
+						</div>
+					</div>
+					<a href="/about" class="link-button">Conoce más →</a>
+				</div>
+			</section>
+
+			<!-- Contact Section -->
+			<section class="snap-section contact-section">
+				<div class="section-content fade-in">
+					<h2>Contacto</h2>
+					<p class="contact-intro">¿Tienes un proyecto en mente? Hablemos!</p>
+					<div class="contact-info">
+						<div class="info-item">
+							<span class="icon">📧</span>
+							<a href="mailto:hello@example.com">hello@example.com</a>
+						</div>
+						<div class="info-item">
+							<span class="icon">📱</span>
+							<a href="tel:+1234567890">+1 (234) 567-890</a>
+						</div>
+					</div>
+					<a href="/contact" class="cta-button">Ir a Contacto →</a>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		background: #0a0f0d;
+	}
+
+	body {
+		overflow-x: hidden;
+		background: #0a0f0d;
+		color: #e5e7eb;
+		font-family: system-ui, -apple-system, sans-serif;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Satoshi', sans-serif;
+		font-weight: 700;
+	}
+
+	/* Scroll Snap Container */
+	.scroll-container {
+		height: 100vh;
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+	}
+
+	/* Cada sección ocupa toda la pantalla */
+	.snap-section {
+		min-height: 100vh;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		position: relative;
+	}
+
+	.section-content {
+		max-width: 1200px;
+		width: 100%;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.8s ease, transform 0.8s ease;
+	}
+
+	.section-content.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Hero Section */
+	.hero-section {
+		background: #0a0f0d;
+		color: #e5e7eb;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#gradient-canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	.hero-section .section-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-section .scroll-indicator {
+		z-index: 1;
+	}
+
+	.hero-section h1 {
+		font-size: clamp(2.5rem, 6vw, 5rem);
+		margin-bottom: 1rem;
+		font-weight: 700;
+		background: linear-gradient(135deg, #10b981 0%, #00ff88 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-shadow: none;
+	}
+
+	.hero-section p {
+		font-size: clamp(1.2rem, 3vw, 2rem);
+		margin-bottom: 2rem;
+		opacity: 0.9;
+		color: #9ca3af;
+	}
+
+	/* Service Detail Sections */
+	.service-detail-section {
+		padding: 4rem 2rem;
+	}
+
+	.service-grid {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		gap: 4rem;
+		max-width: 1400px;
+		width: 100%;
+		align-items: center;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.8s ease, transform 0.8s ease;
+	}
+
+	.reverse-layout .service-grid {
+		grid-template-columns: 2fr 3fr;
+	}
+
+	.service-grid.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.service-text {
+		text-align: left;
+	}
+
+	.service-number {
+		display: inline-block;
+		font-size: 0.9rem;
+		font-weight: 700;
+		opacity: 0.6;
+		margin-bottom: 0.75rem;
+		letter-spacing: 2px;
+	}
+
+	.service-detail-section h2 {
+		font-size: clamp(1.8rem, 4vw, 2.8rem);
+		margin-bottom: 1.25rem;
+		line-height: 1.15;
+	}
+
+	.service-intro {
+		font-size: clamp(1rem, 2vw, 1.2rem);
+		line-height: 1.4;
+		margin-bottom: 2rem;
+		opacity: 0.9;
+	}
+
+	.problems-section {
+		margin-bottom: 2rem;
+	}
+
+	.problems-section h3 {
+		font-size: 1.2rem;
+		margin-bottom: 0.75rem;
+		opacity: 0.9;
+	}
+
+	.problems-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.problems-list li {
+		padding: 0.5rem 0;
+		padding-left: 2rem;
+		position: relative;
+		font-size: 1rem;
+		line-height: 1.4;
+		opacity: 0.85;
+	}
+
+	.problems-list li::before {
+		content: '→';
+		position: absolute;
+		left: 0;
+		font-weight: bold;
+		opacity: 0.7;
+	}
+
+	.service-cta {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		background: rgba(16, 185, 129, 0.1);
+		backdrop-filter: blur(10px);
+		border: 2px solid #10b981;
+		color: #10b981;
+		border-radius: 50px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+	}
+
+	.service-cta:hover {
+		background: rgba(16, 185, 129, 0.2);
+		border-color: #00ff88;
+		color: #00ff88;
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+	}
+
+	/* Individual Service Colors - Dark Theme with Green Tones */
+	.service-1 {
+		background: linear-gradient(135deg, #0f1419 0%, #1a2520 100%);
+		color: #e5e7eb;
+	}
+
+	.service-2 {
+		background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+		color: #e5e7eb;
+	}
+
+	.service-3 {
+		background: linear-gradient(135deg, #0a0f0d 0%, #162318 100%);
+		color: #e5e7eb;
+	}
+
+	.service-4 {
+		background: linear-gradient(135deg, #1a1f1e 0%, #0f2419 100%);
+		color: #e5e7eb;
+	}
+
+	.service-5 {
+		background: linear-gradient(135deg, #0d1117 0%, #1c2921 100%);
+		color: #e5e7eb;
+	}
+
+	.service-6 {
+		background: linear-gradient(135deg, #151b19 0%, #0a1410 100%);
+		color: #e5e7eb;
+	}
+
+	/* Service Image */
+	.service-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		min-height: 400px;
+		background: rgba(16, 185, 129, 0.05);
+		backdrop-filter: blur(10px);
+		border-radius: 20px;
+		border: 2px solid rgba(16, 185, 129, 0.2);
+		overflow: hidden;
+		transition: border-color 0.3s ease;
+	}
+
+	.service-image:hover {
+		border-color: rgba(16, 185, 129, 0.4);
+	}
+
+	.three-canvas {
+		width: 100%;
+		height: 100%;
+		min-height: 400px;
+		display: block;
+	}
+
+	/* Projects Section */
+	.projects-section {
+		background: linear-gradient(135deg, #0d1117 0%, #1a2520 100%);
+		color: #e5e7eb;
+	}
+
+	.projects-section h2 {
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		margin-bottom: 3rem;
+	}
+
+	.projects-showcase {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.project-item {
+		background: rgba(16, 185, 129, 0.05);
+		backdrop-filter: blur(10px);
+		padding: 2rem;
+		border-radius: 12px;
+		border: 1px solid rgba(16, 185, 129, 0.2);
+		transition: all 0.3s ease;
+	}
+
+	.project-item:hover {
+		background: rgba(16, 185, 129, 0.1);
+		border-color: rgba(16, 185, 129, 0.4);
+	}
+
+	.project-preview {
+		font-size: 4rem;
+		margin-bottom: 1rem;
+	}
+
+	.project-item h3 {
+		margin-bottom: 0.5rem;
+	}
+
+	/* About Section */
+	.about-section {
+		background: linear-gradient(135deg, #111827 0%, #162318 100%);
+		color: #e5e7eb;
+	}
+
+	.about-section h2 {
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		margin-bottom: 2rem;
+	}
+
+	.about-content {
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	.about-text p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		margin-bottom: 1rem;
+		opacity: 0.9;
+	}
+
+	/* Contact Section */
+	.contact-section {
+		background: linear-gradient(135deg, #0a0f0d 0%, #1a2520 100%);
+		color: #e5e7eb;
+	}
+
+	.contact-section h2 {
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		margin-bottom: 1rem;
+	}
+
+	.contact-intro {
+		font-size: 1.3rem;
+		margin-bottom: 2rem;
+	}
+
+	.contact-info {
+		display: flex;
+		gap: 3rem;
+		justify-content: center;
+		margin-bottom: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.info-item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	.info-item .icon {
+		font-size: 2rem;
+	}
+
+	.info-item a {
+		color: #10b981;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.info-item a:hover {
+		text-decoration: underline;
+	}
+
+	/* Buttons */
+	.cta-button {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		background: #10b981;
+		color: #0a0f0d;
+		border-radius: 50px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+	}
+
+	.cta-button:hover {
+		background: #00ff88;
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+	}
+
+	.link-button {
+		display: inline-block;
+		color: #10b981;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+	}
+
+	.link-button:hover {
+		color: #00ff88;
+		text-decoration: underline;
+	}
+
+	/* Scroll Indicator */
+	.scroll-indicator {
+		position: absolute;
+		bottom: 2rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		opacity: 0.8;
+		animation: bounce 2s infinite;
+	}
+
+	.scroll-indicator span {
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	.arrow {
+		font-size: 1.5rem;
+	}
+
+	@keyframes bounce {
+		0%, 20%, 50%, 80%, 100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-10px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-5px);
+		}
+	}
+
+	/* Responsive */
+	@media (max-width: 1024px) {
+		.service-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.service-image {
+			min-height: 300px;
+		}
+
+		.service-text {
+			order: 2;
+		}
+
+		.service-image {
+			order: 1;
+		}
+
+		.image-placeholder {
+			min-height: 300px;
+			font-size: 6rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.projects-showcase {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-info {
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.service-detail-section {
+			padding: 2rem 1.5rem;
+		}
+
+		.service-grid {
+			gap: 1.5rem;
+		}
+
+		.service-image {
+			min-height: 250px;
+		}
+
+		.image-placeholder {
+			min-height: 250px;
+			font-size: 4rem;
+		}
+
+		.problems-list li {
+			font-size: 0.95rem;
+		}
+
+		.service-cta {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>
+
+<script>
+	// WebGL Animation
+	function compileShader(gl: WebGL2RenderingContext, type: number, source: string) {
+		const shader = gl.createShader(type);
+		if (!shader) return null;
+		gl.shaderSource(shader, source);
+		gl.compileShader(shader);
+		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+			console.error("An error occurred compiling the shaders: " + gl.getShaderInfoLog(shader));
+			gl.deleteShader(shader);
+			return null;
+		}
+		return shader;
+	}
+
+	function createProgram(gl: WebGL2RenderingContext, vertexSource: string, fragmentSource: string) {
+		const vertexShader = compileShader(gl, gl.VERTEX_SHADER, vertexSource);
+		const fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, fragmentSource);
+		if (!vertexShader || !fragmentShader) return null;
+		const program = gl.createProgram();
+		if (!program) return null;
+		gl.attachShader(program, vertexShader);
+		gl.attachShader(program, fragmentShader);
+		gl.linkProgram(program);
+		if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+			console.error("Unable to initialize the shader program: " + gl.getProgramInfoLog(program));
+			gl.deleteProgram(program);
+			gl.deleteShader(vertexShader);
+			gl.deleteShader(fragmentShader);
+			return null;
+		}
+		gl.detachShader(program, vertexShader);
+		gl.detachShader(program, fragmentShader);
+		gl.deleteShader(vertexShader);
+		gl.deleteShader(fragmentShader);
+		return program;
+	}
+
+	const canvas = document.getElementById("gradient-canvas") as HTMLCanvasElement;
+	if (canvas) {
+		const gl = canvas.getContext("webgl2");
+		if (gl) {
+			const vertexShaderSource = `#version 300 es
+				layout(location = 0) in vec4 a_position;
+				void main() {
+					gl_Position = a_position;
+				}`;
+
+			const fragmentShaderSource = `#version 300 es
+				precision highp float;
+				uniform float u_time;
+				uniform float u_pixelRatio;
+				uniform vec2 u_resolution;
+				uniform float u_scale;
+				uniform float u_rotation;
+				uniform vec4 u_color1;
+				uniform vec4 u_color2;
+				uniform vec4 u_color3;
+				uniform float u_proportion;
+				uniform float u_softness;
+				uniform float u_shape;
+				uniform float u_shapeScale;
+				uniform float u_distortion;
+				uniform float u_swirl;
+				uniform float u_swirlIterations;
+				out vec4 fragColor;
+				#define TWO_PI 6.28318530718
+				#define PI 3.14159265358979323846
+				vec2 rotate(vec2 uv, float th) {
+					return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
+				}
+				float random(vec2 st) {
+					return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+				}
+				float noise(vec2 st) {
+					vec2 i = floor(st);
+					vec2 f = fract(st);
+					float a = random(i);
+					float b = random(i + vec2(1.0, 0.0));
+					float c = random(i + vec2(0.0, 1.0));
+					float d = random(i + vec2(1.0, 1.0));
+					vec2 u = f * f * (3.0 - 2.0 * f);
+					float x1 = mix(a, b, u.x);
+					float x2 = mix(c, d, u.x);
+					return mix(x1, x2, u.y);
+				}
+				vec4 blend_colors(vec4 c1, vec4 c2, vec4 c3, float mixer, float edgesWidth, float edge_blur) {
+					vec3 color1 = c1.rgb * c1.a;
+					vec3 color2 = c2.rgb * c2.a;
+					vec3 color3 = c3.rgb * c3.a;
+					float r1 = smoothstep(.0 + .35 * edgesWidth, .7 - .35 * edgesWidth + .5 * edge_blur, mixer);
+					float r2 = smoothstep(.3 + .35 * edgesWidth, 1. - .35 * edgesWidth + edge_blur, mixer);
+					vec3 blended_color_2 = mix(color1, color2, r1);
+					float blended_opacity_2 = mix(c1.a, c2.a, r1);
+					vec3 c = mix(blended_color_2, color3, r2);
+					float o = mix(blended_opacity_2, c3.a, r2);
+					return vec4(c, o);
+				}
+				void main() {
+					vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+					vec2 uv_original = uv;
+					float t = .5 * u_time;
+					float noise_scale = .0005 + .006 * u_scale;
+					uv -= .5;
+					uv *= (noise_scale * u_resolution);
+					uv = rotate(uv, u_rotation * .5 * PI);
+					uv /= u_pixelRatio;
+					uv += .5;
+					float n1 = noise(uv * 1. + t);
+					float n2 = noise(uv * 2. - t);
+					float angle = n1 * TWO_PI;
+					uv.x += 4. * u_distortion * n2 * cos(angle);
+					uv.y += 4. * u_distortion * n2 * sin(angle);
+					float iterations_number = ceil(clamp(u_swirlIterations, 1., 30.));
+					for (float i = 1.; i <= iterations_number; i++) {
+						uv.x += clamp(u_swirl, 0., 2.) / i * cos(t + i * 1.5 * uv.y);
+						uv.y += clamp(u_swirl, 0., 2.) / i * cos(t + i * 1. * uv.x);
+					}
+					float proportion = clamp(u_proportion, 0., 1.);
+					float shape = 0.;
+					float mixer = 0.;
+					if (u_shape < .5) {
+						vec2 checks_shape_uv = uv * (.5 + 3.5 * u_shapeScale);
+						shape = .5 + .5 * sin(checks_shape_uv.x) * cos(checks_shape_uv.y);
+						mixer = shape + .48 * sign(proportion - .5) * pow(abs(proportion - .5), .5);
+					} else if (u_shape < 1.5) {
+						vec2 stripes_shape_uv = uv * (.25 + 3. * u_shapeScale);
+						float f = fract(stripes_shape_uv.y);
+						shape = smoothstep(.0, .55, f) * smoothstep(1., .45, f);
+						mixer = shape + .48 * sign(proportion - .5) * pow(abs(proportion - .5), .5);
+					} else {
+						float sh = 1. - uv.y;
+						sh -= .5;
+						sh /= (noise_scale * u_resolution.y);
+						sh += .5;
+						float shape_scaling = .2 * (1. - u_shapeScale);
+						shape = smoothstep(.45 - shape_scaling, .55 + shape_scaling, sh + .3 * (proportion - .5));
+						mixer = shape;
+					}
+					vec4 color_mix = blend_colors(u_color1, u_color2, u_color3, mixer, 1. - clamp(u_softness, 0., 1.), .01 + .01 * u_scale);
+					fragColor = vec4(color_mix.rgb, color_mix.a);
+				}`;
+
+			const program = createProgram(gl, vertexShaderSource, fragmentShaderSource);
+			if (program) {
+				const positionBuffer = gl.createBuffer();
+				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
+				const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
+				gl.enableVertexAttribArray(positionAttributeLocation);
+				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+				const timeLocation = gl.getUniformLocation(program, "u_time");
+				const pixelRatioLocation = gl.getUniformLocation(program, "u_pixelRatio");
+				const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+				const scaleLocation = gl.getUniformLocation(program, "u_scale");
+				const rotationLocation = gl.getUniformLocation(program, "u_rotation");
+				const color1Location = gl.getUniformLocation(program, "u_color1");
+				const color2Location = gl.getUniformLocation(program, "u_color2");
+				const color3Location = gl.getUniformLocation(program, "u_color3");
+				const proportionLocation = gl.getUniformLocation(program, "u_proportion");
+				const softnessLocation = gl.getUniformLocation(program, "u_softness");
+				const shapeLocation = gl.getUniformLocation(program, "u_shape");
+				const shapeScaleLocation = gl.getUniformLocation(program, "u_shapeScale");
+				const distortionLocation = gl.getUniformLocation(program, "u_distortion");
+				const swirlLocation = gl.getUniformLocation(program, "u_swirl");
+				const swirlIterationsLocation = gl.getUniformLocation(program, "u_swirlIterations");
+
+				const preset = {
+					scale: 0.48,
+					rotation: 0,
+					color1: [0.04, 0.06, 0.05, 1],  // #0a0f0d - very dark green-tinted black
+					color2: [0.06, 0.73, 0.51, 1],  // #10b981 - emerald green
+					color3: [0.02, 0.09, 0.06, 1],  // #050f0a - darker green-tinted black
+					proportion: 0.33,
+					softness: 1,
+					shape: 1.5,
+					shapeScale: 0.9,
+					distortion: 0.04,
+					swirl: 0.65,
+					swirlIterations: 5,
+				};
+
+				function resize() {
+					const pixelRatio = Math.min(devicePixelRatio, 1.5);
+					canvas.width = canvas.clientWidth * pixelRatio;
+					canvas.height = canvas.clientHeight * pixelRatio;
+					gl?.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+				}
+				resize();
+				new ResizeObserver(resize).observe(canvas);
+
+				let startTime = performance.now();
+				function render() {
+					const time = (performance.now() - startTime) * 0.001 * 0.25;
+					gl?.useProgram(program);
+					gl?.uniform1f(timeLocation, time);
+					gl?.uniform1f(pixelRatioLocation, Math.min(devicePixelRatio, 1.5));
+					gl?.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
+					gl?.uniform1f(scaleLocation, preset.scale);
+					gl?.uniform1f(rotationLocation, preset.rotation);
+					gl?.uniform4fv(color1Location, preset.color1);
+					gl?.uniform4fv(color2Location, preset.color2);
+					gl?.uniform4fv(color3Location, preset.color3);
+					gl?.uniform1f(proportionLocation, preset.proportion);
+					gl?.uniform1f(softnessLocation, preset.softness);
+					gl?.uniform1f(shapeLocation, preset.shape);
+					gl?.uniform1f(shapeScaleLocation, preset.shapeScale);
+					gl?.uniform1f(distortionLocation, preset.distortion);
+					gl?.uniform1f(swirlLocation, preset.swirl);
+					gl?.uniform1f(swirlIterationsLocation, preset.swirlIterations);
+					gl?.drawArrays(gl.TRIANGLES, 0, 6);
+					requestAnimationFrame(render);
+				}
+				render();
+			}
+		}
+	}
+
+	// Intersection Observer para animaciones
+	const observerOptions = {
+		threshold: 0.3,
+		rootMargin: '0px'
+	};
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+			}
+		});
+	}, observerOptions);
+
+	// Observar todas las secciones
+	document.querySelectorAll('.section-content, .service-grid').forEach(section => {
+		observer.observe(section);
+	});
+
+	// Smooth scroll para los enlaces internos
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
+			e.preventDefault();
+			const href = this.getAttribute('href');
+			if (href) {
+				const target = document.querySelector(href);
+				if (target) {
+					target.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			}
+		});
+	});
+
+	// Placeholder para Three.js - se carga en el siguiente script module
+	const greenColor = 0x10b981;
+
+	// Three.js Animations for Services
+	const THREE = (window as any).THREE;
+	if (THREE) {
+		// Service 1: Website Audit - Scanning Torus Knot
+		const canvas1 = document.getElementById('three-canvas-1') as HTMLCanvasElement;
+		if (canvas1) {
+			const scene1 = new THREE.Scene();
+			const camera1 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+			const renderer1 = new THREE.WebGLRenderer({ canvas: canvas1, alpha: true, antialias: true });
+			renderer1.setSize(400, 400);
+			camera1.position.z = 5;
+
+			const geometry1 = new THREE.TorusKnotGeometry(1.5, 0.4, 100, 16);
+			const material1 = new THREE.MeshBasicMaterial({ color: greenColor, wireframe: true });
+			const torusKnot = new THREE.Mesh(geometry1, material1);
+			scene1.add(torusKnot);
+
+			function animate1() {
+				requestAnimationFrame(animate1);
+				torusKnot.rotation.x += 0.01;
+				torusKnot.rotation.y += 0.01;
+				renderer1.render(scene1, camera1);
+			}
+			animate1();
+		}
+
+		// Service 2: Performance - Speed Particles
+		const canvas2 = document.getElementById('three-canvas-2') as HTMLCanvasElement;
+		if (canvas2) {
+			const scene2 = new THREE.Scene();
+			const camera2 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+			const renderer2 = new THREE.WebGLRenderer({ canvas: canvas2, alpha: true, antialias: true });
+			renderer2.setSize(400, 400);
+			camera2.position.z = 5;
+
+			const particles = new THREE.BufferGeometry();
+			const particleCount = 1000;
+			const positions = new Float32Array(particleCount * 3);
+
+			for (let i = 0; i < particleCount * 3; i += 3) {
+				positions[i] = (Math.random() - 0.5) * 10;
+				positions[i + 1] = (Math.random() - 0.5) * 10;
+				positions[i + 2] = (Math.random() - 0.5) * 10;
+			}
+
+			particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+			const particleMaterial = new THREE.PointsMaterial({ color: greenColor, size: 0.05 });
+			const particleSystem = new THREE.Points(particles, particleMaterial);
+			scene2.add(particleSystem);
+
+			function animate2() {
+				requestAnimationFrame(animate2);
+				particleSystem.rotation.y += 0.002;
+				const positions = particleSystem.geometry.attributes.position.array as Float32Array;
+				for (let i = 0; i < positions.length; i += 3) {
+					positions[i] += 0.01;
+					if (positions[i] > 5) positions[i] = -5;
+				}
+				particleSystem.geometry.attributes.position.needsUpdate = true;
+				renderer2.render(scene2, camera2);
+			}
+			animate2();
+		}
+
+		// Service 3: Web Development - Floating Cubes
+		const canvas3 = document.getElementById('three-canvas-3') as HTMLCanvasElement;
+		if (canvas3) {
+			const scene3 = new THREE.Scene();
+			const camera3 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+			const renderer3 = new THREE.WebGLRenderer({ canvas: canvas3, alpha: true, antialias: true });
+			renderer3.setSize(400, 400);
+			camera3.position.z = 8;
+
+			const cubes: any[] = [];
+			for (let i = 0; i < 5; i++) {
+				const geometry = new THREE.BoxGeometry(1, 1, 1);
+				const material = new THREE.MeshBasicMaterial({
+					color: greenColor,
+					wireframe: true
+				});
+				const cube = new THREE.Mesh(geometry, material);
+				cube.position.x = (Math.random() - 0.5) * 6;
+				cube.position.y = (Math.random() - 0.5) * 6;
+				cube.position.z = (Math.random() - 0.5) * 6;
+				cubes.push(cube);
+				scene3.add(cube);
+			}
+
+			function animate3() {
+				requestAnimationFrame(animate3);
+				cubes.forEach((cube, i) => {
+					cube.rotation.x += 0.01 * (i + 1);
+					cube.rotation.y += 0.01 * (i + 1);
+				});
+				renderer3.render(scene3, camera3);
+			}
+			animate3();
+		}
+
+		// Service 4: WordPress - Rotating W
+		const canvas4 = document.getElementById('three-canvas-4') as HTMLCanvasElement;
+		if (canvas4) {
+			const scene4 = new THREE.Scene();
+			const camera4 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+			const renderer4 = new THREE.WebGLRenderer({ canvas: canvas4, alpha: true, antialias: true });
+			renderer4.setSize(400, 400);
+			camera4.position.z = 5;
+
+			const geometry4 = new THREE.OctahedronGeometry(2, 0);
+			const material4 = new THREE.MeshBasicMaterial({
+				color: greenColor,
+				wireframe: true
+			});
+			const octahedron = new THREE.Mesh(geometry4, material4);
+			scene4.add(octahedron);
+
+			function animate4() {
+				requestAnimationFrame(animate4);
+				octahedron.rotation.x += 0.005;
+				octahedron.rotation.y += 0.01;
+				renderer4.render(scene4, camera4);
+			}
+			animate4();
+		}
+
+		// Service 5: Backend/CMS - Connected Network
+		const canvas5 = document.getElementById('three-canvas-5') as HTMLCanvasElement;
+		if (canvas5) {
+			const scene5 = new THREE.Scene();
+			const camera5 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+			const renderer5 = new THREE.WebGLRenderer({ canvas: canvas5, alpha: true, antialias: true });
+			renderer5.setSize(400, 400);
+			camera5.position.z = 8;
+
+			const spheres: any[] = [];
+			const sphereCount = 6;
+
+			for (let i = 0; i < sphereCount; i++) {
+				const geometry = new THREE.SphereGeometry(0.3, 16, 16);
+				const material = new THREE.MeshBasicMaterial({ color: greenColor, wireframe: true });
+				const sphere = new THREE.Mesh(geometry, material);
+
+				const angle = (i / sphereCount) * Math.PI * 2;
+				sphere.position.x = Math.cos(angle) * 3;
+				sphere.position.y = Math.sin(angle) * 3;
+
+				spheres.push(sphere);
+				scene5.add(sphere);
+			}
+
+			const lineMaterial = new THREE.LineBasicMaterial({ color: greenColor, opacity: 0.3, transparent: true });
+			for (let i = 0; i < spheres.length; i++) {
+				for (let j = i + 1; j < spheres.length; j++) {
+					const points = [spheres[i].position, spheres[j].position];
+					const geometry = new THREE.BufferGeometry().setFromPoints(points);
+					const line = new THREE.Line(geometry, lineMaterial);
+					scene5.add(line);
+				}
+			}
+
+			function animate5() {
+				requestAnimationFrame(animate5);
+				spheres.forEach((sphere, i) => {
+					const angle = (i / sphereCount) * Math.PI * 2 + Date.now() * 0.0005;
+					sphere.position.x = Math.cos(angle) * 3;
+					sphere.position.y = Math.sin(angle) * 3;
+				});
+				renderer5.render(scene5, camera5);
+			}
+			animate5();
+		}
+
+		// Service 6: Consulting - Icosahedron
+		const canvas6 = document.getElementById('three-canvas-6') as HTMLCanvasElement;
+		if (canvas6) {
+			const scene6 = new THREE.Scene();
+			const camera6 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+			const renderer6 = new THREE.WebGLRenderer({ canvas: canvas6, alpha: true, antialias: true });
+			renderer6.setSize(400, 400);
+			camera6.position.z = 5;
+
+			const geometry6 = new THREE.IcosahedronGeometry(2, 0);
+			const material6 = new THREE.MeshBasicMaterial({
+				color: greenColor,
+				wireframe: true
+			});
+			const icosahedron = new THREE.Mesh(geometry6, material6);
+			scene6.add(icosahedron);
+
+			function animate6() {
+				requestAnimationFrame(animate6);
+				icosahedron.rotation.x += 0.008;
+				icosahedron.rotation.y += 0.012;
+				renderer6.render(scene6, camera6);
+			}
+			animate6();
+		}
+	}
+</script>
+</body></html>
+
+<script type="module">
+	import '/src/scripts/three-animations.js';
+</script>
+	</body>
+</html>

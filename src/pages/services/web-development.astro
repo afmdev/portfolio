@@ -1,0 +1,183 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+	title="Web Development"
+	description="Custom web applications built with modern technologies and best practices."
+>
+	<article class="service-detail">
+		<div class="service-hero">
+			<span class="service-icon">💻</span>
+			<h1>Web Development</h1>
+			<p class="service-tagline">
+				Building fast, scalable, and modern web applications tailored to your needs.
+			</p>
+		</div>
+
+		<div class="service-content">
+			<section>
+				<h2>What We Offer</h2>
+				<p>
+					We create custom web applications using the latest technologies and frameworks. Our
+					development process focuses on performance, scalability, and user experience.
+				</p>
+			</section>
+
+			<section>
+				<h2>Technologies We Use</h2>
+				<ul class="tech-list">
+					<li>React, Vue, and Astro</li>
+					<li>Node.js and TypeScript</li>
+					<li>Tailwind CSS and modern styling</li>
+					<li>REST APIs and GraphQL</li>
+					<li>Database design and optimization</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Our Process</h2>
+				<div class="process-steps">
+					<div class="step">
+						<h3>1. Discovery</h3>
+						<p>We analyze your requirements and define project goals.</p>
+					</div>
+					<div class="step">
+						<h3>2. Design</h3>
+						<p>Create wireframes and prototypes for your approval.</p>
+					</div>
+					<div class="step">
+						<h3>3. Development</h3>
+						<p>Build your application with clean, maintainable code.</p>
+					</div>
+					<div class="step">
+						<h3>4. Launch</h3>
+						<p>Deploy and provide ongoing support and maintenance.</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="cta-section">
+				<h2>Ready to start your project?</h2>
+				<a href="/contact" class="cta-button">Get in Touch</a>
+			</div>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.service-detail {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.service-hero {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+	}
+
+	.service-icon {
+		font-size: 4rem;
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.service-hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+
+	.service-tagline {
+		font-size: 1.3rem;
+		color: rgb(var(--gray));
+	}
+
+	.service-content section {
+		margin-bottom: 3rem;
+	}
+
+	.service-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+
+	.service-content p {
+		line-height: 1.8;
+		color: rgb(var(--gray-dark));
+		margin-bottom: 1rem;
+	}
+
+	.tech-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.tech-list li {
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+		color: rgb(var(--gray-dark));
+	}
+
+	.tech-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: rgb(var(--accent));
+		font-weight: bold;
+	}
+
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.step {
+		background: rgb(var(--gray-gradient));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+
+	.step h3 {
+		color: rgb(var(--accent));
+		margin-bottom: 0.5rem;
+	}
+
+	.step p {
+		font-size: 0.95rem;
+		margin: 0;
+	}
+
+	.cta-section {
+		text-align: center;
+		margin-top: 4rem;
+		padding: 3rem 2rem;
+		background: rgb(var(--gray-gradient));
+		border-radius: 12px;
+	}
+
+	.cta-section h2 {
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: rgb(var(--accent));
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(var(--accent), 40%);
+	}
+</style>
