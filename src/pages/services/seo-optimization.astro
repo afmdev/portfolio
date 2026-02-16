@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+	title="SEO Optimization"
+	description="Improve your search rankings and drive more organic traffic to your site."
+>
+	<article class="service-detail">
+		<div class="service-hero">
+			<span class="service-icon">🚀</span>
+			<h1>SEO Optimization</h1>
+			<p class="service-tagline">
+				Boost your visibility and drive organic traffic to your website.
+			</p>
+		</div>
+
+		<div class="service-content">
+			<section>
+				<h2>What We Offer</h2>
+				<p>
+					We help businesses improve their search engine rankings and increase organic traffic
+					through proven SEO strategies. Our approach combines technical optimization with
+					content strategy to deliver measurable results.
+				</p>
+			</section>
+
+			<section>
+				<h2>Our SEO Services</h2>
+				<ul class="tech-list">
+					<li>Technical SEO audit and optimization</li>
+					<li>Keyword research and strategy</li>
+					<li>On-page optimization</li>
+					<li>Content optimization and creation</li>
+					<li>Link building and outreach</li>
+					<li>Performance monitoring and reporting</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Our Approach</h2>
+				<div class="process-steps">
+					<div class="step">
+						<h3>1. Audit</h3>
+						<p>Comprehensive analysis of your current SEO performance.</p>
+					</div>
+					<div class="step">
+						<h3>2. Strategy</h3>
+						<p>Develop a customized plan based on your goals.</p>
+					</div>
+					<div class="step">
+						<h3>3. Implementation</h3>
+						<p>Execute technical and content optimizations.</p>
+					</div>
+					<div class="step">
+						<h3>4. Monitor</h3>
+						<p>Track results and continuously refine approach.</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="cta-section">
+				<h2>Ready to improve your rankings?</h2>
+				<a href="/contact" class="cta-button">Get Started</a>
+			</div>
+		</div>
+	</article>
+</Layout>
+
+<style>
+	.service-detail {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.service-hero {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+	}
+
+	.service-icon {
+		font-size: 4rem;
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.service-hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+
+	.service-tagline {
+		font-size: 1.3rem;
+		color: rgb(var(--gray));
+	}
+
+	.service-content section {
+		margin-bottom: 3rem;
+	}
+
+	.service-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+
+	.service-content p {
+		line-height: 1.8;
+		color: rgb(var(--gray-dark));
+		margin-bottom: 1rem;
+	}
+
+	.tech-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.tech-list li {
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+		color: rgb(var(--gray-dark));
+	}
+
+	.tech-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: rgb(var(--accent));
+		font-weight: bold;
+	}
+
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.step {
+		background: rgb(var(--gray-gradient));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+
+	.step h3 {
+		color: rgb(var(--accent));
+		margin-bottom: 0.5rem;
+	}
+
+	.step p {
+		font-size: 0.95rem;
+		margin: 0;
+	}
+
+	.cta-section {
+		text-align: center;
+		margin-top: 4rem;
+		padding: 3rem 2rem;
+		background: rgb(var(--gray-gradient));
+		border-radius: 12px;
+	}
+
+	.cta-section h2 {
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: rgb(var(--accent));
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 8px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(var(--accent), 40%);
+	}
+</style>

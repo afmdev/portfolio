@@ -1,12 +1,96 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const services = [
+	{
+		title: 'Web Development',
+		slug: 'web-development',
+		description: 'Custom web applications built with modern technologies and best practices.',
+		icon: '💻',
+	},
+	{
+		title: 'UI/UX Design',
+		slug: 'ui-ux-design',
+		description: 'Beautiful and intuitive user interfaces that delight your customers.',
+		icon: '🎨',
+	},
+	{
+		title: 'SEO Optimization',
+		slug: 'seo-optimization',
+		description: 'Improve your search rankings and drive more organic traffic to your site.',
+		icon: '🚀',
+	},
+];
 ---
 
-<BaseLayout>
-	<section class="min-h-screen py-20 px-4 md:px-8">
-		<div class="max-w-4xl mx-auto">
-			<h1 class="text-4xl font-bold mb-8 text-center">Services</h1>
-			<p class="text-lg text-gray-600 dark:text-gray-400">Our services page content.</p>
-		</div>
-	</section>
-</BaseLayout>
+<Layout
+	title="Services"
+	description="Professional services to help your business grow and succeed online."
+>
+	<h1 class="page-title">Our Services</h1>
+	<p class="page-description">
+		We offer a range of professional services to help your business thrive in the digital world.
+	</p>
+
+	<div class="services-grid">
+		{
+			services.map((service) => (
+				<a href={`/services/${service.slug}`} class="service-card">
+					<div class="service-icon">{service.icon}</div>
+					<h2>{service.title}</h2>
+					<p>{service.description}</p>
+					<span class="learn-more">Learn more →</span>
+				</a>
+			))
+		}
+	</div>
+</Layout>
+
+<style>
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+
+	.service-card {
+		background: white;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		padding: 2rem;
+		text-decoration: none;
+		color: rgb(var(--black));
+		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.service-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(var(--black), 10%);
+		border-color: rgb(var(--accent));
+	}
+
+	.service-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.service-card h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		color: rgb(var(--black));
+	}
+
+	.service-card p {
+		color: rgb(var(--gray));
+		flex-grow: 1;
+		margin-bottom: 1rem;
+	}
+
+	.learn-more {
+		color: rgb(var(--accent));
+		font-weight: 600;
+	}
+</style>
