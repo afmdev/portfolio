@@ -13,34 +13,86 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 
-		<div class="scroll-container">
-			<!-- Hero Section -->
-			<section class="snap-section hero-section">
-				<canvas id="gradient-canvas"></canvas>
-				<div class="section-content fade-in">
-					<h1>Bienvenido a Mi Portfolio</h1>
-					<p>Creando experiencias digitales increíbles</p>
-					<a href="#services" class="cta-button">Descubre Más</a>
+		<!-- Hero Section -->
+		<section class="hero-section">
+			<canvas id="gradient-canvas"></canvas>
+			<div class="hero-grid"></div>
+			<div class="hero-content">
+				<div class="award-badge reveal">
+					<div class="award-badge__border"></div>
+					<div class="award-badge__inner">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<span>Web Development Studio — Berlin</span>
+					</div>
 				</div>
-				<div class="scroll-indicator">
-					<span>Scroll</span>
-					<div class="arrow">↓</div>
+				<h1 class="masking-text">
+					<span class="line">We build digital</span>
+					<span class="line">experiences that <span class="text-accent">matter</span></span>
+				</h1>
+				<p class="hero-subtitle masking-text"><span class="line">Design, development and web optimization for businesses ready to grow.</span></p>
+				<div class="hero-buttons reveal">
+					<a href="/contact" class="btn-primary">Let's talk about your project</a>
+					<a href="#services" class="btn-outline">View services</a>
 				</div>
-			</section>
+			</div>
+			<div class="scroll-indicator">
+				<span>Scroll</span>
+				<div class="scroll-line"></div>
+			</div>
+		</section>
 
-			<!-- Service 1: Website Audit & Technical SEO -->
-			<section class="snap-section service-detail-section service-1" id="services">
-				<div class="service-grid fade-in">
-					<div class="service-text">
+		<!-- Marquee -->
+		<div class="marquee">
+			<div class="marquee__wrapper">
+				<div class="marquee__group" aria-hidden="true">
+					<span>Strategy</span><span class="marquee-dot"></span>
+					<span>Development</span><span class="marquee-dot"></span>
+					<span>Performance</span><span class="marquee-dot"></span>
+					<span>SEO</span><span class="marquee-dot"></span>
+					<span>Design</span><span class="marquee-dot"></span>
+					<span>Consulting</span><span class="marquee-dot"></span>
+				</div>
+				<div class="marquee__group">
+					<span>Strategy</span><span class="marquee-dot"></span>
+					<span>Development</span><span class="marquee-dot"></span>
+					<span>Performance</span><span class="marquee-dot"></span>
+					<span>SEO</span><span class="marquee-dot"></span>
+					<span>Design</span><span class="marquee-dot"></span>
+					<span>Consulting</span><span class="marquee-dot"></span>
+				</div>
+				<div class="marquee__group" aria-hidden="true">
+					<span>Strategy</span><span class="marquee-dot"></span>
+					<span>Development</span><span class="marquee-dot"></span>
+					<span>Performance</span><span class="marquee-dot"></span>
+					<span>SEO</span><span class="marquee-dot"></span>
+					<span>Design</span><span class="marquee-dot"></span>
+					<span>Consulting</span><span class="marquee-dot"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Services -->
+		<section class="services-wrapper" id="services">
+			<div class="section-header">
+				<span class="section-label masking-text"><span class="line">What We Do</span></span>
+				<h2 class="section-title parallax-text" data-speed="0.08">Services</h2>
+			</div>
+
+			<!-- Service 1 -->
+			<div class="service-block">
+				<div class="service-grid">
+					<div class="service-text reveal-left">
 						<span class="service-number">01</span>
-						<h2>Website Audit & Technical SEO Review Services</h2>
+						<h3>Website Audit & Technical SEO Review Services</h3>
 						<p class="service-intro">
 							Our website audit and technical SEO review services identify SEO, performance, and usability issues that
 							limit business growth. You receive clear, prioritized audit insights to improve rankings, speed, and
 							technical stability.
 						</p>
-						<div class="problems-section">
-							<h3>Common searches / problems users have:</h3>
+						<div class="problems-section stagger-children">
+							<h4>Common searches / problems users have:</h4>
 							<ul class="problems-list">
 								<li>Why is my website not ranking on Google despite good content?</li>
 								<li>How to identify technical SEO issues on a business website?</li>
@@ -48,30 +100,45 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>Why does my website traffic keep dropping over time?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">👉 Get Your Free Audit Report</a>
+						<a href="/contact" class="service-cta">Get Your Free Audit Report</a>
 					</div>
-					<div class="service-image">
-						<canvas id="three-canvas-1" class="three-canvas"></canvas>
+					<div class="service-visual reveal-right">
+						<div class="visual-card shutter-reveal">
+							<div class="css-art art-rings">
+								<div class="ring ring-1"></div>
+								<div class="ring ring-2"></div>
+								<div class="ring ring-3"></div>
+								<div class="ring-dot"></div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 
-			<!-- Service 2: Performance Optimization -->
-			<section class="snap-section service-detail-section service-2 reverse-layout">
-				<div class="service-grid fade-in">
-					<div class="service-image">
-						<canvas id="three-canvas-2" class="three-canvas"></canvas>
+			<!-- Service 2 -->
+			<div class="service-block reverse">
+				<div class="service-grid">
+					<div class="service-visual reveal-left">
+						<div class="visual-card shutter-reveal">
+							<div class="css-art art-bars">
+								<div class="bar bar-1"></div>
+								<div class="bar bar-2"></div>
+								<div class="bar bar-3"></div>
+								<div class="bar bar-4"></div>
+								<div class="bar bar-5"></div>
+							</div>
+						</div>
 					</div>
-					<div class="service-text">
+					<div class="service-text reveal-right">
 						<span class="service-number">02</span>
-						<h2>Website Performance Optimization in Berlin</h2>
+						<h3>Website Performance Optimization in Berlin</h3>
 						<p class="service-intro">
 							Our website performance and page speed optimization services in Berlin help businesses fix slow websites
 							and improve Core Web Vitals and Lighthouse scores. We optimize loading times, assets, and architecture to
 							deliver faster, SEO-friendly websites.
 						</p>
-						<div class="problems-section">
-							<h3>Search-type questions:</h3>
+						<div class="problems-section stagger-children">
+							<h4>Search-type questions:</h4>
 							<ul class="problems-list">
 								<li>How to fix Core Web Vitals in Berlin?</li>
 								<li>Why is my website slow in Germany?</li>
@@ -79,23 +146,23 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to speed up an existing website?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">👉 Fix My Website Speed</a>
+						<a href="/contact" class="service-cta">Fix My Website Speed</a>
 					</div>
 				</div>
-			</section>
+			</div>
 
-			<!-- Service 3: Custom Web Development -->
-			<section class="snap-section service-detail-section service-3" id="custom-dev">
-				<div class="service-grid fade-in">
-					<div class="service-text">
+			<!-- Service 3 -->
+			<div class="service-block">
+				<div class="service-grid">
+					<div class="service-text reveal-left">
 						<span class="service-number">03</span>
-						<h2>Custom Web Development in Berlin</h2>
+						<h3>Custom Web Development in Berlin</h3>
 						<p class="service-intro">
 							Our custom web development services in Berlin help startups and growing businesses build scalable,
 							SEO-optimized websites using React, Next.js, and modern architecture.
 						</p>
-						<div class="problems-section">
-							<h3>Search-type questions:</h3>
+						<div class="problems-section stagger-children">
+							<h4>Search-type questions:</h4>
 							<ul class="problems-list">
 								<li>Who builds custom React websites in Berlin?</li>
 								<li>How to find a reliable web developer in Berlin?</li>
@@ -103,30 +170,48 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to rebuild a company website in Berlin without losing SEO?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">👉 Start My Berlin Web Project</a>
+						<a href="/contact" class="service-cta">Start My Berlin Web Project</a>
 					</div>
-					<div class="service-image">
-						<canvas id="three-canvas-3" class="three-canvas"></canvas>
+					<div class="service-visual reveal-right">
+						<div class="visual-card shutter-reveal">
+							<div class="css-art art-grid-squares">
+								<div class="sq sq-1"></div>
+								<div class="sq sq-2"></div>
+								<div class="sq sq-3"></div>
+								<div class="sq sq-4"></div>
+								<div class="sq sq-5"></div>
+								<div class="sq sq-6"></div>
+								<div class="sq sq-7"></div>
+								<div class="sq sq-8"></div>
+								<div class="sq sq-9"></div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 
-			<!-- Service 4: WordPress Websites -->
-			<section class="snap-section service-detail-section service-4 reverse-layout">
-				<div class="service-grid fade-in">
-					<div class="service-image">
-						<canvas id="three-canvas-4" class="three-canvas"></canvas>
+			<!-- Service 4 -->
+			<div class="service-block reverse">
+				<div class="service-grid">
+					<div class="service-visual reveal-left">
+						<div class="visual-card shutter-reveal">
+							<div class="css-art art-cards">
+								<div class="stack-card card-1"></div>
+								<div class="stack-card card-2"></div>
+								<div class="stack-card card-3"></div>
+							</div>
+						</div>
 					</div>
-					<div class="service-text">
+					<div class="service-text reveal-right">
 						<span class="service-number">04</span>
-						<h2>WordPress Websites in Berlin</h2>
+						<h3>WordPress Websites in Berlin</h3>
 						<p class="service-intro">
 							Our WordPress development services in Berlin deliver custom, performance-optimized WordPress websites —
 							not bloated themes. We build scalable architectures, custom themes, and clean implementations tailored
 							to your business goals.
 						</p>
-						<div class="problems-section">
-							<h3>Search-type questions:</h3>
+						<div class="problems-section stagger-children">
+							<h4>Search-type questions:</h4>
 							<ul class="problems-list">
 								<li>Who builds custom WordPress websites in Berlin?</li>
 								<li>How to make WordPress fast and SEO-friendly?</li>
@@ -134,23 +219,23 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to customize WordPress without breaking updates?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">👉 Build My WordPress Site</a>
+						<a href="/contact" class="service-cta">Build My WordPress Site</a>
 					</div>
 				</div>
-			</section>
+			</div>
 
-			<!-- Service 5: Backend Integration & Headless CMS -->
-			<section class="snap-section service-detail-section service-5">
-				<div class="service-grid fade-in">
-					<div class="service-text">
+			<!-- Service 5 -->
+			<div class="service-block">
+				<div class="service-grid">
+					<div class="service-text reveal-left">
 						<span class="service-number">05</span>
-						<h2>Backend Integration & Headless CMS in Berlin</h2>
+						<h3>Backend Integration & Headless CMS in Berlin</h3>
 						<p class="service-intro">
 							We implement headless CMS solutions and backend integrations in Berlin using Contentful, Storyblok,
 							and Payload for flexible and scalable content workflows.
 						</p>
-						<div class="problems-section">
-							<h3>Search-type questions:</h3>
+						<div class="problems-section stagger-children">
+							<h4>Search-type questions:</h4>
 							<ul class="problems-list">
 								<li>Best headless CMS developer in Berlin?</li>
 								<li>How to integrate Contentful with Next.js?</li>
@@ -158,29 +243,54 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to improve content management without slowing the site?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">👉 Integrate My CMS</a>
+						<a href="/contact" class="service-cta">Integrate My CMS</a>
 					</div>
-					<div class="service-image">
-						<canvas id="three-canvas-5" class="three-canvas"></canvas>
+					<div class="service-visual reveal-right">
+						<div class="visual-card shutter-reveal">
+							<div class="css-art art-nodes">
+								<div class="node node-1"></div>
+								<div class="node node-2"></div>
+								<div class="node node-3"></div>
+								<div class="node node-4"></div>
+								<div class="node node-5"></div>
+								<svg class="node-lines" viewBox="0 0 200 200">
+									<line x1="100" y1="40" x2="40" y2="100" />
+									<line x1="100" y1="40" x2="160" y2="100" />
+									<line x1="40" y1="100" x2="80" y2="160" />
+									<line x1="160" y1="100" x2="120" y2="160" />
+									<line x1="80" y1="160" x2="120" y2="160" />
+								</svg>
+							</div>
+						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 
-			<!-- Service 6: Technical Consulting -->
-			<section class="snap-section service-detail-section service-6 reverse-layout">
-				<div class="service-grid fade-in">
-					<div class="service-image">
-						<canvas id="three-canvas-6" class="three-canvas"></canvas>
+			<!-- Service 6 -->
+			<div class="service-block reverse">
+				<div class="service-grid">
+					<div class="service-visual reveal-left">
+						<div class="visual-card shutter-reveal">
+							<div class="css-art art-vbars">
+								<div class="vbar vbar-1"></div>
+								<div class="vbar vbar-2"></div>
+								<div class="vbar vbar-3"></div>
+								<div class="vbar vbar-4"></div>
+								<div class="vbar vbar-5"></div>
+								<div class="vbar vbar-6"></div>
+								<div class="vbar vbar-7"></div>
+							</div>
+						</div>
 					</div>
-					<div class="service-text">
+					<div class="service-text reveal-right">
 						<span class="service-number">06</span>
-						<h2>Technical Consulting for Digital Teams in Berlin</h2>
+						<h3>Technical Consulting for Digital Teams in Berlin</h3>
 						<p class="service-intro">
 							Our technical consulting services in Berlin support product teams with architecture decisions,
 							code reviews, and scalability planning.
 						</p>
-						<div class="problems-section">
-							<h3>Search-type questions:</h3>
+						<div class="problems-section stagger-children">
+							<h4>Search-type questions:</h4>
 							<ul class="problems-list">
 								<li>Who offers web architecture consulting in Berlin?</li>
 								<li>Code review services for startups Berlin?</li>
@@ -188,74 +298,237 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to scale a React application properly?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">👉 Get Expert Advice</a>
+						<a href="/contact" class="service-cta">Get Expert Advice</a>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Projects Section -->
-			<section class="snap-section projects-section">
-				<div class="section-content fade-in">
-					<h2>Proyectos Destacados</h2>
-					<div class="projects-showcase">
-						<div class="project-item">
-							<div class="project-preview">🛒</div>
-							<h3>E-Commerce Platform</h3>
-							<p>Plataforma de comercio electrónico completa</p>
-						</div>
-						<div class="project-item">
-							<div class="project-preview">📊</div>
-							<h3>Analytics Dashboard</h3>
-							<p>Dashboard de datos en tiempo real</p>
-						</div>
-					</div>
-					<a href="/projects" class="link-button">Ver todos los proyectos →</a>
+		<!-- Process / How We Work -->
+		<section class="process-section" id="process">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">How We Work</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">Our Process</h2>
 				</div>
-			</section>
+				<div class="process-steps stagger-children">
+					<div class="process-step">
+						<span class="step-number">01</span>
+						<h3>Discovery</h3>
+						<p>We analyze your current situation, goals, and target audience to define a clear roadmap.</p>
+					</div>
+					<div class="process-step">
+						<span class="step-number">02</span>
+						<h3>Strategy</h3>
+						<p>We design the technical architecture, content strategy, and performance benchmarks.</p>
+					</div>
+					<div class="process-step">
+						<span class="step-number">03</span>
+						<h3>Build</h3>
+						<p>We develop with modern tools, clean code, and continuous feedback loops.</p>
+					</div>
+					<div class="process-step">
+						<span class="step-number">04</span>
+						<h3>Launch & Optimize</h3>
+						<p>We deploy, monitor performance, and iterate based on real data and analytics.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-			<!-- About Section -->
-			<section class="snap-section about-section">
-				<div class="section-content fade-in">
-					<h2>Sobre Mí</h2>
-					<div class="about-content">
-						<div class="about-text">
-							<p>
-								Soy un desarrollador apasionado por crear experiencias web excepcionales.
-								Con años de experiencia en desarrollo frontend y backend, ayudo a empresas
-								a alcanzar sus objetivos digitales.
-							</p>
-							<p>
-								Especializado en tecnologías modernas como React, Astro, Node.js y más.
-							</p>
-						</div>
-					</div>
-					<a href="/about" class="link-button">Conoce más →</a>
+		<!-- Tech Stack -->
+		<section class="tech-section">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">Technology</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">Tools We Use</h2>
 				</div>
-			</section>
+				<div class="tech-grid stagger-children">
+					<div class="tech-item">React</div>
+					<div class="tech-item">Next.js</div>
+					<div class="tech-item">Astro</div>
+					<div class="tech-item">TypeScript</div>
+					<div class="tech-item">Node.js</div>
+					<div class="tech-item">WordPress</div>
+					<div class="tech-item">Contentful</div>
+					<div class="tech-item">Tailwind CSS</div>
+					<div class="tech-item">Figma</div>
+					<div class="tech-item">Vercel</div>
+					<div class="tech-item">AWS</div>
+					<div class="tech-item">PostgreSQL</div>
+				</div>
+			</div>
+		</section>
 
-			<!-- Contact Section -->
-			<section class="snap-section contact-section">
-				<div class="section-content fade-in">
-					<h2>Contacto</h2>
-					<p class="contact-intro">¿Tienes un proyecto en mente? Hablemos!</p>
-					<div class="contact-info">
-						<div class="info-item">
-							<span class="icon">📧</span>
-							<a href="mailto:hello@example.com">hello@example.com</a>
-						</div>
-						<div class="info-item">
-							<span class="icon">📱</span>
-							<a href="tel:+1234567890">+1 (234) 567-890</a>
-						</div>
-					</div>
-					<a href="/contact" class="cta-button">Ir a Contacto →</a>
+		<!-- Projects Section -->
+		<section class="projects-section" id="projects">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">Our Work</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">Featured Projects</h2>
 				</div>
-			</section>
-		</div>
+				<div class="projects-showcase stagger-children">
+					<div class="project-item shutter-reveal">
+						<div class="project-preview">🛒</div>
+						<h3>E-Commerce Platform</h3>
+						<p>Full-featured e-commerce platform with custom checkout and inventory management.</p>
+					</div>
+					<div class="project-item shutter-reveal">
+						<div class="project-preview">📊</div>
+						<h3>Analytics Dashboard</h3>
+						<p>Real-time data dashboard with interactive visualizations and automated reporting.</p>
+					</div>
+				</div>
+				<a href="/projects" class="link-button">View all projects →</a>
+			</div>
+		</section>
+
+		<!-- Testimonials / Social Proof -->
+		<section class="testimonials-section" id="testimonials">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">Testimonials</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">What Clients Say</h2>
+				</div>
+				<div class="testimonials-grid stagger-children">
+					<blockquote class="testimonial">
+						<p>"They transformed our outdated website into a high-performance platform. Page speed improved by 300% and organic traffic doubled within three months."</p>
+						<footer>
+							<strong>Anna M.</strong>
+							<span>CEO, TechStart Berlin</span>
+						</footer>
+					</blockquote>
+					<blockquote class="testimonial">
+						<p>"Professional, efficient, and genuinely invested in our success. The custom CMS integration saved our team hours of manual work every week."</p>
+						<footer>
+							<strong>Marcus K.</strong>
+							<span>CTO, GreenLeaf GmbH</span>
+						</footer>
+					</blockquote>
+					<blockquote class="testimonial">
+						<p>"The SEO audit revealed critical issues we had no idea about. After implementing their recommendations, we jumped from page 3 to page 1 on Google."</p>
+						<footer>
+							<strong>Laura S.</strong>
+							<span>Marketing Director, UrbanFlow</span>
+						</footer>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+
+		<!-- About Section -->
+		<section class="about-section" id="about">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">Who We Are</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">About Us</h2>
+				</div>
+				<div class="about-content reveal">
+					<p>
+						We are developers passionate about building exceptional web experiences.
+						With years of frontend and backend expertise, we help businesses
+						achieve their digital goals.
+					</p>
+					<p>
+						Specialized in modern technologies like React, Astro, Node.js and more.
+						Based in Berlin, working worldwide.
+					</p>
+				</div>
+				<a href="/about" class="link-button">Learn more →</a>
+			</div>
+		</section>
+
+		<!-- FAQ Section (SEO) -->
+		<section class="faq-section" id="faq">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">FAQ</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">Frequently Asked Questions</h2>
+				</div>
+				<div class="faq-list stagger-children">
+					<details class="faq-item">
+						<summary>What types of websites do you build?</summary>
+						<p>We build custom websites, e-commerce platforms, landing pages, headless CMS solutions, and WordPress sites. Every project is tailored to your specific business needs and growth goals.</p>
+					</details>
+					<details class="faq-item">
+						<summary>How long does a typical web project take?</summary>
+						<p>A standard website takes 4-8 weeks from discovery to launch. Complex platforms with custom integrations may take 8-16 weeks. We provide a detailed timeline during the strategy phase.</p>
+					</details>
+					<details class="faq-item">
+						<summary>Do you work with clients outside Berlin?</summary>
+						<p>Yes. While we are based in Berlin, we work with clients across Germany and internationally. We use modern collaboration tools and async workflows to ensure smooth communication.</p>
+					</details>
+					<details class="faq-item">
+						<summary>What is included in a website audit?</summary>
+						<p>Our audits cover technical SEO, Core Web Vitals, accessibility, security, content structure, mobile usability, and competitive analysis. You receive a prioritized report with actionable recommendations.</p>
+					</details>
+					<details class="faq-item">
+						<summary>How much does a website cost?</summary>
+						<p>Pricing depends on scope, complexity, and timeline. A simple landing page starts at a different range than a full e-commerce platform. Contact us for a free initial consultation and quote.</p>
+					</details>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section class="contact-section" id="contact">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-label masking-text"><span class="line">Get In Touch</span></span>
+					<h2 class="section-title parallax-text" data-speed="0.08">Contact</h2>
+				</div>
+				<p class="contact-intro reveal">Have a project in mind? Let's talk.</p>
+				<div class="contact-info stagger-children">
+					<div class="info-item">
+						<span class="icon">📧</span>
+						<a href="mailto:hello@example.com">hello@example.com</a>
+					</div>
+					<div class="info-item">
+						<span class="icon">📱</span>
+						<a href="tel:+1234567890">+1 (234) 567-890</a>
+					</div>
+				</div>
+				<a href="/contact" class="btn-primary">Get in touch →</a>
+			</div>
+		</section>
+
+		<!-- FAQ Schema (JSON-LD) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "What types of websites do you build?",
+					"acceptedAnswer": { "@type": "Answer", "text": "We build custom websites, e-commerce platforms, landing pages, headless CMS solutions, and WordPress sites. Every project is tailored to your specific business needs and growth goals." }
+				},
+				{
+					"@type": "Question",
+					"name": "How long does a typical web project take?",
+					"acceptedAnswer": { "@type": "Answer", "text": "A standard website takes 4-8 weeks from discovery to launch. Complex platforms with custom integrations may take 8-16 weeks. We provide a detailed timeline during the strategy phase." }
+				},
+				{
+					"@type": "Question",
+					"name": "Do you work with clients outside Berlin?",
+					"acceptedAnswer": { "@type": "Answer", "text": "Yes. While we are based in Berlin, we work with clients across Germany and internationally. We use modern collaboration tools and async workflows to ensure smooth communication." }
+				},
+				{
+					"@type": "Question",
+					"name": "What is included in a website audit?",
+					"acceptedAnswer": { "@type": "Answer", "text": "Our audits cover technical SEO, Core Web Vitals, accessibility, security, content structure, mobile usability, and competitive analysis. You receive a prioritized report with actionable recommendations." }
+				},
+				{
+					"@type": "Question",
+					"name": "How much does a website cost?",
+					"acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on scope, complexity, and timeline. A simple landing page starts at a different range than a full e-commerce platform. Contact us for a free initial consultation and quote." }
+				}
+			]
+		})} />
 	</body>
 </html>
 
 <style>
+	/* ===== Base Reset ===== */
 	* {
 		margin: 0;
 		padding: 0;
@@ -264,61 +537,249 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 	html {
 		scroll-behavior: smooth;
-		background: #0a0f0d;
+		background: #0a0a0a;
 	}
 
 	body {
 		overflow-x: hidden;
-		background: #0a0f0d;
-		color: #e5e7eb;
+		background: #0a0a0a;
+		color: #a3a3a3;
 		font-family: system-ui, -apple-system, sans-serif;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Satoshi', sans-serif;
 		font-weight: 700;
+		color: #fafafa;
 	}
 
-	/* Scroll Snap Container */
-	.scroll-container {
-		height: 100vh;
-		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
-		scroll-behavior: smooth;
-	}
-
-	/* Cada sección ocupa toda la pantalla */
-	.snap-section {
-		min-height: 100vh;
-		scroll-snap-align: start;
-		scroll-snap-stop: always;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
-		position: relative;
-	}
-
-	.section-content {
+	.container {
 		max-width: 1200px;
 		width: 100%;
-		text-align: center;
-		opacity: 0;
-		transform: translateY(30px);
-		transition: opacity 0.8s ease, transform 0.8s ease;
+		margin: 0 auto;
+		padding: 0 2rem;
 	}
 
-	.section-content.visible {
+	/* ===== Masking Text Animation (elementis-style line reveal) ===== */
+	.masking-text {
+		overflow: hidden;
+		display: block;
+	}
+
+	.masking-text .line {
+		display: block;
+		transform: translateY(120%);
+		transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+		will-change: transform;
+	}
+
+	.masking-text.is-visible .line {
+		transform: translateY(0);
+	}
+
+	/* Stagger lines within same masking-text */
+	.masking-text.is-visible .line:nth-child(2) { transition-delay: 0.1s; }
+	.masking-text.is-visible .line:nth-child(3) { transition-delay: 0.2s; }
+
+	/* ===== Parallax Text (moves with scroll) ===== */
+	.parallax-text {
+		will-change: transform;
+		transition: none;
+	}
+
+	/* ===== Shutter/Blind Reveal ===== */
+	.shutter-reveal {
+		--shutter-progress: 0;
+		-webkit-mask-image: repeating-linear-gradient(
+			to bottom,
+			black 0px,
+			black calc(var(--shutter-progress) * 100%),
+			transparent calc(var(--shutter-progress) * 100%),
+			transparent 20px
+		);
+		mask-image: repeating-linear-gradient(
+			to bottom,
+			black 0px,
+			black calc(var(--shutter-progress) * 100%),
+			transparent calc(var(--shutter-progress) * 100%),
+			transparent 20px
+		);
+		-webkit-mask-size: 100% 20px;
+		mask-size: 100% 20px;
+	}
+
+	.shutter-reveal.is-visible {
+		animation: shutterOpen 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	}
+
+	@keyframes shutterOpen {
+		0% { --shutter-progress: 0; opacity: 0; }
+		100% { --shutter-progress: 1; opacity: 1;
+			-webkit-mask-image: none;
+			mask-image: none;
+		}
+	}
+
+	/* ===== Standard Reveal Animations ===== */
+	.reveal {
+		opacity: 0;
+		transform: translateY(40px);
+		transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+		            transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.reveal-left {
+		opacity: 0;
+		transform: translateX(-60px);
+		transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+		            transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.reveal-right {
+		opacity: 0;
+		transform: translateX(60px);
+		transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+		            transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.reveal.is-visible,
+	.reveal-left.is-visible,
+	.reveal-right.is-visible {
+		opacity: 1;
+		transform: translate(0);
+	}
+
+	.stagger-children > * {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+		            transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.stagger-children.is-visible > * {
 		opacity: 1;
 		transform: translateY(0);
 	}
 
-	/* Hero Section */
-	.hero-section {
-		background: #0a0f0d;
-		color: #e5e7eb;
+	.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0s; }
+	.stagger-children.is-visible > *:nth-child(2) { transition-delay: 0.08s; }
+	.stagger-children.is-visible > *:nth-child(3) { transition-delay: 0.16s; }
+	.stagger-children.is-visible > *:nth-child(4) { transition-delay: 0.24s; }
+	.stagger-children.is-visible > *:nth-child(5) { transition-delay: 0.32s; }
+	.stagger-children.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
+	.stagger-children.is-visible > *:nth-child(7) { transition-delay: 0.48s; }
+	.stagger-children.is-visible > *:nth-child(8) { transition-delay: 0.56s; }
+	.stagger-children.is-visible > *:nth-child(9) { transition-delay: 0.64s; }
+	.stagger-children.is-visible > *:nth-child(10) { transition-delay: 0.72s; }
+	.stagger-children.is-visible > *:nth-child(11) { transition-delay: 0.80s; }
+	.stagger-children.is-visible > *:nth-child(12) { transition-delay: 0.88s; }
+
+	/* ===== Reduced Motion ===== */
+	@media (prefers-reduced-motion: reduce) {
+		.reveal,
+		.reveal-left,
+		.reveal-right,
+		.stagger-children > *,
+		.masking-text .line {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+
+		.shutter-reveal {
+			-webkit-mask-image: none;
+			mask-image: none;
+			animation: none !important;
+		}
+
+		.scroll-line, .ring, .bar, .sq, .stack-card, .node, .vbar {
+			animation: none !important;
+		}
+
+		#gradient-canvas { display: none; }
+		.parallax-text { transform: none !important; }
+	}
+
+	/* ===== Section Headers ===== */
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-label {
+		font-size: 0.8rem;
+		font-weight: 500;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		color: #3b82f6;
+		margin-bottom: 1rem;
+	}
+
+	.section-title {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		color: #fafafa;
+		line-height: 1.1;
+	}
+
+	/* ===== Award Badge ===== */
+	.award-badge {
 		position: relative;
+		display: inline-flex;
+		border-radius: 9999px;
+		padding: 1px;
+		margin-bottom: 2rem;
 		overflow: hidden;
+	}
+
+	.award-badge__border {
+		position: absolute;
+		inset: -100%;
+		width: 300%;
+		height: 300%;
+		background: conic-gradient(
+			from 0deg,
+			transparent 0deg,
+			rgba(59, 130, 246, 0.9) 60deg,
+			rgba(147, 197, 253, 0.6) 90deg,
+			transparent 150deg
+		);
+		animation: rotateBadgeBorder 8s linear infinite;
+	}
+
+	@keyframes rotateBadgeBorder {
+		to { transform: rotate(360deg); }
+	}
+
+	.award-badge__inner {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: rgba(10, 10, 10, 0.9);
+		border-radius: 9999px;
+		padding: 0.375rem 0.875rem;
+	}
+
+	.award-badge__inner span {
+		font-size: 0.8rem;
+		color: rgba(250, 250, 250, 0.7);
+		font-weight: 500;
+		letter-spacing: 0.02em;
+		white-space: nowrap;
+	}
+
+	/* ===== Hero Section ===== */
+	.hero-section {
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		overflow: hidden;
+		padding: 8rem 2rem 4rem;
 	}
 
 	#gradient-canvas {
@@ -330,36 +791,204 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		z-index: 0;
 	}
 
-	.hero-section .section-content {
-		position: relative;
-		z-index: 1;
+	.hero-grid {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+		background-size: 80px 80px;
+		z-index: 0;
 	}
 
-	.hero-section .scroll-indicator {
+	.hero-content {
+		position: relative;
 		z-index: 1;
+		text-align: center;
+		max-width: 900px;
+	}
+
+	.hero-label {
+		font-size: 0.8rem;
+		font-weight: 500;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		color: #3b82f6;
+		margin-bottom: 2rem;
 	}
 
 	.hero-section h1 {
-		font-size: clamp(2.5rem, 6vw, 5rem);
-		margin-bottom: 1rem;
+		font-size: clamp(2.8rem, 7vw, 5rem);
+		line-height: 1.08;
+		margin-bottom: 1.5rem;
 		font-weight: 700;
-		background: linear-gradient(135deg, #10b981 0%, #00ff88 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		text-shadow: none;
+		color: #fafafa;
+		overflow: hidden;
 	}
 
-	.hero-section p {
-		font-size: clamp(1.2rem, 3vw, 2rem);
-		margin-bottom: 2rem;
-		opacity: 0.9;
-		color: #9ca3af;
+	.text-accent {
+		color: #3b82f6;
 	}
 
-	/* Service Detail Sections */
-	.service-detail-section {
-		padding: 4rem 2rem;
+	.hero-subtitle {
+		font-size: clamp(1rem, 2vw, 1.25rem);
+		color: #737373;
+		margin-bottom: 2.5rem;
+		line-height: 1.7;
+		max-width: 550px;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* ===== Buttons ===== */
+	.btn-primary {
+		display: inline-block;
+		padding: 0.9rem 2.25rem;
+		background: #fafafa;
+		color: #0a0a0a;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: all 0.3s ease;
+		letter-spacing: 0.02em;
+	}
+
+	.btn-primary:hover {
+		background: #3b82f6;
+		color: #fff;
+		transform: translateY(-2px);
+	}
+
+	.btn-outline {
+		display: inline-block;
+		padding: 0.9rem 2.25rem;
+		background: transparent;
+		color: #d4d4d4;
+		border: 1px solid #404040;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: all 0.3s ease;
+		letter-spacing: 0.02em;
+	}
+
+	.btn-outline:hover {
+		border-color: #3b82f6;
+		color: #3b82f6;
+		transform: translateY(-2px);
+	}
+
+	/* ===== Scroll Indicator ===== */
+	.scroll-indicator {
+		position: absolute;
+		bottom: 2.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75rem;
+		z-index: 1;
+	}
+
+	.scroll-indicator span {
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		color: #525252;
+	}
+
+	.scroll-line {
+		width: 1px;
+		height: 48px;
+		background: linear-gradient(to bottom, #525252, transparent);
+		animation: scrollPulse 2.5s ease-in-out infinite;
+	}
+
+	@keyframes scrollPulse {
+		0%, 100% { opacity: 0.2; transform: scaleY(0.4); transform-origin: top; }
+		50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+	}
+
+	/* ===== Marquee ===== */
+	.marquee {
+		padding: 2.5rem 0;
+		overflow: hidden;
+		border-top: 1px solid #1a1a1a;
+		border-bottom: 1px solid #1a1a1a;
+		background: #0a0a0a;
+		position: relative;
+		z-index: 2;
+	}
+
+	.marquee__wrapper {
+		display: flex;
+		white-space: nowrap;
+		will-change: transform;
+	}
+
+	.marquee__group {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		flex-shrink: 0;
+		padding-right: 2rem;
+	}
+
+	.marquee__group span {
+		font-family: 'Satoshi', sans-serif;
+		font-size: clamp(1rem, 2vw, 1.3rem);
+		font-weight: 500;
+		color: #525252;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+
+	.marquee-dot {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		background: #3b82f6;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+
+	/* ===== Stacking sections (cover hero) ===== */
+	.services-wrapper,
+	.process-section,
+	.tech-section,
+	.projects-section,
+	.testimonials-section,
+	.about-section,
+	.faq-section,
+	.contact-section {
+		position: relative;
+		z-index: 2;
+		background: #0a0a0a;
+	}
+
+	/* ===== Services ===== */
+	.services-wrapper {
+		padding: 8rem 0 4rem;
+	}
+
+	.service-block {
+		padding: 6rem 2rem;
+		border-top: 1px solid #1a1a1a;
+	}
+
+	.service-block:last-child {
+		border-bottom: 1px solid #1a1a1a;
 	}
 
 	.service-grid {
@@ -367,20 +996,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		grid-template-columns: 3fr 2fr;
 		gap: 4rem;
 		max-width: 1400px;
-		width: 100%;
+		margin: 0 auto;
 		align-items: center;
-		opacity: 0;
-		transform: translateY(30px);
-		transition: opacity 0.8s ease, transform 0.8s ease;
 	}
 
-	.reverse-layout .service-grid {
+	.reverse .service-grid {
 		grid-template-columns: 2fr 3fr;
-	}
-
-	.service-grid.visible {
-		opacity: 1;
-		transform: translateY(0);
 	}
 
 	.service-text {
@@ -389,34 +1010,36 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 	.service-number {
 		display: inline-block;
-		font-size: 0.9rem;
-		font-weight: 700;
-		opacity: 0.6;
+		font-size: 0.85rem;
+		font-weight: 600;
 		margin-bottom: 0.75rem;
 		letter-spacing: 2px;
+		color: #3b82f6;
 	}
 
-	.service-detail-section h2 {
-		font-size: clamp(1.8rem, 4vw, 2.8rem);
+	.service-block h3 {
+		font-size: clamp(1.6rem, 3.5vw, 2.4rem);
 		margin-bottom: 1.25rem;
 		line-height: 1.15;
+		color: #fafafa;
 	}
 
 	.service-intro {
-		font-size: clamp(1rem, 2vw, 1.2rem);
-		line-height: 1.4;
+		font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+		line-height: 1.7;
 		margin-bottom: 2rem;
-		opacity: 0.9;
+		color: #737373;
 	}
 
 	.problems-section {
 		margin-bottom: 2rem;
 	}
 
-	.problems-section h3 {
-		font-size: 1.2rem;
+	.problems-section h4 {
+		font-size: 1rem;
 		margin-bottom: 0.75rem;
-		opacity: 0.9;
+		color: #a3a3a3;
+		font-weight: 600;
 	}
 
 	.problems-list {
@@ -425,186 +1048,516 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	}
 
 	.problems-list li {
-		padding: 0.5rem 0;
-		padding-left: 2rem;
+		padding: 0.4rem 0;
+		padding-left: 1.75rem;
 		position: relative;
-		font-size: 1rem;
-		line-height: 1.4;
-		opacity: 0.85;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: #737373;
 	}
 
 	.problems-list li::before {
 		content: '→';
 		position: absolute;
 		left: 0;
+		color: #3b82f6;
 		font-weight: bold;
-		opacity: 0.7;
 	}
 
 	.service-cta {
 		display: inline-block;
-		padding: 1rem 2.5rem;
-		background: rgba(16, 185, 129, 0.1);
-		backdrop-filter: blur(10px);
-		border: 2px solid #10b981;
-		color: #10b981;
-		border-radius: 50px;
+		padding: 0.8rem 1.75rem;
+		background: transparent;
+		border: 1px solid #404040;
+		color: #d4d4d4;
+		border-radius: 4px;
 		text-decoration: none;
 		font-weight: 600;
-		font-size: 1.1rem;
+		font-size: 0.9rem;
 		transition: all 0.3s ease;
+		letter-spacing: 0.02em;
 	}
 
 	.service-cta:hover {
-		background: rgba(16, 185, 129, 0.2);
-		border-color: #00ff88;
-		color: #00ff88;
+		background: #3b82f6;
+		border-color: #3b82f6;
+		color: #fff;
 		transform: translateY(-2px);
-		box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
 	}
 
-	/* Individual Service Colors - Dark Theme with Green Tones */
-	.service-1 {
-		background: linear-gradient(135deg, #0f1419 0%, #1a2520 100%);
-		color: #e5e7eb;
-	}
-
-	.service-2 {
-		background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
-		color: #e5e7eb;
-	}
-
-	.service-3 {
-		background: linear-gradient(135deg, #0a0f0d 0%, #162318 100%);
-		color: #e5e7eb;
-	}
-
-	.service-4 {
-		background: linear-gradient(135deg, #1a1f1e 0%, #0f2419 100%);
-		color: #e5e7eb;
-	}
-
-	.service-5 {
-		background: linear-gradient(135deg, #0d1117 0%, #1c2921 100%);
-		color: #e5e7eb;
-	}
-
-	.service-6 {
-		background: linear-gradient(135deg, #151b19 0%, #0a1410 100%);
-		color: #e5e7eb;
-	}
-
-	/* Service Image */
-	.service-image {
+	/* ===== Visual Cards ===== */
+	.visual-card {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100%;
-		min-height: 400px;
-		background: rgba(16, 185, 129, 0.05);
-		backdrop-filter: blur(10px);
-		border-radius: 20px;
-		border: 2px solid rgba(16, 185, 129, 0.2);
+		min-height: 350px;
+		background: #111111;
+		border-radius: 12px;
+		border: 1px solid #1a1a1a;
 		overflow: hidden;
 		transition: border-color 0.3s ease;
 	}
 
-	.service-image:hover {
-		border-color: rgba(16, 185, 129, 0.4);
+	.visual-card:hover {
+		border-color: #262626;
 	}
 
-	.three-canvas {
+	.css-art {
+		width: 200px;
+		height: 200px;
+		position: relative;
+	}
+
+	/* Art 1: Concentric Rings */
+	.art-rings {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.ring {
+		position: absolute;
+		border: 1px solid rgba(59, 130, 246, 0.3);
+		border-radius: 50%;
+		animation: ringPulse 3s ease-in-out infinite;
+	}
+
+	.ring-1 { width: 160px; height: 160px; animation-delay: 0s; }
+	.ring-2 { width: 110px; height: 110px; animation-delay: 0.5s; }
+	.ring-3 { width: 60px; height: 60px; animation-delay: 1s; }
+
+	.ring-dot {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		background: #3b82f6;
+		border-radius: 50%;
+		box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+	}
+
+	@keyframes ringPulse {
+		0%, 100% { opacity: 0.3; transform: scale(1); }
+		50% { opacity: 0.8; transform: scale(1.06); }
+	}
+
+	/* Art 2: Horizontal Bars */
+	.art-bars {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 12px;
+		padding: 20px;
+	}
+
+	.bar {
+		height: 6px;
+		background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0.1));
+		border-radius: 3px;
+		animation: barGrow 2s ease-in-out infinite alternate;
+	}
+
+	.bar-1 { width: 90%; animation-delay: 0s; }
+	.bar-2 { width: 70%; animation-delay: 0.15s; }
+	.bar-3 { width: 95%; animation-delay: 0.3s; }
+	.bar-4 { width: 60%; animation-delay: 0.45s; }
+	.bar-5 { width: 80%; animation-delay: 0.6s; }
+
+	@keyframes barGrow {
+		0% { opacity: 0.4; }
+		100% { opacity: 1; }
+	}
+
+	/* Art 3: Grid Squares */
+	.art-grid-squares {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+		padding: 20px;
+	}
+
+	.sq {
+		aspect-ratio: 1;
+		border: 1px solid #262626;
+		border-radius: 4px;
+		background: #141414;
+		animation: sqFade 2.5s ease-in-out infinite alternate;
+	}
+
+	.sq-5 { background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
+
+	.sq-1 { animation-delay: 0s; }
+	.sq-2 { animation-delay: 0.1s; }
+	.sq-3 { animation-delay: 0.2s; }
+	.sq-4 { animation-delay: 0.3s; }
+	.sq-5 { animation-delay: 0.4s; }
+	.sq-6 { animation-delay: 0.5s; }
+	.sq-7 { animation-delay: 0.6s; }
+	.sq-8 { animation-delay: 0.7s; }
+	.sq-9 { animation-delay: 0.8s; }
+
+	@keyframes sqFade {
+		0% { opacity: 0.3; }
+		100% { opacity: 1; }
+	}
+
+	/* Art 4: Stacked Cards */
+	.art-cards {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
 		height: 100%;
-		min-height: 400px;
-		display: block;
 	}
 
-	/* Projects Section */
+	.stack-card {
+		position: absolute;
+		width: 120px;
+		height: 160px;
+		border: 1px solid #262626;
+		border-radius: 8px;
+		background: #141414;
+		animation: cardFloat 4s ease-in-out infinite;
+	}
+
+	.card-1 { --card-transform: rotate(-8deg) translateX(-20px); transform: var(--card-transform); animation-delay: 0s; }
+	.card-2 { --card-transform: rotate(0deg); transform: var(--card-transform); animation-delay: 0.3s; border-color: #3b82f6; }
+	.card-3 { --card-transform: rotate(8deg) translateX(20px); transform: var(--card-transform); animation-delay: 0.6s; }
+
+	@keyframes cardFloat {
+		0%, 100% { transform: var(--card-transform, rotate(0deg)) translateY(0); }
+		50% { transform: var(--card-transform, rotate(0deg)) translateY(-8px); }
+	}
+
+	/* Art 5: Nodes */
+	.art-nodes {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.node {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		background: #3b82f6;
+		border-radius: 50%;
+		box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+		animation: nodePulse 2s ease-in-out infinite;
+	}
+
+	.node-1 { top: 20%; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+	.node-2 { top: 50%; left: 20%; animation-delay: 0.2s; }
+	.node-3 { top: 50%; right: 20%; animation-delay: 0.4s; }
+	.node-4 { bottom: 20%; left: 35%; animation-delay: 0.6s; }
+	.node-5 { bottom: 20%; right: 35%; animation-delay: 0.8s; }
+
+	.node-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+	.node-lines line { stroke: #262626; stroke-width: 1; }
+
+	@keyframes nodePulse {
+		0%, 100% { transform: scale(1); opacity: 0.5; }
+		50% { transform: scale(1.2); opacity: 1; }
+	}
+
+	/* Art 6: Vertical Bars */
+	.art-vbars {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		gap: 10px;
+		padding: 20px;
+		height: 100%;
+	}
+
+	.vbar {
+		width: 14px;
+		background: linear-gradient(to top, #3b82f6, rgba(59, 130, 246, 0.1));
+		border-radius: 3px 3px 0 0;
+		animation: vbarRise 2s ease-in-out infinite alternate;
+	}
+
+	.vbar-1 { height: 40%; animation-delay: 0s; }
+	.vbar-2 { height: 65%; animation-delay: 0.1s; }
+	.vbar-3 { height: 50%; animation-delay: 0.2s; }
+	.vbar-4 { height: 85%; animation-delay: 0.3s; }
+	.vbar-5 { height: 55%; animation-delay: 0.4s; }
+	.vbar-6 { height: 75%; animation-delay: 0.5s; }
+	.vbar-7 { height: 45%; animation-delay: 0.6s; }
+
+	@keyframes vbarRise {
+		0% { opacity: 0.4; transform: scaleY(0.8); }
+		100% { opacity: 1; transform: scaleY(1); }
+	}
+
+	/* ===== Process Section ===== */
+	.process-section {
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
+	}
+
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+
+	.process-step {
+		padding: 2rem;
+		border: 1px solid #1a1a1a;
+		border-radius: 8px;
+		background: #111111;
+		transition: border-color 0.3s ease;
+	}
+
+	.process-step:hover {
+		border-color: #262626;
+	}
+
+	.step-number {
+		display: inline-block;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: #3b82f6;
+		letter-spacing: 2px;
+		margin-bottom: 1rem;
+	}
+
+	.process-step h3 {
+		font-size: 1.2rem;
+		margin-bottom: 0.75rem;
+		color: #e5e5e5;
+	}
+
+	.process-step p {
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: #737373;
+	}
+
+	/* ===== Tech Section ===== */
+	.tech-section {
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
+	}
+
+	.tech-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		gap: 1rem;
+	}
+
+	.tech-item {
+		padding: 1.25rem 1rem;
+		text-align: center;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #a3a3a3;
+		border: 1px solid #1a1a1a;
+		border-radius: 6px;
+		background: #111111;
+		transition: all 0.3s ease;
+		letter-spacing: 0.02em;
+	}
+
+	.tech-item:hover {
+		border-color: #3b82f6;
+		color: #fafafa;
+		transform: translateY(-2px);
+	}
+
+	/* ===== Projects Section ===== */
 	.projects-section {
-		background: linear-gradient(135deg, #0d1117 0%, #1a2520 100%);
-		color: #e5e7eb;
-	}
-
-	.projects-section h2 {
-		font-size: clamp(2rem, 4vw, 3.5rem);
-		margin-bottom: 3rem;
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
 	}
 
 	.projects-showcase {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-		margin-bottom: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 2.5rem;
 	}
 
 	.project-item {
-		background: rgba(16, 185, 129, 0.05);
-		backdrop-filter: blur(10px);
+		background: #111111;
 		padding: 2rem;
-		border-radius: 12px;
-		border: 1px solid rgba(16, 185, 129, 0.2);
+		border-radius: 8px;
+		border: 1px solid #1a1a1a;
 		transition: all 0.3s ease;
+		text-align: left;
 	}
 
 	.project-item:hover {
-		background: rgba(16, 185, 129, 0.1);
-		border-color: rgba(16, 185, 129, 0.4);
+		border-color: #262626;
+		transform: translateY(-4px);
 	}
 
 	.project-preview {
-		font-size: 4rem;
+		font-size: 2.5rem;
 		margin-bottom: 1rem;
 	}
 
 	.project-item h3 {
 		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		color: #e5e5e5;
 	}
 
-	/* About Section */
+	.project-item p {
+		color: #737373;
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
+
+	/* ===== Testimonials Section ===== */
+	.testimonials-section {
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.testimonial {
+		background: #111111;
+		border: 1px solid #1a1a1a;
+		border-radius: 8px;
+		padding: 2rem;
+		transition: border-color 0.3s ease;
+	}
+
+	.testimonial:hover {
+		border-color: #262626;
+	}
+
+	.testimonial p {
+		font-size: 1rem;
+		line-height: 1.7;
+		color: #a3a3a3;
+		margin-bottom: 1.5rem;
+		font-style: italic;
+	}
+
+	.testimonial footer {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.testimonial strong {
+		color: #e5e5e5;
+		font-size: 0.95rem;
+	}
+
+	.testimonial footer span {
+		color: #525252;
+		font-size: 0.85rem;
+	}
+
+	/* ===== About Section ===== */
 	.about-section {
-		background: linear-gradient(135deg, #111827 0%, #162318 100%);
-		color: #e5e7eb;
-	}
-
-	.about-section h2 {
-		font-size: clamp(2rem, 4vw, 3.5rem);
-		margin-bottom: 2rem;
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
+		text-align: center;
 	}
 
 	.about-content {
-		max-width: 800px;
+		max-width: 650px;
 		margin: 0 auto 2rem;
 	}
 
-	.about-text p {
-		font-size: 1.2rem;
+	.about-content p {
+		font-size: 1.05rem;
 		line-height: 1.8;
 		margin-bottom: 1rem;
-		opacity: 0.9;
+		color: #737373;
 	}
 
-	/* Contact Section */
+	/* ===== FAQ Section ===== */
+	.faq-section {
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
+	}
+
+	.faq-list {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.faq-item {
+		border-bottom: 1px solid #1a1a1a;
+		padding: 1.5rem 0;
+	}
+
+	.faq-item summary {
+		cursor: pointer;
+		font-family: 'Satoshi', sans-serif;
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: #e5e5e5;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: color 0.2s ease;
+	}
+
+	.faq-item summary::-webkit-details-marker { display: none; }
+
+	.faq-item summary::after {
+		content: '+';
+		font-size: 1.4rem;
+		color: #525252;
+		transition: transform 0.3s ease, color 0.3s ease;
+		flex-shrink: 0;
+		margin-left: 1rem;
+	}
+
+	.faq-item[open] summary::after {
+		transform: rotate(45deg);
+		color: #3b82f6;
+	}
+
+	.faq-item summary:hover {
+		color: #3b82f6;
+	}
+
+	.faq-item p {
+		margin-top: 1rem;
+		font-size: 0.95rem;
+		line-height: 1.7;
+		color: #737373;
+		padding-right: 2rem;
+	}
+
+	/* ===== Contact Section ===== */
 	.contact-section {
-		background: linear-gradient(135deg, #0a0f0d 0%, #1a2520 100%);
-		color: #e5e7eb;
-	}
-
-	.contact-section h2 {
-		font-size: clamp(2rem, 4vw, 3.5rem);
-		margin-bottom: 1rem;
+		padding: 8rem 2rem;
+		background: #0a0a0a;
+		border-top: 1px solid #1a1a1a;
+		text-align: center;
 	}
 
 	.contact-intro {
-		font-size: 1.3rem;
+		font-size: 1.15rem;
 		margin-bottom: 2rem;
+		color: #737373;
 	}
 
 	.contact-info {
 		display: flex;
 		gap: 3rem;
 		justify-content: center;
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 		flex-wrap: wrap;
 	}
 
@@ -612,165 +1565,240 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		font-size: 1.2rem;
+		font-size: 1.05rem;
 	}
 
 	.info-item .icon {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 	.info-item a {
-		color: #10b981;
+		color: #a3a3a3;
 		text-decoration: none;
 		font-weight: 600;
+		transition: color 0.3s ease;
 	}
 
 	.info-item a:hover {
-		text-decoration: underline;
-	}
-
-	/* Buttons */
-	.cta-button {
-		display: inline-block;
-		padding: 1rem 2.5rem;
-		background: #10b981;
-		color: #0a0f0d;
-		border-radius: 50px;
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1.1rem;
-		transition: all 0.3s ease;
-		box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-	}
-
-	.cta-button:hover {
-		background: #00ff88;
-		transform: translateY(-2px);
-		box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+		color: #3b82f6;
 	}
 
 	.link-button {
 		display: inline-block;
-		color: #10b981;
+		color: #a3a3a3;
 		text-decoration: none;
 		font-weight: 600;
-		font-size: 1.1rem;
-		transition: all 0.3s ease;
+		font-size: 0.95rem;
+		transition: color 0.3s ease;
+		letter-spacing: 0.02em;
 	}
 
 	.link-button:hover {
-		color: #00ff88;
-		text-decoration: underline;
+		color: #3b82f6;
 	}
 
-	/* Scroll Indicator */
-	.scroll-indicator {
-		position: absolute;
-		bottom: 2rem;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
-		opacity: 0.8;
-		animation: bounce 2s infinite;
-	}
-
-	.scroll-indicator span {
-		font-size: 0.9rem;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-	}
-
-	.arrow {
-		font-size: 1.5rem;
-	}
-
-	@keyframes bounce {
-		0%, 20%, 50%, 80%, 100% {
-			transform: translateX(-50%) translateY(0);
-		}
-		40% {
-			transform: translateX(-50%) translateY(-10px);
-		}
-		60% {
-			transform: translateX(-50%) translateY(-5px);
-		}
-	}
-
-	/* Responsive */
+	/* ===== Responsive ===== */
 	@media (max-width: 1024px) {
-		.service-grid {
+		.service-grid,
+		.reverse .service-grid {
 			grid-template-columns: 1fr;
-			gap: 2rem;
+			gap: 2.5rem;
 		}
 
-		.service-image {
-			min-height: 300px;
-		}
+		.service-visual { order: -1; }
+		.visual-card { min-height: 260px; }
 
-		.service-text {
-			order: 2;
-		}
-
-		.service-image {
-			order: 1;
-		}
-
-		.image-placeholder {
-			min-height: 300px;
-			font-size: 6rem;
+		.process-steps {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 
 	@media (max-width: 768px) {
-		.projects-showcase {
+		.hero-section {
+			padding: 6rem 1.5rem 3rem;
+		}
+
+		.hero-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.btn-primary,
+		.btn-outline {
+			width: 100%;
+			max-width: 320px;
+			text-align: center;
+		}
+
+		.service-block {
+			padding: 4rem 1.5rem;
+		}
+
+		.process-steps {
+			grid-template-columns: 1fr;
+		}
+
+		.projects-section,
+		.about-section,
+		.contact-section,
+		.testimonials-section,
+		.faq-section,
+		.tech-section,
+		.process-section {
+			padding: 5rem 1.5rem;
+		}
+
+		.projects-showcase,
+		.testimonials-grid {
 			grid-template-columns: 1fr;
 		}
 
 		.contact-info {
 			flex-direction: column;
 			gap: 1rem;
-		}
-
-		.service-detail-section {
-			padding: 2rem 1.5rem;
-		}
-
-		.service-grid {
-			gap: 1.5rem;
-		}
-
-		.service-image {
-			min-height: 250px;
-		}
-
-		.image-placeholder {
-			min-height: 250px;
-			font-size: 4rem;
-		}
-
-		.problems-list li {
-			font-size: 0.95rem;
+			align-items: center;
 		}
 
 		.service-cta {
 			width: 100%;
 			text-align: center;
 		}
+
+		.section-title {
+			font-size: clamp(2rem, 8vw, 3rem);
+		}
 	}
 </style>
 
 <script>
-	// WebGL Animation
+	// Intersection Observer for all reveal animations
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-visible');
+				observer.unobserve(entry.target);
+			}
+		});
+	}, {
+		threshold: 0.15,
+		rootMargin: '0px 0px -50px 0px'
+	});
+
+	document.querySelectorAll(
+		'.reveal, .reveal-left, .reveal-right, .stagger-children, .masking-text, .shutter-reveal'
+	).forEach(el => {
+		observer.observe(el);
+	});
+
+	// ===== Scroll-driven Marquee =====
+	(function () {
+		const wrapper = document.querySelector('.marquee__wrapper') as HTMLElement | null;
+		const group = document.querySelector('.marquee__group') as HTMLElement | null;
+		if (!wrapper || !group) return;
+
+		const IDLE_SPEED   = 0.4;  // px/frame when not scrolling
+		const SCROLL_SPEED = 1.4;  // px/frame when actively scrolling
+		const LERP = 0.04;         // smoothing
+
+		let groupWidth = group!.getBoundingClientRect().width;
+
+		// Re-measure if fonts or layout shift
+		new ResizeObserver(() => {
+			groupWidth = group!.getBoundingClientRect().width;
+		}).observe(group!);
+
+		// Start at the middle group so there's content on both sides
+		let x = -groupWidth;
+		let lerpedSpeed = IDLE_SPEED;
+		let lastDirection = 1;    // 1 = left, -1 = right (persists after scroll stops)
+		let isScrolling = false;
+		let lastScrollY = window.scrollY;
+		let scrollTimer: ReturnType<typeof setTimeout>;
+
+		window.addEventListener('scroll', () => {
+			const currentY = window.scrollY;
+			const delta = currentY - lastScrollY;
+			lastScrollY = currentY;
+
+			if (delta > 0) lastDirection = 1;   // scroll down → go left
+			if (delta < 0) lastDirection = -1;  // scroll up   → go right
+
+			isScrolling = true;
+			clearTimeout(scrollTimer);
+			scrollTimer = setTimeout(() => { isScrolling = false; }, 120);
+		}, { passive: true });
+
+		function tick() {
+			const targetSpeed = (isScrolling ? SCROLL_SPEED : IDLE_SPEED) * lastDirection;
+			lerpedSpeed += (targetSpeed - lerpedSpeed) * LERP;
+
+			x -= lerpedSpeed;
+
+			// Loop within the middle group's range — content exists on both sides
+			if (x <= -2 * groupWidth) x += groupWidth;
+			if (x >= 0)               x -= groupWidth;
+
+			wrapper!.style.transform = `translateX(${x}px)`;
+			requestAnimationFrame(tick);
+		}
+
+		tick();
+	})();
+
+	// Parallax text — moves with scroll
+	const parallaxElements = document.querySelectorAll('.parallax-text') as NodeListOf<HTMLElement>;
+	const heroContent = document.querySelector('.hero-content') as HTMLElement | null;
+	const heroGrid    = document.querySelector('.hero-grid')    as HTMLElement | null;
+
+	function onScroll() {
+		const scrollY = window.scrollY;
+
+		// ── Hero curtain parallax ──────────────────────────────────────────
+		// Hero is sticky; we move its inner content up at 35% of scroll speed,
+		// so it looks like the hero drifts upward slower than the sections below.
+		if (heroContent) {
+			heroContent.style.transform = `translateY(${-scrollY * 0.35}px)`;
+		}
+		// Grid moves even slower for depth
+		if (heroGrid) {
+			heroGrid.style.transform = `translateY(${-scrollY * 0.15}px)`;
+		}
+
+		// ── Section parallax text ──────────────────────────────────────────
+		parallaxElements.forEach(el => {
+			const rect = el.getBoundingClientRect();
+			const speed = parseFloat(el.dataset.speed || '0.1');
+			const offset = (rect.top - window.innerHeight * 0.5) * speed;
+			el.style.transform = `translateY(${offset}px)`;
+		});
+	}
+
+	window.addEventListener('scroll', onScroll, { passive: true });
+
+	// Smooth scroll for internal anchors
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
+			e.preventDefault();
+			const href = this.getAttribute('href');
+			if (href) {
+				const target = document.querySelector(href);
+				if (target) {
+					target.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			}
+		});
+	});
+
+	// ===== WebGL Gradient Shader =====
 	function compileShader(gl: WebGL2RenderingContext, type: number, source: string) {
 		const shader = gl.createShader(type);
 		if (!shader) return null;
 		gl.shaderSource(shader, source);
 		gl.compileShader(shader);
 		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-			console.error("An error occurred compiling the shaders: " + gl.getShaderInfoLog(shader));
 			gl.deleteShader(shader);
 			return null;
 		}
@@ -787,7 +1815,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		gl.attachShader(program, fragmentShader);
 		gl.linkProgram(program);
 		if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-			console.error("Unable to initialize the shader program: " + gl.getProgramInfoLog(program));
 			gl.deleteProgram(program);
 			gl.deleteShader(vertexShader);
 			gl.deleteShader(fragmentShader);
@@ -862,7 +1889,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				}
 				void main() {
 					vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-					vec2 uv_original = uv;
 					float t = .5 * u_time;
 					float noise_scale = .0005 + .006 * u_scale;
 					uv -= .5;
@@ -933,9 +1959,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				const preset = {
 					scale: 0.48,
 					rotation: 0,
-					color1: [0.04, 0.06, 0.05, 1],  // #0a0f0d - very dark green-tinted black
-					color2: [0.06, 0.73, 0.51, 1],  // #10b981 - emerald green
-					color3: [0.02, 0.09, 0.06, 1],  // #050f0a - darker green-tinted black
+					color1: [0.04, 0.04, 0.04, 1],    // #0a0a0a — near-black background
+					color2: [0.23, 0.51, 0.96, 1],     // #3b82f6 — blue accent
+					color3: [0.03, 0.03, 0.06, 1],     // #080810 — dark blue-tinted black
 					proportion: 0.33,
 					softness: 1,
 					shape: 1.5,
@@ -980,249 +2006,4 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			}
 		}
 	}
-
-	// Intersection Observer para animaciones
-	const observerOptions = {
-		threshold: 0.3,
-		rootMargin: '0px'
-	};
-
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('visible');
-			}
-		});
-	}, observerOptions);
-
-	// Observar todas las secciones
-	document.querySelectorAll('.section-content, .service-grid').forEach(section => {
-		observer.observe(section);
-	});
-
-	// Smooth scroll para los enlaces internos
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
-			e.preventDefault();
-			const href = this.getAttribute('href');
-			if (href) {
-				const target = document.querySelector(href);
-				if (target) {
-					target.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-				}
-			}
-		});
-	});
-
-	// Placeholder para Three.js - se carga en el siguiente script module
-	const greenColor = 0x10b981;
-
-	// Three.js Animations for Services
-	const THREE = (window as any).THREE;
-	if (THREE) {
-		// Service 1: Website Audit - Scanning Torus Knot
-		const canvas1 = document.getElementById('three-canvas-1') as HTMLCanvasElement;
-		if (canvas1) {
-			const scene1 = new THREE.Scene();
-			const camera1 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-			const renderer1 = new THREE.WebGLRenderer({ canvas: canvas1, alpha: true, antialias: true });
-			renderer1.setSize(400, 400);
-			camera1.position.z = 5;
-
-			const geometry1 = new THREE.TorusKnotGeometry(1.5, 0.4, 100, 16);
-			const material1 = new THREE.MeshBasicMaterial({ color: greenColor, wireframe: true });
-			const torusKnot = new THREE.Mesh(geometry1, material1);
-			scene1.add(torusKnot);
-
-			function animate1() {
-				requestAnimationFrame(animate1);
-				torusKnot.rotation.x += 0.01;
-				torusKnot.rotation.y += 0.01;
-				renderer1.render(scene1, camera1);
-			}
-			animate1();
-		}
-
-		// Service 2: Performance - Speed Particles
-		const canvas2 = document.getElementById('three-canvas-2') as HTMLCanvasElement;
-		if (canvas2) {
-			const scene2 = new THREE.Scene();
-			const camera2 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-			const renderer2 = new THREE.WebGLRenderer({ canvas: canvas2, alpha: true, antialias: true });
-			renderer2.setSize(400, 400);
-			camera2.position.z = 5;
-
-			const particles = new THREE.BufferGeometry();
-			const particleCount = 1000;
-			const positions = new Float32Array(particleCount * 3);
-
-			for (let i = 0; i < particleCount * 3; i += 3) {
-				positions[i] = (Math.random() - 0.5) * 10;
-				positions[i + 1] = (Math.random() - 0.5) * 10;
-				positions[i + 2] = (Math.random() - 0.5) * 10;
-			}
-
-			particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-			const particleMaterial = new THREE.PointsMaterial({ color: greenColor, size: 0.05 });
-			const particleSystem = new THREE.Points(particles, particleMaterial);
-			scene2.add(particleSystem);
-
-			function animate2() {
-				requestAnimationFrame(animate2);
-				particleSystem.rotation.y += 0.002;
-				const positions = particleSystem.geometry.attributes.position.array as Float32Array;
-				for (let i = 0; i < positions.length; i += 3) {
-					positions[i] += 0.01;
-					if (positions[i] > 5) positions[i] = -5;
-				}
-				particleSystem.geometry.attributes.position.needsUpdate = true;
-				renderer2.render(scene2, camera2);
-			}
-			animate2();
-		}
-
-		// Service 3: Web Development - Floating Cubes
-		const canvas3 = document.getElementById('three-canvas-3') as HTMLCanvasElement;
-		if (canvas3) {
-			const scene3 = new THREE.Scene();
-			const camera3 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-			const renderer3 = new THREE.WebGLRenderer({ canvas: canvas3, alpha: true, antialias: true });
-			renderer3.setSize(400, 400);
-			camera3.position.z = 8;
-
-			const cubes: any[] = [];
-			for (let i = 0; i < 5; i++) {
-				const geometry = new THREE.BoxGeometry(1, 1, 1);
-				const material = new THREE.MeshBasicMaterial({
-					color: greenColor,
-					wireframe: true
-				});
-				const cube = new THREE.Mesh(geometry, material);
-				cube.position.x = (Math.random() - 0.5) * 6;
-				cube.position.y = (Math.random() - 0.5) * 6;
-				cube.position.z = (Math.random() - 0.5) * 6;
-				cubes.push(cube);
-				scene3.add(cube);
-			}
-
-			function animate3() {
-				requestAnimationFrame(animate3);
-				cubes.forEach((cube, i) => {
-					cube.rotation.x += 0.01 * (i + 1);
-					cube.rotation.y += 0.01 * (i + 1);
-				});
-				renderer3.render(scene3, camera3);
-			}
-			animate3();
-		}
-
-		// Service 4: WordPress - Rotating W
-		const canvas4 = document.getElementById('three-canvas-4') as HTMLCanvasElement;
-		if (canvas4) {
-			const scene4 = new THREE.Scene();
-			const camera4 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-			const renderer4 = new THREE.WebGLRenderer({ canvas: canvas4, alpha: true, antialias: true });
-			renderer4.setSize(400, 400);
-			camera4.position.z = 5;
-
-			const geometry4 = new THREE.OctahedronGeometry(2, 0);
-			const material4 = new THREE.MeshBasicMaterial({
-				color: greenColor,
-				wireframe: true
-			});
-			const octahedron = new THREE.Mesh(geometry4, material4);
-			scene4.add(octahedron);
-
-			function animate4() {
-				requestAnimationFrame(animate4);
-				octahedron.rotation.x += 0.005;
-				octahedron.rotation.y += 0.01;
-				renderer4.render(scene4, camera4);
-			}
-			animate4();
-		}
-
-		// Service 5: Backend/CMS - Connected Network
-		const canvas5 = document.getElementById('three-canvas-5') as HTMLCanvasElement;
-		if (canvas5) {
-			const scene5 = new THREE.Scene();
-			const camera5 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-			const renderer5 = new THREE.WebGLRenderer({ canvas: canvas5, alpha: true, antialias: true });
-			renderer5.setSize(400, 400);
-			camera5.position.z = 8;
-
-			const spheres: any[] = [];
-			const sphereCount = 6;
-
-			for (let i = 0; i < sphereCount; i++) {
-				const geometry = new THREE.SphereGeometry(0.3, 16, 16);
-				const material = new THREE.MeshBasicMaterial({ color: greenColor, wireframe: true });
-				const sphere = new THREE.Mesh(geometry, material);
-
-				const angle = (i / sphereCount) * Math.PI * 2;
-				sphere.position.x = Math.cos(angle) * 3;
-				sphere.position.y = Math.sin(angle) * 3;
-
-				spheres.push(sphere);
-				scene5.add(sphere);
-			}
-
-			const lineMaterial = new THREE.LineBasicMaterial({ color: greenColor, opacity: 0.3, transparent: true });
-			for (let i = 0; i < spheres.length; i++) {
-				for (let j = i + 1; j < spheres.length; j++) {
-					const points = [spheres[i].position, spheres[j].position];
-					const geometry = new THREE.BufferGeometry().setFromPoints(points);
-					const line = new THREE.Line(geometry, lineMaterial);
-					scene5.add(line);
-				}
-			}
-
-			function animate5() {
-				requestAnimationFrame(animate5);
-				spheres.forEach((sphere, i) => {
-					const angle = (i / sphereCount) * Math.PI * 2 + Date.now() * 0.0005;
-					sphere.position.x = Math.cos(angle) * 3;
-					sphere.position.y = Math.sin(angle) * 3;
-				});
-				renderer5.render(scene5, camera5);
-			}
-			animate5();
-		}
-
-		// Service 6: Consulting - Icosahedron
-		const canvas6 = document.getElementById('three-canvas-6') as HTMLCanvasElement;
-		if (canvas6) {
-			const scene6 = new THREE.Scene();
-			const camera6 = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-			const renderer6 = new THREE.WebGLRenderer({ canvas: canvas6, alpha: true, antialias: true });
-			renderer6.setSize(400, 400);
-			camera6.position.z = 5;
-
-			const geometry6 = new THREE.IcosahedronGeometry(2, 0);
-			const material6 = new THREE.MeshBasicMaterial({
-				color: greenColor,
-				wireframe: true
-			});
-			const icosahedron = new THREE.Mesh(geometry6, material6);
-			scene6.add(icosahedron);
-
-			function animate6() {
-				requestAnimationFrame(animate6);
-				icosahedron.rotation.x += 0.008;
-				icosahedron.rotation.y += 0.012;
-				renderer6.render(scene6, camera6);
-			}
-			animate6();
-		}
-	}
 </script>
-</body></html>
-
-<script type="module">
-	import '/src/scripts/three-animations.js';
-</script>
-	</body>
-</html>
