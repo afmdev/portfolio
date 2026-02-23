@@ -7,12 +7,13 @@ import HeaderLink from './HeaderLink.astro';
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/services">Services</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+			<HeaderLink href="/" class="magnetic">Home</HeaderLink>
+			<HeaderLink href="/services" class="magnetic">Services</HeaderLink>
+			<HeaderLink href="/projects" class="magnetic">Projects</HeaderLink>
+			<HeaderLink href="/blog" class="magnetic">Blog</HeaderLink>
+			<HeaderLink href="/about" class="magnetic">About</HeaderLink>
+			<HeaderLink href="/contact" class="magnetic">Contact</HeaderLink>
+			<div class="nav-indicator" aria-hidden="true"></div>
 		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
@@ -51,20 +52,14 @@ import HeaderLink from './HeaderLink.astro';
 		top: 0;
 		left: 0;
 		right: 0;
-		width: 100%;
+		box-sizing: border-box;
 		z-index: 1000;
 		margin: 0;
-		padding: 0 1em;
+		padding: 0 1.5em;
 		background: rgba(10, 10, 10, 0.92);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
-		transition: transform 0.3s ease-in-out;
-		transform: translateY(0);
-	}
-
-	header.header-hidden {
-		transform: translateY(-100%);
 	}
 
 	h2 {
@@ -81,20 +76,38 @@ import HeaderLink from './HeaderLink.astro';
 		align-items: center;
 		justify-content: space-between;
 	}
+	.internal-links {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
 	nav a {
 		padding: 1em 0.5em;
 		color: #a3a3a3;
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
-		transition: color 0.2s ease;
+		transition: color 0.2s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+		display: inline-block;
 	}
-	nav a:hover {
-		color: #fafafa;
-	}
+	nav a:hover,
 	nav a.active {
-		text-decoration: none;
-		border-bottom-color: #3b82f6;
 		color: #fafafa;
+		text-decoration: none;
+	}
+	/* Sliding indicator */
+	.nav-indicator {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		width: 0;
+		background: #3b82f6;
+		border-radius: 2px;
+		pointer-events: none;
+		/* Spring cubic-bezier: overshoots slightly then settles */
+		transition:
+			left  0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+			width 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+			opacity 0.2s ease;
 	}
 	.social-links,
 	.social-links a {
@@ -108,37 +121,41 @@ import HeaderLink from './HeaderLink.astro';
 </style>
 
 <script>
-	let lastScrollY = window.scrollY;
-	let ticking = false;
+	// ── Sliding nav indicator ────────────────────────────────────────────
+	const linksContainer = document.querySelector('.internal-links') as HTMLElement | null;
+	const indicator      = document.querySelector('.nav-indicator')  as HTMLElement | null;
+	const navLinks       = document.querySelectorAll('.internal-links a') as NodeListOf<HTMLElement>;
+	const activeLink     = document.querySelector('.internal-links a.active') as HTMLElement | null;
 
-	function updateHeader() {
-		const header = document.querySelector('header');
-		const currentScrollY = window.scrollY;
-
-		// Solo ocultar si hemos hecho scroll más de 100px
-		if (currentScrollY > 100) {
-			if (currentScrollY > lastScrollY) {
-				// Scrolling down
-				header?.classList.add('header-hidden');
-			} else {
-				// Scrolling up
-				header?.classList.remove('header-hidden');
-			}
-		} else {
-			// En la parte superior, siempre mostrar
-			header?.classList.remove('header-hidden');
-		}
-
-		lastScrollY = currentScrollY;
-		ticking = false;
+	function moveIndicatorTo(el: HTMLElement) {
+		if (!indicator || !linksContainer) return;
+		const containerRect = linksContainer.getBoundingClientRect();
+		const elRect        = el.getBoundingClientRect();
+		indicator.style.left  = `${elRect.left - containerRect.left}px`;
+		indicator.style.width = `${elRect.width}px`;
 	}
 
-	function onScroll() {
-		if (!ticking) {
-			window.requestAnimationFrame(updateHeader);
-			ticking = true;
-		}
+	// Init: place at active link, or hide
+	if (activeLink) {
+		moveIndicatorTo(activeLink);
+	} else if (indicator) {
+		indicator.style.opacity = '0';
 	}
 
-	window.addEventListener('scroll', onScroll, { passive: true });
+	navLinks.forEach(link => {
+		link.addEventListener('mouseenter', () => {
+			if (indicator) indicator.style.opacity = '1';
+			moveIndicatorTo(link);
+		});
+	});
+
+	// On mouse leave: return to active link (or hide)
+	linksContainer?.addEventListener('mouseleave', () => {
+		if (activeLink) {
+			moveIndicatorTo(activeLink);
+		} else if (indicator) {
+			indicator.style.opacity = '0';
+		}
+	});
+
 </script>

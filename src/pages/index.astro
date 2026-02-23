@@ -9,8 +9,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" is:inline></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" is:inline></script>
 	</head>
 	<body>
+		<div id="cursor"></div>
 		<Header />
 
 		<!-- Hero Section -->
@@ -24,17 +27,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 							<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
-						<span>Web Development Studio — Berlin</span>
+						<span>Webdesign Freelancer in Berlin</span>
 					</div>
 				</div>
 				<h1 class="masking-text">
-					<span class="line">We build digital</span>
-					<span class="line">experiences that <span class="text-accent">matter</span></span>
+					<span class="line">Webdesign in <span class="text-accent">Berlin</span> </span>
 				</h1>
-				<p class="hero-subtitle masking-text"><span class="line">Design, development and web optimization for businesses ready to grow.</span></p>
+				<p class="hero-subtitle masking-text"><span class="line">As a freelance web designer and developer in Berlin, I build high-performance websites using modern frameworks like React and Next.js, as well as scalable WordPress solutions — tailored to your business goals.</span></p>
 				<div class="hero-buttons reveal">
-					<a href="/contact" class="btn-primary">Let's talk about your project</a>
-					<a href="#services" class="btn-outline">View services</a>
+					<a href="/contact" class="btn-primary magnetic">Let's talk about your project</a>
+					<a href="#services" class="btn-outline magnetic">View services</a>
 				</div>
 			</div>
 			<div class="scroll-indicator">
@@ -47,31 +49,59 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<div class="marquee">
 			<div class="marquee__wrapper">
 				<div class="marquee__group" aria-hidden="true">
-					<span>Strategy</span><span class="marquee-dot"></span>
-					<span>Development</span><span class="marquee-dot"></span>
-					<span>Performance</span><span class="marquee-dot"></span>
-					<span>SEO</span><span class="marquee-dot"></span>
-					<span>Design</span><span class="marquee-dot"></span>
-					<span>Consulting</span><span class="marquee-dot"></span>
+					<span>Strategy</span><canvas class="dot-canvas"></canvas>
+					<span>Development</span><canvas class="dot-canvas"></canvas>
+					<span>Performance</span><canvas class="dot-canvas"></canvas>
+					<span>SEO</span><canvas class="dot-canvas"></canvas>
+					<span>Design</span><canvas class="dot-canvas"></canvas>
+					<span>Consulting</span><canvas class="dot-canvas"></canvas>
 				</div>
 				<div class="marquee__group">
-					<span>Strategy</span><span class="marquee-dot"></span>
-					<span>Development</span><span class="marquee-dot"></span>
-					<span>Performance</span><span class="marquee-dot"></span>
-					<span>SEO</span><span class="marquee-dot"></span>
-					<span>Design</span><span class="marquee-dot"></span>
-					<span>Consulting</span><span class="marquee-dot"></span>
+					<span>Strategy</span><canvas class="dot-canvas"></canvas>
+					<span>Development</span><canvas class="dot-canvas"></canvas>
+					<span>Performance</span><canvas class="dot-canvas"></canvas>
+					<span>SEO</span><canvas class="dot-canvas"></canvas>
+					<span>Design</span><canvas class="dot-canvas"></canvas>
+					<span>Consulting</span><canvas class="dot-canvas"></canvas>
 				</div>
 				<div class="marquee__group" aria-hidden="true">
-					<span>Strategy</span><span class="marquee-dot"></span>
-					<span>Development</span><span class="marquee-dot"></span>
-					<span>Performance</span><span class="marquee-dot"></span>
-					<span>SEO</span><span class="marquee-dot"></span>
-					<span>Design</span><span class="marquee-dot"></span>
-					<span>Consulting</span><span class="marquee-dot"></span>
+					<span>Strategy</span><canvas class="dot-canvas"></canvas>
+					<span>Development</span><canvas class="dot-canvas"></canvas>
+					<span>Performance</span><canvas class="dot-canvas"></canvas>
+					<span>SEO</span><canvas class="dot-canvas"></canvas>
+					<span>Design</span><canvas class="dot-canvas"></canvas>
+					<span>Consulting</span><canvas class="dot-canvas"></canvas>
 				</div>
 			</div>
 		</div>
+
+		<!-- Intro / Value Proposition -->
+		<section class="intro-section">
+			<div class="intro-grid">
+				<div class="intro-left">
+					<h2 class="intro-title reveal">Looking for professional web design and development in Berlin?</h2>
+				</div>
+				<!-- Flowing line that draws on scroll -->
+				<svg class="intro-line" viewBox="0 0 40 600" fill="none" preserveAspectRatio="none" aria-hidden="true">
+					<path class="intro-line__path" d="M20 0 C20 40, 8 60, 8 100 S32 160, 32 200 S8 260, 8 300 S32 360, 32 400 S8 460, 8 500 S20 560, 20 600" stroke="url(#intro-line-grad)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+					<circle class="intro-line__dot" cx="20" cy="600" r="3" fill="#3b82f6" opacity="0"/>
+					<defs>
+						<linearGradient id="intro-line-grad" x1="0" y1="0" x2="0" y2="1">
+							<stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+							<stop offset="50%" stop-color="#3b82f6" stop-opacity="0.4"/>
+							<stop offset="100%" stop-color="#3b82f6" stop-opacity="0.6"/>
+						</linearGradient>
+					</defs>
+				</svg>
+				<div class="intro-right">
+					<p class="reveal">Building a successful website today requires more than good design. Businesses in Berlin need high-performance web development, modern UX design, and technical SEO architecture that drive measurable growth.</p>
+          <p class="reveal">Many companies struggle with slow websites, low conversion rates, and outdated technology. At the same time, AI-driven search and evolving user behavior are changing how digital products are discovered and evaluated.</p>
+          <p class="reveal">I design and develop fast, scalable, and AI-ready websites using React, Next.js, and modern WordPress or headless CMS architectures — focused on performance, search visibility, and increasing sales impact.</p>
+				</div>
+			</div>
+		</section>
+
+		<div id="scroll-content">
 
 		<!-- Services -->
 		<section class="services-wrapper" id="services">
@@ -100,7 +130,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>Why does my website traffic keep dropping over time?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">Get Your Free Audit Report</a>
+						<a href="/contact" class="service-cta magnetic">Get Your Free Audit Report</a>
 					</div>
 					<div class="service-visual reveal-right">
 						<div class="visual-card shutter-reveal">
@@ -146,7 +176,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to speed up an existing website?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">Fix My Website Speed</a>
+						<a href="/contact" class="service-cta magnetic">Fix My Website Speed</a>
 					</div>
 				</div>
 			</div>
@@ -170,7 +200,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to rebuild a company website in Berlin without losing SEO?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">Start My Berlin Web Project</a>
+						<a href="/contact" class="service-cta magnetic">Start My Berlin Web Project</a>
 					</div>
 					<div class="service-visual reveal-right">
 						<div class="visual-card shutter-reveal">
@@ -219,7 +249,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to customize WordPress without breaking updates?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">Build My WordPress Site</a>
+						<a href="/contact" class="service-cta magnetic">Build My WordPress Site</a>
 					</div>
 				</div>
 			</div>
@@ -243,7 +273,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to improve content management without slowing the site?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">Integrate My CMS</a>
+						<a href="/contact" class="service-cta magnetic">Integrate My CMS</a>
 					</div>
 					<div class="service-visual reveal-right">
 						<div class="visual-card shutter-reveal">
@@ -298,7 +328,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<li>How to scale a React application properly?</li>
 							</ul>
 						</div>
-						<a href="/contact" class="service-cta">Get Expert Advice</a>
+						<a href="/contact" class="service-cta magnetic">Get Expert Advice</a>
 					</div>
 				</div>
 			</div>
@@ -488,9 +518,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 						<a href="tel:+1234567890">+1 (234) 567-890</a>
 					</div>
 				</div>
-				<a href="/contact" class="btn-primary">Get in touch →</a>
+				<a href="/contact" class="btn-primary magnetic">Get in touch →</a>
 			</div>
 		</section>
+
+		</div><!-- /#scroll-content -->
 
 		<!-- FAQ Schema (JSON-LD) -->
 		<script type="application/ld+json" set:html={JSON.stringify({
@@ -570,7 +602,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		display: block;
 		transform: translateY(120%);
 		transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-		will-change: transform;
 	}
 
 	.masking-text.is-visible .line {
@@ -824,6 +855,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		font-weight: 700;
 		color: #fafafa;
 		overflow: hidden;
+    padding-bottom: 10px;
 	}
 
 	.text-accent {
@@ -835,7 +867,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		color: #737373;
 		margin-bottom: 2.5rem;
 		line-height: 1.7;
-		max-width: 550px;
+		max-width: 760px;
 		margin-left: auto;
 		margin-right: auto;
 		overflow: hidden;
@@ -858,14 +890,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		text-decoration: none;
 		font-weight: 600;
 		font-size: 0.95rem;
-		transition: all 0.3s ease;
+		transition: background 0.3s ease, color 0.3s ease;
 		letter-spacing: 0.02em;
 	}
 
 	.btn-primary:hover {
 		background: #3b82f6;
 		color: #fff;
-		transform: translateY(-2px);
 	}
 
 	.btn-outline {
@@ -878,14 +909,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		text-decoration: none;
 		font-weight: 600;
 		font-size: 0.95rem;
-		transition: all 0.3s ease;
+		transition: border-color 0.3s ease, color 0.3s ease;
 		letter-spacing: 0.02em;
 	}
 
 	.btn-outline:hover {
 		border-color: #3b82f6;
 		color: #3b82f6;
-		transform: translateY(-2px);
 	}
 
 	/* ===== Scroll Indicator ===== */
@@ -934,7 +964,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	.marquee__wrapper {
 		display: flex;
 		white-space: nowrap;
-		will-change: transform;
 	}
 
 	.marquee__group {
@@ -954,13 +983,111 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		letter-spacing: 3px;
 	}
 
-	.marquee-dot {
+	.dot-canvas {
 		display: inline-block;
-		width: 6px;
-		height: 6px;
-		background: #3b82f6;
-		border-radius: 50%;
+		width: 60px;
+		height: 60px;
 		flex-shrink: 0;
+		vertical-align: middle;
+		opacity: 0.85;
+	}
+
+	/* ===== Intro Section ===== */
+	.intro-section {
+		position: relative;
+		z-index: 2;
+		background: #0a0a0a;
+		padding: 8rem 2rem;
+	}
+
+	.intro-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 40px 1fr;
+		gap: 2rem;
+		align-items: start;
+		position: relative;
+	}
+
+	.intro-left {
+		position: sticky;
+		top: 8rem;
+	}
+
+	.intro-title {
+		font-family: 'Satoshi', sans-serif;
+		font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+		font-weight: 400;
+		font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+		color: #fafafa;
+		margin: 0;
+	}
+
+	.intro-right {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.intro-right p {
+		font-size: clamp(1rem, 2.5vw, 1.875rem);
+		line-height: clamp(1rem, 2.5vw, 1.875rem);
+		color: #404040;
+		margin: 0;
+	}
+
+	.reveal-word {
+		display: inline;
+	}
+
+	.intro-line {
+		width: 40px;
+		height: 100%;
+		pointer-events: none;
+		justify-self: center;
+	}
+
+	.intro-line__path {
+		stroke-dasharray: var(--line-length, 1000);
+		stroke-dashoffset: var(--line-length, 1000);
+	}
+
+	@media (max-width: 768px) {
+		.intro-section {
+			padding: 4rem 1.5rem;
+		}
+		.intro-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		.intro-left {
+			position: static;
+		}
+		.intro-line {
+			display: none;
+		}
+	}
+
+	/* Pause decorative CSS animations when off-screen */
+	.visual-card {
+		content-visibility: auto;
+	}
+	.visual-card .ring,
+	.visual-card .bar,
+	.visual-card .sq,
+	.visual-card .stack-card,
+	.visual-card .node,
+	.visual-card .vbar {
+		animation-play-state: paused;
+	}
+	.visual-card.is-animating .ring,
+	.visual-card.is-animating .bar,
+	.visual-card.is-animating .sq,
+	.visual-card.is-animating .stack-card,
+	.visual-card.is-animating .node,
+	.visual-card.is-animating .vbar {
+		animation-play-state: running;
 	}
 
 	/* ===== Stacking sections (cover hero) ===== */
@@ -977,9 +1104,27 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		background: #0a0a0a;
 	}
 
-	/* ===== Services ===== */
+	/* ===== Services — layered background ===== */
 	.services-wrapper {
 		padding: 8rem 0 4rem;
+		/* background:
+			radial-gradient(ellipse 120% 60% at 15% 30%, rgba(18, 16, 40, 0.85) 0%, transparent 55%),
+			radial-gradient(ellipse 80% 50% at 85% 70%, rgba(10, 14, 30, 0.7) 0%, transparent 50%),
+			radial-gradient(ellipse 100% 80% at 50% 100%, rgba(6, 8, 18, 0.9) 0%, transparent 60%),
+			#070709; */
+		isolation: isolate;
+	}
+
+	.services-wrapper::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+		background-size: 256px 256px;
+		background-repeat: repeat;
+		opacity: 0.055;
+		pointer-events: none;
+		z-index: -1;
 	}
 
 	.service-block {
@@ -1074,7 +1219,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		text-decoration: none;
 		font-weight: 600;
 		font-size: 0.9rem;
-		transition: all 0.3s ease;
+		transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 		letter-spacing: 0.02em;
 	}
 
@@ -1082,7 +1227,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		background: #3b82f6;
 		border-color: #3b82f6;
 		color: #fff;
-		transform: translateY(-2px);
 	}
 
 	/* ===== Visual Cards ===== */
@@ -1357,14 +1501,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		border: 1px solid #1a1a1a;
 		border-radius: 6px;
 		background: #111111;
-		transition: all 0.3s ease;
+		transition: border-color 0.3s ease, color 0.3s ease;
 		letter-spacing: 0.02em;
 	}
 
 	.tech-item:hover {
 		border-color: #3b82f6;
 		color: #fafafa;
-		transform: translateY(-2px);
 	}
 
 	/* ===== Projects Section ===== */
@@ -1386,13 +1529,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		padding: 2rem;
 		border-radius: 8px;
 		border: 1px solid #1a1a1a;
-		transition: all 0.3s ease;
+		transition: border-color 0.3s ease;
 		text-align: left;
 	}
 
 	.project-item:hover {
 		border-color: #262626;
-		transform: translateY(-4px);
 	}
 
 	.project-preview {
@@ -1668,129 +1810,150 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			font-size: clamp(2rem, 8vw, 3rem);
 		}
 	}
+	/* === Custom cursor === */
+	@media (hover: hover) {
+		* { cursor: none !important; }
+	}
+
+	#cursor {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		background: #ffffff;
+		border-radius: 50%;
+		pointer-events: none;
+		mix-blend-mode: difference;
+		z-index: 99999;
+		transition:
+			width  0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+			height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	#cursor.magnet {
+		width: 90px;
+		height: 90px;
+		background: transparent;
+		border: 1px solid #ffffff;
+	}
+
+	#cursor.magnet::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 10px;
+		height: 10px;
+		background: #ffffff;
+		border-radius: 50%;
+	}
+
+	/* Magnetic spring-back on leave */
+	.magnetic {
+		transition:
+			transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+			background 0.3s ease,
+			color 0.3s ease,
+			border-color 0.3s ease;
+	}
+
+	/* Scroll-content wrapper */
+	#scroll-content {
+		position: relative;
+		z-index: 2;
+		will-change: transform;
+		transform-origin: center center;
+	}
 </style>
 
 <script>
-	// Intersection Observer for all reveal animations
-	const observer = new IntersectionObserver((entries) => {
+	// ===== Intersection Observer for reveal animations =====
+	const revealObserver = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add('is-visible');
-				observer.unobserve(entry.target);
+				revealObserver.unobserve(entry.target);
 			}
 		});
-	}, {
-		threshold: 0.15,
-		rootMargin: '0px 0px -50px 0px'
-	});
+	}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
 	document.querySelectorAll(
 		'.reveal, .reveal-left, .reveal-right, .stagger-children, .masking-text, .shutter-reveal'
-	).forEach(el => {
-		observer.observe(el);
-	});
+	).forEach(el => revealObserver.observe(el));
 
-	// ===== Scroll-driven Marquee =====
-	(function () {
-		const wrapper = document.querySelector('.marquee__wrapper') as HTMLElement | null;
-		const group = document.querySelector('.marquee__group') as HTMLElement | null;
-		if (!wrapper || !group) return;
-
-		const IDLE_SPEED   = 0.4;  // px/frame when not scrolling
-		const SCROLL_SPEED = 1.4;  // px/frame when actively scrolling
-		const LERP = 0.04;         // smoothing
-
-		let groupWidth = group!.getBoundingClientRect().width;
-
-		// Re-measure if fonts or layout shift
-		new ResizeObserver(() => {
-			groupWidth = group!.getBoundingClientRect().width;
-		}).observe(group!);
-
-		// Start at the middle group so there's content on both sides
-		let x = -groupWidth;
-		let lerpedSpeed = IDLE_SPEED;
-		let lastDirection = 1;    // 1 = left, -1 = right (persists after scroll stops)
-		let isScrolling = false;
-		let lastScrollY = window.scrollY;
-		let scrollTimer: ReturnType<typeof setTimeout>;
-
-		window.addEventListener('scroll', () => {
-			const currentY = window.scrollY;
-			const delta = currentY - lastScrollY;
-			lastScrollY = currentY;
-
-			if (delta > 0) lastDirection = 1;   // scroll down → go left
-			if (delta < 0) lastDirection = -1;  // scroll up   → go right
-
-			isScrolling = true;
-			clearTimeout(scrollTimer);
-			scrollTimer = setTimeout(() => { isScrolling = false; }, 120);
-		}, { passive: true });
-
-		function tick() {
-			const targetSpeed = (isScrolling ? SCROLL_SPEED : IDLE_SPEED) * lastDirection;
-			lerpedSpeed += (targetSpeed - lerpedSpeed) * LERP;
-
-			x -= lerpedSpeed;
-
-			// Loop within the middle group's range — content exists on both sides
-			if (x <= -2 * groupWidth) x += groupWidth;
-			if (x >= 0)               x -= groupWidth;
-
-			wrapper!.style.transform = `translateX(${x}px)`;
-			requestAnimationFrame(tick);
-		}
-
-		tick();
-	})();
-
-	// Parallax text — moves with scroll
-	const parallaxElements = document.querySelectorAll('.parallax-text') as NodeListOf<HTMLElement>;
-	const heroContent = document.querySelector('.hero-content') as HTMLElement | null;
-	const heroGrid    = document.querySelector('.hero-grid')    as HTMLElement | null;
-
-	function onScroll() {
-		const scrollY = window.scrollY;
-
-		// ── Hero curtain parallax ──────────────────────────────────────────
-		// Hero is sticky; we move its inner content up at 35% of scroll speed,
-		// so it looks like the hero drifts upward slower than the sections below.
-		if (heroContent) {
-			heroContent.style.transform = `translateY(${-scrollY * 0.35}px)`;
-		}
-		// Grid moves even slower for depth
-		if (heroGrid) {
-			heroGrid.style.transform = `translateY(${-scrollY * 0.15}px)`;
-		}
-
-		// ── Section parallax text ──────────────────────────────────────────
-		parallaxElements.forEach(el => {
-			const rect = el.getBoundingClientRect();
-			const speed = parseFloat(el.dataset.speed || '0.1');
-			const offset = (rect.top - window.innerHeight * 0.5) * speed;
-			el.style.transform = `translateY(${offset}px)`;
+	// ===== Pause/resume CSS animations on visual cards when off-screen =====
+	const cardObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			entry.target.classList.toggle('is-animating', entry.isIntersecting);
 		});
+	}, { rootMargin: '100px' });
+
+	document.querySelectorAll('.visual-card').forEach(card => cardObserver.observe(card));
+
+	// ===== Marquee (driven by main RAF via global) =====
+	const marqueeWrapper = document.querySelector('.marquee__wrapper') as HTMLElement | null;
+	const marqueeGroup = document.querySelector('.marquee__group') as HTMLElement | null;
+	let marqueeVisible = false;
+	let marqueeX = 0;
+	let marqueeGroupWidth = 0;
+	let marqueeSpeed = 0.4;
+	let marqueeDirection = 1;
+	let marqueeScrolling = false;
+	let marqueeScrollTimer: ReturnType<typeof setTimeout>;
+
+	if (marqueeWrapper && marqueeGroup) {
+		marqueeGroupWidth = marqueeGroup.getBoundingClientRect().width;
+		marqueeX = -marqueeGroupWidth;
+
+		new ResizeObserver(() => {
+			marqueeGroupWidth = marqueeGroup!.getBoundingClientRect().width;
+		}).observe(marqueeGroup);
+
+		const marqueeEl = document.querySelector('.marquee') as HTMLElement;
+		new IntersectionObserver(([entry]) => {
+			marqueeVisible = entry.isIntersecting;
+		}, { threshold: 0 }).observe(marqueeEl);
 	}
 
-	window.addEventListener('scroll', onScroll, { passive: true });
+	// ===== Dot canvases — CSS animation replaces Three.js =====
+	// Instead of loading Three.js (700KB+) for 3 line segments,
+	// use lightweight CSS-animated SVG inline in each canvas slot.
+	document.querySelectorAll('.dot-canvas').forEach((c) => {
+		const canvas = c as HTMLCanvasElement;
+		const ctx = canvas.getContext('2d');
+		if (!ctx) return;
+		canvas.width = 60; canvas.height = 60;
+		const cx = 30, cy = 30, len = 16;
+		let angle = Math.random() * Math.PI * 2;
+		const speed = 0.008 + Math.random() * 0.004;
 
-	// Smooth scroll for internal anchors
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
-			e.preventDefault();
-			const href = this.getAttribute('href');
-			if (href) {
-				const target = document.querySelector(href);
-				if (target) {
-					target.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-				}
-			}
-		});
+		function drawCross() {
+			ctx!.clearRect(0, 0, 60, 60);
+			ctx!.strokeStyle = '#3b82f6';
+			ctx!.lineWidth = 1;
+			ctx!.beginPath();
+			// X axis
+			ctx!.moveTo(cx - len * Math.cos(angle), cy - len * Math.sin(angle));
+			ctx!.lineTo(cx + len * Math.cos(angle), cy + len * Math.sin(angle));
+			// Y axis
+			const a2 = angle + Math.PI / 3;
+			ctx!.moveTo(cx - len * Math.cos(a2), cy - len * Math.sin(a2));
+			ctx!.lineTo(cx + len * Math.cos(a2), cy + len * Math.sin(a2));
+			// Z axis
+			const a3 = angle + 2 * Math.PI / 3;
+			ctx!.moveTo(cx - len * Math.cos(a3), cy - len * Math.sin(a3));
+			ctx!.lineTo(cx + len * Math.cos(a3), cy + len * Math.sin(a3));
+			ctx!.stroke();
+			angle += speed;
+		}
+		// Draw once initially; tick() updates it when marquee is visible
+		drawCross();
+		(canvas as any)._draw = drawCross;
 	});
+
+	const dotCanvases = Array.from(document.querySelectorAll('.dot-canvas')) as HTMLCanvasElement[];
 
 	// ===== WebGL Gradient Shader =====
 	function compileShader(gl: WebGL2RenderingContext, type: number, source: string) {
@@ -1798,212 +1961,298 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		if (!shader) return null;
 		gl.shaderSource(shader, source);
 		gl.compileShader(shader);
-		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-			gl.deleteShader(shader);
-			return null;
-		}
+		if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) { gl.deleteShader(shader); return null; }
 		return shader;
 	}
 
-	function createProgram(gl: WebGL2RenderingContext, vertexSource: string, fragmentSource: string) {
-		const vertexShader = compileShader(gl, gl.VERTEX_SHADER, vertexSource);
-		const fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, fragmentSource);
-		if (!vertexShader || !fragmentShader) return null;
-		const program = gl.createProgram();
-		if (!program) return null;
-		gl.attachShader(program, vertexShader);
-		gl.attachShader(program, fragmentShader);
-		gl.linkProgram(program);
-		if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-			gl.deleteProgram(program);
-			gl.deleteShader(vertexShader);
-			gl.deleteShader(fragmentShader);
-			return null;
-		}
-		gl.detachShader(program, vertexShader);
-		gl.detachShader(program, fragmentShader);
-		gl.deleteShader(vertexShader);
-		gl.deleteShader(fragmentShader);
-		return program;
+	function createProgram(gl: WebGL2RenderingContext, vs: string, fs: string) {
+		const v = compileShader(gl, gl.VERTEX_SHADER, vs);
+		const f = compileShader(gl, gl.FRAGMENT_SHADER, fs);
+		if (!v || !f) return null;
+		const p = gl.createProgram();
+		if (!p) return null;
+		gl.attachShader(p, v); gl.attachShader(p, f);
+		gl.linkProgram(p);
+		if (!gl.getProgramParameter(p, gl.LINK_STATUS)) { gl.deleteProgram(p); return null; }
+		gl.detachShader(p, v); gl.detachShader(p, f);
+		gl.deleteShader(v); gl.deleteShader(f);
+		return p;
 	}
 
-	const canvas = document.getElementById("gradient-canvas") as HTMLCanvasElement;
-	if (canvas) {
-		const gl = canvas.getContext("webgl2");
-		if (gl) {
-			const vertexShaderSource = `#version 300 es
-				layout(location = 0) in vec4 a_position;
-				void main() {
-					gl_Position = a_position;
-				}`;
+	let glRender: ((t: number) => void) | null = null;
+	let glVisible = true;
 
-			const fragmentShaderSource = `#version 300 es
+	const glCanvas = document.getElementById("gradient-canvas") as HTMLCanvasElement;
+	if (glCanvas) {
+		const gl = glCanvas.getContext("webgl2");
+		if (gl) {
+			const vsSrc = `#version 300 es
+				layout(location=0) in vec4 a_position;
+				void main() { gl_Position = a_position; }`;
+			const fsSrc = `#version 300 es
 				precision highp float;
-				uniform float u_time;
-				uniform float u_pixelRatio;
+				uniform float u_time, u_pixelRatio, u_scale, u_rotation, u_proportion, u_softness, u_shape, u_shapeScale, u_distortion, u_swirl, u_swirlIterations;
 				uniform vec2 u_resolution;
-				uniform float u_scale;
-				uniform float u_rotation;
-				uniform vec4 u_color1;
-				uniform vec4 u_color2;
-				uniform vec4 u_color3;
-				uniform float u_proportion;
-				uniform float u_softness;
-				uniform float u_shape;
-				uniform float u_shapeScale;
-				uniform float u_distortion;
-				uniform float u_swirl;
-				uniform float u_swirlIterations;
+				uniform vec4 u_color1, u_color2, u_color3;
 				out vec4 fragColor;
 				#define TWO_PI 6.28318530718
 				#define PI 3.14159265358979323846
-				vec2 rotate(vec2 uv, float th) {
-					return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
-				}
-				float random(vec2 st) {
-					return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
-				}
+				vec2 rot(vec2 uv, float th) { return mat2(cos(th),sin(th),-sin(th),cos(th))*uv; }
+				float hash(vec2 st) { return fract(sin(dot(st,vec2(12.9898,78.233)))*43758.5453); }
 				float noise(vec2 st) {
-					vec2 i = floor(st);
-					vec2 f = fract(st);
-					float a = random(i);
-					float b = random(i + vec2(1.0, 0.0));
-					float c = random(i + vec2(0.0, 1.0));
-					float d = random(i + vec2(1.0, 1.0));
-					vec2 u = f * f * (3.0 - 2.0 * f);
-					float x1 = mix(a, b, u.x);
-					float x2 = mix(c, d, u.x);
-					return mix(x1, x2, u.y);
+					vec2 i=floor(st), f=fract(st); vec2 u=f*f*(3.-2.*f);
+					return mix(mix(hash(i),hash(i+vec2(1,0)),u.x), mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x), u.y);
 				}
-				vec4 blend_colors(vec4 c1, vec4 c2, vec4 c3, float mixer, float edgesWidth, float edge_blur) {
-					vec3 color1 = c1.rgb * c1.a;
-					vec3 color2 = c2.rgb * c2.a;
-					vec3 color3 = c3.rgb * c3.a;
-					float r1 = smoothstep(.0 + .35 * edgesWidth, .7 - .35 * edgesWidth + .5 * edge_blur, mixer);
-					float r2 = smoothstep(.3 + .35 * edgesWidth, 1. - .35 * edgesWidth + edge_blur, mixer);
-					vec3 blended_color_2 = mix(color1, color2, r1);
-					float blended_opacity_2 = mix(c1.a, c2.a, r1);
-					vec3 c = mix(blended_color_2, color3, r2);
-					float o = mix(blended_opacity_2, c3.a, r2);
-					return vec4(c, o);
+				vec4 blend3(vec4 c1,vec4 c2,vec4 c3,float m,float ew,float eb) {
+					vec3 a=c1.rgb*c1.a, b=c2.rgb*c2.a, c=c3.rgb*c3.a;
+					float r1=smoothstep(.35*ew,.7-.35*ew+.5*eb,m), r2=smoothstep(.3+.35*ew,1.-.35*ew+eb,m);
+					vec3 col=mix(mix(a,b,r1),c,r2); float o=mix(mix(c1.a,c2.a,r1),c3.a,r2);
+					return vec4(col,o);
 				}
 				void main() {
-					vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-					float t = .5 * u_time;
-					float noise_scale = .0005 + .006 * u_scale;
-					uv -= .5;
-					uv *= (noise_scale * u_resolution);
-					uv = rotate(uv, u_rotation * .5 * PI);
-					uv /= u_pixelRatio;
-					uv += .5;
-					float n1 = noise(uv * 1. + t);
-					float n2 = noise(uv * 2. - t);
-					float angle = n1 * TWO_PI;
-					uv.x += 4. * u_distortion * n2 * cos(angle);
-					uv.y += 4. * u_distortion * n2 * sin(angle);
-					float iterations_number = ceil(clamp(u_swirlIterations, 1., 30.));
-					for (float i = 1.; i <= iterations_number; i++) {
-						uv.x += clamp(u_swirl, 0., 2.) / i * cos(t + i * 1.5 * uv.y);
-						uv.y += clamp(u_swirl, 0., 2.) / i * cos(t + i * 1. * uv.x);
-					}
-					float proportion = clamp(u_proportion, 0., 1.);
-					float shape = 0.;
-					float mixer = 0.;
-					if (u_shape < .5) {
-						vec2 checks_shape_uv = uv * (.5 + 3.5 * u_shapeScale);
-						shape = .5 + .5 * sin(checks_shape_uv.x) * cos(checks_shape_uv.y);
-						mixer = shape + .48 * sign(proportion - .5) * pow(abs(proportion - .5), .5);
-					} else if (u_shape < 1.5) {
-						vec2 stripes_shape_uv = uv * (.25 + 3. * u_shapeScale);
-						float f = fract(stripes_shape_uv.y);
-						shape = smoothstep(.0, .55, f) * smoothstep(1., .45, f);
-						mixer = shape + .48 * sign(proportion - .5) * pow(abs(proportion - .5), .5);
-					} else {
-						float sh = 1. - uv.y;
-						sh -= .5;
-						sh /= (noise_scale * u_resolution.y);
-						sh += .5;
-						float shape_scaling = .2 * (1. - u_shapeScale);
-						shape = smoothstep(.45 - shape_scaling, .55 + shape_scaling, sh + .3 * (proportion - .5));
-						mixer = shape;
-					}
-					vec4 color_mix = blend_colors(u_color1, u_color2, u_color3, mixer, 1. - clamp(u_softness, 0., 1.), .01 + .01 * u_scale);
-					fragColor = vec4(color_mix.rgb, color_mix.a);
+					vec2 uv=gl_FragCoord.xy/u_resolution; float t=.5*u_time;
+					float ns=.0005+.006*u_scale; uv-=.5; uv*=ns*u_resolution;
+					uv=rot(uv,u_rotation*.5*PI); uv/=u_pixelRatio; uv+=.5;
+					float n1=noise(uv+t), n2=noise(uv*2.-t), ang=n1*TWO_PI;
+					uv.x+=4.*u_distortion*n2*cos(ang); uv.y+=4.*u_distortion*n2*sin(ang);
+					float iters=ceil(clamp(u_swirlIterations,1.,30.));
+					for(float i=1.;i<=iters;i++){uv.x+=clamp(u_swirl,0.,2.)/i*cos(t+i*1.5*uv.y);uv.y+=clamp(u_swirl,0.,2.)/i*cos(t+i*uv.x);}
+					float prop=clamp(u_proportion,0.,1.), shape=0., mixer=0.;
+					if(u_shape<.5){vec2 cuv=uv*(.5+3.5*u_shapeScale);shape=.5+.5*sin(cuv.x)*cos(cuv.y);mixer=shape+.48*sign(prop-.5)*pow(abs(prop-.5),.5);}
+					else if(u_shape<1.5){vec2 suv=uv*(.25+3.*u_shapeScale);float f=fract(suv.y);shape=smoothstep(0.,.55,f)*smoothstep(1.,.45,f);mixer=shape+.48*sign(prop-.5)*pow(abs(prop-.5),.5);}
+					else{float sh=1.-uv.y; sh-=.5; sh/=ns*u_resolution.y; sh+=.5; float ss=.2*(1.-u_shapeScale);shape=smoothstep(.45-ss,.55+ss,sh+.3*(prop-.5));mixer=shape;}
+					fragColor=blend3(u_color1,u_color2,u_color3,mixer,1.-clamp(u_softness,0.,1.),.01+.01*u_scale);
 				}`;
 
-			const program = createProgram(gl, vertexShaderSource, fragmentShaderSource);
+			const program = createProgram(gl, vsSrc, fsSrc);
 			if (program) {
-				const positionBuffer = gl.createBuffer();
-				gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]), gl.STATIC_DRAW);
-				const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
-				gl.enableVertexAttribArray(positionAttributeLocation);
-				gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+				gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+				gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]), gl.STATIC_DRAW);
+				gl.enableVertexAttribArray(0);
+				gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
-				const timeLocation = gl.getUniformLocation(program, "u_time");
-				const pixelRatioLocation = gl.getUniformLocation(program, "u_pixelRatio");
-				const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
-				const scaleLocation = gl.getUniformLocation(program, "u_scale");
-				const rotationLocation = gl.getUniformLocation(program, "u_rotation");
-				const color1Location = gl.getUniformLocation(program, "u_color1");
-				const color2Location = gl.getUniformLocation(program, "u_color2");
-				const color3Location = gl.getUniformLocation(program, "u_color3");
-				const proportionLocation = gl.getUniformLocation(program, "u_proportion");
-				const softnessLocation = gl.getUniformLocation(program, "u_softness");
-				const shapeLocation = gl.getUniformLocation(program, "u_shape");
-				const shapeScaleLocation = gl.getUniformLocation(program, "u_shapeScale");
-				const distortionLocation = gl.getUniformLocation(program, "u_distortion");
-				const swirlLocation = gl.getUniformLocation(program, "u_swirl");
-				const swirlIterationsLocation = gl.getUniformLocation(program, "u_swirlIterations");
+				const loc = (n: string) => gl.getUniformLocation(program, n);
+				const uTime = loc("u_time"), uPR = loc("u_pixelRatio"), uRes = loc("u_resolution");
 
-				const preset = {
-					scale: 0.48,
-					rotation: 0,
-					color1: [0.04, 0.04, 0.04, 1],    // #0a0a0a — near-black background
-					color2: [0.23, 0.51, 0.96, 1],     // #3b82f6 — blue accent
-					color3: [0.03, 0.03, 0.06, 1],     // #080810 — dark blue-tinted black
-					proportion: 0.33,
-					softness: 1,
-					shape: 1.5,
-					shapeScale: 0.9,
-					distortion: 0.04,
-					swirl: 0.65,
-					swirlIterations: 5,
-				};
+				gl.useProgram(program);
+				gl.uniform1f(loc("u_scale"), 0.48);
+				gl.uniform1f(loc("u_rotation"), 0);
+				gl.uniform4fv(loc("u_color1"), [0.04,0.04,0.04,1]);
+				gl.uniform4fv(loc("u_color2"), [0.23,0.51,0.96,1]);
+				gl.uniform4fv(loc("u_color3"), [0.03,0.03,0.06,1]);
+				gl.uniform1f(loc("u_proportion"), 0.33);
+				gl.uniform1f(loc("u_softness"), 1);
+				gl.uniform1f(loc("u_shape"), 1.5);
+				gl.uniform1f(loc("u_shapeScale"), 0.9);
+				gl.uniform1f(loc("u_distortion"), 0.04);
+				gl.uniform1f(loc("u_swirl"), 0.65);
+				gl.uniform1f(loc("u_swirlIterations"), 5);
 
 				function resize() {
-					const pixelRatio = Math.min(devicePixelRatio, 1.5);
-					canvas.width = canvas.clientWidth * pixelRatio;
-					canvas.height = canvas.clientHeight * pixelRatio;
-					gl?.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+					const pr = Math.min(devicePixelRatio, 1.5);
+					glCanvas.width = glCanvas.clientWidth * pr;
+					glCanvas.height = glCanvas.clientHeight * pr;
+					gl!.viewport(0, 0, gl!.canvas.width, gl!.canvas.height);
+					gl!.useProgram(program);
+					gl!.uniform1f(uPR, pr);
+					gl!.uniform2f(uRes, gl!.canvas.width, gl!.canvas.height);
 				}
 				resize();
-				new ResizeObserver(resize).observe(canvas);
+				new ResizeObserver(resize).observe(glCanvas);
 
-				let startTime = performance.now();
-				function render() {
-					const time = (performance.now() - startTime) * 0.001 * 0.25;
-					gl?.useProgram(program);
-					gl?.uniform1f(timeLocation, time);
-					gl?.uniform1f(pixelRatioLocation, Math.min(devicePixelRatio, 1.5));
-					gl?.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
-					gl?.uniform1f(scaleLocation, preset.scale);
-					gl?.uniform1f(rotationLocation, preset.rotation);
-					gl?.uniform4fv(color1Location, preset.color1);
-					gl?.uniform4fv(color2Location, preset.color2);
-					gl?.uniform4fv(color3Location, preset.color3);
-					gl?.uniform1f(proportionLocation, preset.proportion);
-					gl?.uniform1f(softnessLocation, preset.softness);
-					gl?.uniform1f(shapeLocation, preset.shape);
-					gl?.uniform1f(shapeScaleLocation, preset.shapeScale);
-					gl?.uniform1f(distortionLocation, preset.distortion);
-					gl?.uniform1f(swirlLocation, preset.swirl);
-					gl?.uniform1f(swirlIterationsLocation, preset.swirlIterations);
-					gl?.drawArrays(gl.TRIANGLES, 0, 6);
-					requestAnimationFrame(render);
-				}
-				render();
+				const t0 = performance.now();
+				glRender = () => {
+					gl!.useProgram(program);
+					gl!.uniform1f(uTime, (performance.now() - t0) * 0.00025);
+					gl!.drawArrays(gl!.TRIANGLES, 0, 6);
+				};
 			}
 		}
 	}
+
+	// ===== Smooth scroll for internal anchors =====
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
+			e.preventDefault();
+			const href = this.getAttribute('href');
+			if (href) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+	});
+
+	// ===== SINGLE UNIFIED RAF =====
+	// All animation in ONE requestAnimationFrame — cursor, parallax, marquee, WebGL, dot canvases.
+	// No duplicate rAF loops. No DOM reads inside the loop. Scroll position captured via event listener.
+
+	const cursor = document.getElementById('cursor') as HTMLElement;
+	const heroContent = document.querySelector('.hero-content') as HTMLElement | null;
+	const heroGrid = document.querySelector('.hero-grid') as HTMLElement | null;
+
+	function lerp(a: number, b: number, f: number) { return a + (b - a) * f; }
+
+	let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+	let scrollY = window.scrollY;
+	let lastScrollY = scrollY;
+	let currentSkew = 0;
+	const scrollContent = document.getElementById('scroll-content') as HTMLElement | null;
+
+	window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; }, { passive: true });
+	window.addEventListener('scroll', () => {
+		scrollY = window.scrollY;
+		// Marquee direction tracking
+		const delta = scrollY - marqueeLastScrollY;
+		marqueeLastScrollY = scrollY;
+		if (delta > 0) marqueeDirection = 1;
+		else if (delta < 0) marqueeDirection = -1;
+		marqueeScrolling = true;
+		clearTimeout(marqueeScrollTimer);
+		marqueeScrollTimer = setTimeout(() => { marqueeScrolling = false; }, 120);
+
+		// WebGL visibility (hero is 100vh, covered by z-index:2 content after that)
+		const nowVisible = scrollY < window.innerHeight;
+		if (nowVisible !== glVisible) glVisible = nowVisible;
+	}, { passive: true });
+
+	let marqueeLastScrollY = scrollY;
+
+	// Pre-read parallax positions (no getBoundingClientRect in loop)
+	const parallaxItems = Array.from(document.querySelectorAll('.parallax-text')).map(el => ({
+		el: el as HTMLElement,
+		speed: parseFloat((el as HTMLElement).dataset.speed || '0.1'),
+		top: el.getBoundingClientRect().top + scrollY
+	}));
+	window.addEventListener('resize', () => {
+		parallaxItems.forEach(item => {
+			item.top = item.el.getBoundingClientRect().top + window.scrollY;
+		});
+	}, { passive: true });
+
+	// Frame counter for throttling less important updates
+	let frame = 0;
+
+	(function tick() {
+		frame++;
+
+		// ── Cursor (every frame for smooth tracking) ──
+		cursorX = lerp(cursorX, mouseX, 0.15);
+		cursorY = lerp(cursorY, mouseY, 0.15);
+		cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+
+		// ── Hero parallax (every frame, pure math) ──
+		if (heroContent) heroContent.style.transform = `translateY(${-scrollY * 0.35}px)`;
+		if (heroGrid) heroGrid.style.transform = `translateY(${-scrollY * 0.15}px)`;
+
+		// ── Skew on scroll (elastic stretch effect) ──
+		const delta = scrollY - lastScrollY;
+		lastScrollY = scrollY;
+		const targetSkew = Math.max(-3, Math.min(3, delta * 0.1));
+		currentSkew = lerp(currentSkew, targetSkew, 0.08);
+		if (scrollContent) scrollContent.style.transform = `skewY(${currentSkew}deg)`;
+
+		// ── Section parallax (every 2nd frame — titles move slowly, no one notices) ──
+		if (frame % 2 === 0) {
+			const vh = window.innerHeight;
+			parallaxItems.forEach(({ el, speed, top }) => {
+				el.style.transform = `translateY(${(top - scrollY - vh * 0.5) * speed}px)`;
+			});
+		}
+
+		// ── Marquee (only when visible) ──
+		if (marqueeVisible && marqueeWrapper) {
+			const target = (marqueeScrolling ? 1.4 : 0.4) * marqueeDirection;
+			marqueeSpeed += (target - marqueeSpeed) * 0.04;
+			marqueeX -= marqueeSpeed;
+			if (marqueeX <= -2 * marqueeGroupWidth) marqueeX += marqueeGroupWidth;
+			if (marqueeX >= 0) marqueeX -= marqueeGroupWidth;
+			marqueeWrapper.style.transform = `translateX(${marqueeX}px)`;
+
+			// Dot canvas crosses — update every 3rd frame (they're tiny, 60px)
+			if (frame % 3 === 0) {
+				dotCanvases.forEach(c => (c as any)._draw?.());
+			}
+		}
+
+		// ── WebGL gradient (only when hero visible) ──
+		if (glVisible && glRender) glRender(0);
+
+		requestAnimationFrame(tick);
+	})();
+
+	// ── Magnetic effect ──
+	document.querySelectorAll('.magnetic').forEach(el => {
+		el.addEventListener('mousemove', (e: Event) => {
+			const me = e as MouseEvent;
+			const r = (el as HTMLElement).getBoundingClientRect();
+			const cx = r.left + r.width / 2;
+			const cy = r.top + r.height / 2;
+			(el as HTMLElement).style.transform = `translate(${(me.clientX - cx) * 0.5}px, ${(me.clientY - cy) * 0.5}px)`;
+			cursor.classList.add('magnet');
+		});
+		el.addEventListener('mouseleave', () => {
+			(el as HTMLElement).style.transform = 'translate(0, 0)';
+			cursor.classList.remove('magnet');
+		});
+	});
+
+	// ===== GSAP TEXT REVEAL =====
+	gsap.registerPlugin(ScrollTrigger);
+
+	// ===== FLOWING LINE DRAW =====
+	const introLinePath = document.querySelector('.intro-line__path') as SVGPathElement | null;
+	const introLineDot = document.querySelector('.intro-line__dot') as SVGCircleElement | null;
+	const introSection = document.querySelector('.intro-section') as HTMLElement | null;
+
+	if (introLinePath && introSection) {
+		const lineLength = introLinePath.getTotalLength();
+		introLinePath.style.strokeDasharray = `${lineLength}`;
+		introLinePath.style.strokeDashoffset = `${lineLength}`;
+
+		gsap.to(introLinePath, {
+			strokeDashoffset: 0,
+			ease: 'none',
+			scrollTrigger: {
+				trigger: introSection,
+				start: 'top 60%',
+				end: 'bottom 40%',
+				scrub: 1.5,
+			}
+		});
+
+		if (introLineDot) {
+			gsap.to(introLineDot, {
+				opacity: 1,
+				scale: 1.2,
+				transformOrigin: 'center center',
+				scrollTrigger: {
+					trigger: introSection,
+					start: 'bottom 50%',
+					end: 'bottom 35%',
+					scrub: true,
+				}
+			});
+		}
+	}
+
+	// ===== TEXT REVEAL =====
+	document.querySelectorAll('.intro-right p').forEach(p => {
+		const text = p.textContent?.trim() || '';
+		p.innerHTML = text.split(' ').filter(Boolean).map(word =>
+			`<span class="reveal-word">${word}</span>`
+		).join(' ');
+
+		const words = p.querySelectorAll('.reveal-word');
+
+		gsap.fromTo(words,
+			{ color: '#404040' },
+			{
+				color: '#fafafa',
+				stagger: 0.05,
+				scrollTrigger: {
+					trigger: p,
+					start: 'top 85%',
+					end: 'top 20%',
+					scrub: true,
+				}
+			}
+		);
+	});
 </script>
