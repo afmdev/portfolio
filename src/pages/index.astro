@@ -1826,6 +1826,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		pointer-events: none;
 		mix-blend-mode: difference;
 		z-index: 99999;
+		will-change: transform;
+		contain: layout style size;
 		transition:
 			width  0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
 			height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -1863,8 +1865,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	#scroll-content {
 		position: relative;
 		z-index: 2;
-		will-change: transform;
-		transform-origin: center center;
 	}
 </style>
 
@@ -2089,13 +2089,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 	function lerp(a: number, b: number, f: number) { return a + (b - a) * f; }
 
-	let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+	let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, prevCX = -1, prevCY = -1;
 	let scrollY = window.scrollY;
 	let lastScrollY = scrollY;
-	let currentSkew = 0;
-	const scrollContent = document.getElementById('scroll-content') as HTMLElement | null;
 
 	window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; }, { passive: true });
+
 	window.addEventListener('scroll', () => {
 		scrollY = window.scrollY;
 		// Marquee direction tracking
@@ -2132,21 +2131,24 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	(function tick() {
 		frame++;
 
-		// ── Cursor (every frame for smooth tracking) ──
-		cursorX = lerp(cursorX, mouseX, 0.15);
-		cursorY = lerp(cursorY, mouseY, 0.15);
-		cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
-
-		// ── Hero parallax (every frame, pure math) ──
-		if (heroContent) heroContent.style.transform = `translateY(${-scrollY * 0.35}px)`;
-		if (heroGrid) heroGrid.style.transform = `translateY(${-scrollY * 0.15}px)`;
-
-		// ── Skew on scroll (elastic stretch effect) ──
+		// ── Scroll delta ──
 		const delta = scrollY - lastScrollY;
 		lastScrollY = scrollY;
-		const targetSkew = Math.max(-3, Math.min(3, delta * 0.1));
-		currentSkew = lerp(currentSkew, targetSkew, 0.08);
-		if (scrollContent) scrollContent.style.transform = `skewY(${currentSkew}deg)`;
+
+		// ── Cursor (every frame for smooth tracking) ──
+		cursorX = lerp(cursorX, mouseX, 0.4);
+		cursorY = lerp(cursorY, mouseY, 0.4);
+		if (Math.abs(cursorX - prevCX) > 0.1 || Math.abs(cursorY - prevCY) > 0.1) {
+			cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+			prevCX = cursorX;
+			prevCY = cursorY;
+		}
+
+		// ── Hero parallax (only when scrolling) ──
+		if (delta !== 0) {
+			if (heroContent) heroContent.style.transform = `translateY(${-scrollY * 0.35}px)`;
+			if (heroGrid) heroGrid.style.transform = `translateY(${-scrollY * 0.15}px)`;
+		}
 
 		// ── Section parallax (every 2nd frame — titles move slowly, no one notices) ──
 		if (frame % 2 === 0) {
@@ -2179,11 +2181,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 	// ── Magnetic effect ──
 	document.querySelectorAll('.magnetic').forEach(el => {
+		let rect: DOMRect;
+		el.addEventListener('mouseenter', () => {
+			rect = (el as HTMLElement).getBoundingClientRect();
+		});
 		el.addEventListener('mousemove', (e: Event) => {
 			const me = e as MouseEvent;
-			const r = (el as HTMLElement).getBoundingClientRect();
-			const cx = r.left + r.width / 2;
-			const cy = r.top + r.height / 2;
+			const cx = rect.left + rect.width / 2;
+			const cy = rect.top + rect.height / 2;
 			(el as HTMLElement).style.transform = `translate(${(me.clientX - cx) * 0.5}px, ${(me.clientY - cy) * 0.5}px)`;
 			cursor.classList.add('magnet');
 		});
