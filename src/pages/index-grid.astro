@@ -12,9 +12,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" is:inline></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" is:inline
-    ></script>
   </head>
   <body>
     <div id="cursor"></div>
@@ -151,231 +148,122 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     </section>
 
     <div id="scroll-content">
-      <!-- Services -->
-      <section class="services-wrapper" id="services">
-        <!-- SVG Zigzag Line Background -->
-        <svg
-          class="services-line"
-          viewBox="0 0 100 1000"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            class="services-line__path"
-            d="M50 0 L50 100 L20 250 L50 400 L80 550 L50 700 L20 850 L50 1000"
-            stroke="url(#services-line-grad)"
-            stroke-width="0.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            fill="none"></path>
-          <circle class="services-line__dot" cx="50" cy="0" r="1.5" fill="#3b82f6" opacity="0"
-          ></circle>
-          <defs>
-            <linearGradient id="services-line-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1"></stop>
-              <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.5"></stop>
-              <stop offset="100%" stop-color="#3b82f6" stop-opacity="1"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <div class="section-header">
-          <span class="section-label masking-text"><span class="line">What We Do</span></span>
-          <h2 class="section-title parallax-text" data-speed="0.08">Services</h2>
-        </div>
-
-        <!-- Service 1 -->
-        <div class="service-block">
-          <div class="service-grid">
-            <div class="service-text reveal-left">
-              <span class="service-number">01</span>
-              <h3>Website Audit & Technical SEO Review Services</h3>
-              <p class="service-intro">
-                Our website audit and technical SEO review services identify SEO, performance, and
-                usability issues that limit business growth. You receive clear, prioritized audit
-                insights to improve rankings, speed, and technical stability.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Common searches / problems users have:</h4>
-                <ul class="problems-list">
-                  <li>Why is my website not ranking on Google despite good content?</li>
-                  <li>How to identify technical SEO issues on a business website?</li>
-                  <li>How do I know if my website has SEO or performance problems?</li>
-                  <li>Why does my website traffic keep dropping over time?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Get Your Free Audit Report</a>
-            </div>
-            <div class="service-visual reveal-right">
-              <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_01.png"
-                  alt="Website Audit & Technical SEO"
-                  class="service-image"
-                />
-              </div>
-            </div>
+      <!-- Services Grid -->
+      <section class="services-grid-section" id="services">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label masking-text"><span class="line">What We Do</span></span>
+            <h2 class="section-title parallax-text" data-speed="0.08">Services</h2>
           </div>
-        </div>
 
-        <!-- Service 2 -->
-        <div class="service-block reverse">
-          <div class="service-grid">
-            <div class="service-visual reveal-left">
-              <div class="visual-card shutter-reveal">
+          <div class="services-grid stagger-children">
+            <!-- Service 1 -->
+            <a href="/contact" class="service-card">
+              <div class="service-image-wrapper">
+                <img src="/images/service_01.png" alt="SEO & Audits" class="service-image" />
+                <div class="service-image-overlay"></div>
+              </div>
+              <div class="service-card-content">
+                <span class="service-number">01</span>
+                <h3>Website Audit & Technical SEO</h3>
+                <p>
+                  Identify SEO, performance, and usability issues that limit growth with prioritized
+                  insights.
+                </p>
+              </div>
+            </a>
+
+            <!-- Service 2 -->
+            <a href="/contact" class="service-card">
+              <div class="service-image-wrapper">
                 <img
                   src="/images/service_02.png"
-                  alt="Website Performance Optimization"
+                  alt="Performance Optimization"
                   class="service-image"
                 />
+                <div class="service-image-overlay"></div>
               </div>
-            </div>
-            <div class="service-text reveal-right">
-              <span class="service-number">02</span>
-              <h3>Website Performance Optimization in Berlin</h3>
-              <p class="service-intro">
-                Our website performance and page speed optimization services in Berlin help
-                businesses fix slow websites and improve Core Web Vitals and Lighthouse scores. We
-                optimize loading times, assets, and architecture to deliver faster, SEO-friendly
-                websites.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>How to fix Core Web Vitals in Berlin?</li>
-                  <li>Why is my website slow in Germany?</li>
-                  <li>Who offers Lighthouse audits in Berlin?</li>
-                  <li>How to speed up an existing website?</li>
-                </ul>
+              <div class="service-card-content">
+                <span class="service-number">02</span>
+                <h3>Performance Optimization</h3>
+                <p>
+                  Fix slow websites, improve Core Web Vitals, and optimize loading times for better
+                  SEO.
+                </p>
               </div>
-              <a href="/contact" class="service-cta magnetic">Fix My Website Speed</a>
-            </div>
-          </div>
-        </div>
+            </a>
 
-        <!-- Service 3 -->
-        <div class="service-block">
-          <div class="service-grid">
-            <div class="service-text reveal-left">
-              <span class="service-number">03</span>
-              <h3>Custom Web Development in Berlin</h3>
-              <p class="service-intro">
-                Our custom web development services in Berlin help startups and growing businesses
-                build scalable, SEO-optimized websites using React, Next.js, and modern
-                architecture.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Who builds custom React websites in Berlin?</li>
-                  <li>How to find a reliable web developer in Berlin?</li>
-                  <li>What is the cost of custom web development in Berlin?</li>
-                  <li>How to rebuild a company website in Berlin without losing SEO?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Start My Berlin Web Project</a>
-            </div>
-            <div class="service-visual reveal-right">
-              <div class="visual-card shutter-reveal">
+            <!-- Service 3 -->
+            <a href="/contact" class="service-card">
+              <div class="service-image-wrapper">
                 <img
                   src="/images/service_03.png"
                   alt="Custom Web Development"
                   class="service-image"
                 />
+                <div class="service-image-overlay"></div>
               </div>
-            </div>
-          </div>
-        </div>
+              <div class="service-card-content">
+                <span class="service-number">03</span>
+                <h3>Custom Web Development</h3>
+                <p>
+                  Build scalable, SEO-optimized, and lightning-fast websites using modern frameworks
+                  like React and Next.js.
+                </p>
+              </div>
+            </a>
 
-        <!-- Service 4 -->
-        <div class="service-block reverse">
-          <div class="service-grid">
-            <div class="service-visual reveal-left">
-              <div class="visual-card shutter-reveal">
-                <img src="/images/service_03.png" alt="WordPress Websites" class="service-image" />
+            <!-- Service 4 -->
+            <a href="/contact" class="service-card">
+              <div class="service-image-wrapper">
+                <img src="/images/service_03.png" alt="WordPress Solutions" class="service-image" />
+                <div class="service-image-overlay"></div>
               </div>
-            </div>
-            <div class="service-text reveal-right">
-              <span class="service-number">04</span>
-              <h3>WordPress Websites in Berlin</h3>
-              <p class="service-intro">
-                Our WordPress development services in Berlin deliver custom, performance-optimized
-                WordPress websites — not bloated themes. We build scalable architectures, custom
-                themes, and clean implementations tailored to your business goals.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Who builds custom WordPress websites in Berlin?</li>
-                  <li>How to make WordPress fast and SEO-friendly?</li>
-                  <li>Best WordPress developer in Berlin for business sites?</li>
-                  <li>How to customize WordPress without breaking updates?</li>
-                </ul>
+              <div class="service-card-content">
+                <span class="service-number">04</span>
+                <h3>WordPress Websites</h3>
+                <p>
+                  Custom, scalable, and performance-optimized WordPress architectures tailored to
+                  your business goals.
+                </p>
               </div>
-              <a href="/contact" class="service-cta magnetic">Build My WordPress Site</a>
-            </div>
-          </div>
-        </div>
+            </a>
 
-        <!-- Service 5 -->
-        <div class="service-block">
-          <div class="service-grid">
-            <div class="service-text reveal-left">
-              <span class="service-number">05</span>
-              <h3>Backend Integration & Headless CMS in Berlin</h3>
-              <p class="service-intro">
-                We implement headless CMS solutions and backend integrations in Berlin using
-                Contentful, Storyblok, and Payload for flexible and scalable content workflows.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Best headless CMS developer in Berlin?</li>
-                  <li>How to integrate Contentful with Next.js?</li>
-                  <li>CMS setup for startups in Berlin?</li>
-                  <li>How to improve content management without slowing the site?</li>
-                </ul>
+            <!-- Service 5 -->
+            <a href="/contact" class="service-card">
+              <div class="service-image-wrapper">
+                <img src="/images/service_03.png" alt="Headless CMS" class="service-image" />
+                <div class="service-image-overlay"></div>
               </div>
-              <a href="/contact" class="service-cta magnetic">Integrate My CMS</a>
-            </div>
-            <div class="service-visual reveal-right">
-              <div class="visual-card shutter-reveal">
-                <img src="/images/service_03.png" alt="Backend Integration" class="service-image" />
+              <div class="service-card-content">
+                <span class="service-number">05</span>
+                <h3>Backend & Headless CMS</h3>
+                <p>
+                  Implement flexible Headless CMS solutions like Contentful, Sanity, or Storyblok
+                  for robust content workflows.
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
+            </a>
 
-        <!-- Service 6 -->
-        <div class="service-block reverse">
-          <div class="service-grid">
-            <div class="service-visual reveal-left">
-              <div class="visual-card shutter-reveal">
+            <!-- Service 6 -->
+            <a href="/contact" class="service-card">
+              <div class="service-image-wrapper">
                 <img
                   src="/images/service_01.png"
                   alt="Technical Consulting"
                   class="service-image"
                 />
+                <div class="service-image-overlay"></div>
               </div>
-            </div>
-            <div class="service-text reveal-right">
-              <span class="service-number">06</span>
-              <h3>Technical Consulting for Digital Teams in Berlin</h3>
-              <p class="service-intro">
-                Our technical consulting services in Berlin support product teams with architecture
-                decisions, code reviews, and scalability planning.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Who offers web architecture consulting in Berlin?</li>
-                  <li>Code review services for startups Berlin?</li>
-                  <li>Should we refactor or rebuild our platform?</li>
-                  <li>How to scale a React application properly?</li>
-                </ul>
+              <div class="service-card-content">
+                <span class="service-number">06</span>
+                <h3>Technical Consulting</h3>
+                <p>
+                  Support for growing digital teams through actionable architecture decisions, code
+                  reviews, and scalability planning.
+                </p>
               </div>
-              <a href="/contact" class="service-cta magnetic">Get Expert Advice</a>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -465,69 +353,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
             </div>
           </div>
           <a href="/projects" class="link-button">View all projects →</a>
-        </div>
-      </section>
-
-      <!-- Testimonials / Social Proof -->
-      <section class="testimonials-section" id="testimonials">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Testimonials</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">What Clients Say</h2>
-          </div>
-          <div class="testimonials-grid stagger-children">
-            <blockquote class="testimonial">
-              <p>
-                "They transformed our outdated website into a high-performance platform. Page speed
-                improved by 300% and organic traffic doubled within three months."
-              </p>
-              <footer>
-                <strong>Anna M.</strong>
-                <span>CEO, TechStart Berlin</span>
-              </footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>
-                "Professional, efficient, and genuinely invested in our success. The custom CMS
-                integration saved our team hours of manual work every week."
-              </p>
-              <footer>
-                <strong>Marcus K.</strong>
-                <span>CTO, GreenLeaf GmbH</span>
-              </footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>
-                "The SEO audit revealed critical issues we had no idea about. After implementing
-                their recommendations, we jumped from page 3 to page 1 on Google."
-              </p>
-              <footer>
-                <strong>Laura S.</strong>
-                <span>Marketing Director, UrbanFlow</span>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section class="about-section" id="about">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Who We Are</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">About Us</h2>
-          </div>
-          <div class="about-content reveal">
-            <p>
-              We are developers passionate about building exceptional web experiences. With years of
-              frontend and backend expertise, we help businesses achieve their digital goals.
-            </p>
-            <p>
-              Specialized in modern technologies like React, Astro, Node.js and more. Based in
-              Berlin, working worldwide.
-            </p>
-          </div>
-          <a href="/about" class="link-button">Learn more →</a>
         </div>
       </section>
 
@@ -1178,7 +1003,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   .intro-title {
     font-family: "Satoshi", sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 400;
+    font-weight: 600;
     font-size: clamp(1.8rem, 3.5vw, 2.8rem);
     color: #fafafa;
     margin: 0;
@@ -1250,193 +1075,113 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     animation-play-state: running;
   }
 
-  /* ===== Stacking sections (cover hero) ===== */
-  .services-wrapper,
-  .process-section,
-  .tech-section,
-  .projects-section,
-  .testimonials-section,
-  .about-section,
-  .faq-section,
-  .contact-section {
-    position: relative;
-    z-index: 2;
+  /* ===== Services Grid Layout ===== */
+  .services-grid-section {
+    padding: 8rem 0;
     background: #0a0a0a;
-  }
-
-  /* ===== Services — layered background & expanding setup ===== */
-  .services-wrapper {
-    padding: 8rem 0 4rem;
-    isolation: isolate;
-
-    /* Reveal Expansion Setup */
-    width: 100%;
-    will-change: clip-path; /* optimize animation */
-  }
-
-  .services-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 256px 256px;
-    background-repeat: repeat;
-    opacity: 0.055;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .service-block {
-    padding: 6rem 2rem;
+    position: relative;
     border-top: 1px solid #1a1a1a;
   }
 
-  .service-block:last-child {
-    border-bottom: 1px solid #1a1a1a;
-  }
-
-  .service-grid {
+  .services-grid {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
   }
 
-  .reverse .service-grid {
-    grid-template-columns: 2fr 3fr;
-  }
-
-  .service-text {
-    text-align: left;
-  }
-
-  .service-number {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    letter-spacing: 2px;
-    color: #3b82f6;
-  }
-
-  .service-block h3 {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    margin-bottom: 1.25rem;
-    line-height: 1.15;
-    color: #fafafa;
-  }
-
-  .service-intro {
-    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    color: #737373;
-  }
-
-  .problems-section {
-    margin-bottom: 2rem;
-  }
-
-  .problems-section h4 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    color: #a3a3a3;
-    font-weight: 600;
-  }
-
-  .problems-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .problems-list li {
-    padding: 0.4rem 0;
-    padding-left: 1.75rem;
-    position: relative;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #737373;
-  }
-
-  .problems-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #3b82f6;
-    font-weight: bold;
-  }
-
-  .service-cta {
-    display: inline-block;
-    padding: 0.8rem 1.75rem;
-    background: transparent;
-    border: 1px solid #404040;
-    color: #d4d4d4;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .service-cta:hover {
-    background: #3b82f6;
-    border-color: #3b82f6;
-    color: #fff;
-  }
-
-  /* ===== Services SVG Zigzag Line ===== */
-  .services-line {
-    position: absolute;
-    top: 10%;
-    left: 10%; /* Place it off-center so it flows across the grid */
-    width: 80%;
-    height: 90%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.5; /* Subtle background glow */
-  }
-
-  /* Visual Cards & Images */
-  .visual-card {
+  .service-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px; /* Slightly taller for the images */
+    flex-direction: column;
     background: #111111;
-    border-radius: 12px;
     border: 1px solid #1a1a1a;
+    border-radius: 12px;
     overflow: hidden;
-    position: relative;
-    transition: border-color 0.3s ease;
+    text-decoration: none;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .visual-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.1) 0%,
-      transparent 50%,
-      rgba(59, 130, 246, 0.05) 100%
-    );
-    pointer-events: none;
+  .service-card:hover {
+    border-color: #3b82f6;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+  }
+
+  .service-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
   }
 
   .service-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.01);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .visual-card:hover .service-image {
-    transform: scale(1.05); /* Soft zoom on hover */
+  .service-card:hover .service-image {
+    transform: scale(1.05);
+  }
+
+  .service-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #111111, transparent);
+    pointer-events: none;
+  }
+
+  .service-card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card-content .service-number {
+    display: inline-block;
+    color: #3b82f6;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .service-card-content h3 {
+    font-size: 1.5rem;
+    color: #fafafa;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .service-card-content p {
+    color: #a3a3a3;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ===== Visual Cards ===== */
+  .visual-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    background: #111111;
+    border-radius: 12px;
+    border: 1px solid #1a1a1a;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .visual-card:hover {
+    border-color: #262626;
+  }
+
+  .css-art {
+    width: 200px;
+    height: 200px;
+    position: relative;
   }
 
   /* Art 1: Concentric Rings */
@@ -1594,49 +1339,127 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     }
   }
 
-  /* Art 4: Stacked Cards */
-  .art-cards {
+  /* Art 5: Nodes */
+  .art-nodes {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+    animation: nodePulse 2s ease-in-out infinite;
+  }
+
+  .node-1 {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+  }
+  .node-2 {
+    top: 50%;
+    left: 20%;
+    animation-delay: 0.2s;
+  }
+  .node-3 {
+    top: 50%;
+    right: 20%;
+    animation-delay: 0.4s;
+  }
+  .node-4 {
+    bottom: 20%;
+    left: 35%;
+    animation-delay: 0.6s;
+  }
+  .node-5 {
+    bottom: 20%;
+    right: 35%;
+    animation-delay: 0.8s;
+  }
+
+  .node-lines {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
   }
-
-  .stack-card {
-    position: absolute;
-    width: 120px;
-    height: 160px;
-    border: 1px solid #262626;
-    border-radius: 8px;
-    background: #141414;
-    animation: cardFloat 4s ease-in-out infinite;
+  .node-lines line {
+    stroke: #262626;
+    stroke-width: 1;
   }
 
-  .card-1 {
-    --card-transform: rotate(-8deg) translateX(-20px);
-    transform: var(--card-transform);
+  @keyframes nodePulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  /* Art 6: Vertical Bars */
+  .art-vbars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    height: 100%;
+  }
+
+  .vbar {
+    width: 14px;
+    background: linear-gradient(to top, #3b82f6, rgba(59, 130, 246, 0.1));
+    border-radius: 3px 3px 0 0;
+    animation: vbarRise 2s ease-in-out infinite alternate;
+  }
+
+  .vbar-1 {
+    height: 40%;
     animation-delay: 0s;
   }
-  .card-2 {
-    --card-transform: rotate(0deg);
-    transform: var(--card-transform);
-    animation-delay: 0.3s;
-    border-color: #3b82f6;
+  .vbar-2 {
+    height: 65%;
+    animation-delay: 0.1s;
   }
-  .card-3 {
-    --card-transform: rotate(8deg) translateX(20px);
-    transform: var(--card-transform);
+  .vbar-3 {
+    height: 50%;
+    animation-delay: 0.2s;
+  }
+  .vbar-4 {
+    height: 85%;
+    animation-delay: 0.3s;
+  }
+  .vbar-5 {
+    height: 55%;
+    animation-delay: 0.4s;
+  }
+  .vbar-6 {
+    height: 75%;
+    animation-delay: 0.5s;
+  }
+  .vbar-7 {
+    height: 45%;
     animation-delay: 0.6s;
   }
 
-  @keyframes cardFloat {
-    0%,
-    100% {
-      transform: var(--card-transform, rotate(0deg)) translateY(0);
+  @keyframes vbarRise {
+    0% {
+      opacity: 0.4;
+      transform: scaleY(0.8);
     }
-    50% {
-      transform: var(--card-transform, rotate(0deg)) translateY(-8px);
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
     }
   }
 
@@ -1761,75 +1584,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     line-height: 1.6;
   }
 
-  /* ===== Testimonials Section ===== */
-  .testimonials-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .testimonial {
-    background: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 8px;
-    padding: 2rem;
-    transition: border-color 0.3s ease;
-  }
-
-  .testimonial:hover {
-    border-color: #262626;
-  }
-
-  .testimonial p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #a3a3a3;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-  }
-
-  .testimonial footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .testimonial strong {
-    color: #e5e5e5;
-    font-size: 0.95rem;
-  }
-
-  .testimonial footer span {
-    color: #525252;
-    font-size: 0.85rem;
-  }
-
-  /* ===== About Section ===== */
-  .about-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-    text-align: center;
-  }
-
-  .about-content {
-    max-width: 650px;
-    margin: 0 auto 2rem;
-  }
-
-  .about-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    color: #737373;
-  }
-
   /* ===== FAQ Section ===== */
   .faq-section {
     padding: 8rem 2rem;
@@ -1950,20 +1704,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
   /* ===== Responsive ===== */
   @media (max-width: 1024px) {
-    .service-grid,
-    .reverse .service-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-
-    .service-visual {
-      order: -1;
-    }
-    .visual-card {
-      min-height: 260px;
-    }
-
-    .process-steps {
+    .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -1985,8 +1726,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       text-align: center;
     }
 
-    .service-block {
+    .services-grid-section {
       padding: 4rem 1.5rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
     }
 
     .process-steps {
@@ -1994,17 +1739,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     }
 
     .projects-section,
-    .about-section,
     .contact-section,
-    .testimonials-section,
     .faq-section,
     .tech-section,
     .process-section {
       padding: 5rem 1.5rem;
     }
 
-    .projects-showcase,
-    .testimonials-grid {
+    .projects-showcase {
       grid-template-columns: 1fr;
     }
 
@@ -2012,11 +1754,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       flex-direction: column;
       gap: 1rem;
       align-items: center;
-    }
-
-    .service-cta {
-      width: 100%;
-      text-align: center;
     }
 
     .section-title {
@@ -2080,6 +1817,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 </style>
 
 <script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
   // ===== Intersection Observer for reveal animations =====
   const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -2478,7 +2218,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     introLinePath.style.strokeDasharray = `${lineLength}`;
     introLinePath.style.strokeDashoffset = `${lineLength}`;
 
-    gsap.to(introLinePath, {
+    gsap.to(introLinePath as any, {
       strokeDashoffset: 0,
       ease: "none",
       scrollTrigger: {
@@ -2490,7 +2230,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     });
 
     if (introLineDot) {
-      gsap.to(introLineDot, {
+      gsap.to(introLineDot as any, {
         opacity: 1,
         scale: 1.2,
         transformOrigin: "center center",
@@ -2503,31 +2243,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       });
     }
   }
-
-  // ===== CLIP PATH EXPANSION (Antigravity video style) =====
-  let mm = gsap.matchMedia();
-
-  mm.add("(min-width: 768px)", () => {
-    // Expand services wrapper on scroll.
-    // Starts narrow with rounded corners, expands to container width.
-    // We use fromTo to guarantee GSAP interpolates the string values smoothly.
-    gsap.fromTo(
-      ".services-wrapper",
-      {
-        clipPath: "inset(0% 15% 0% 15% round 40px)",
-      },
-      {
-        clipPath: "inset(0% 0% 0% 0% round 0px)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".services-wrapper",
-          start: "top 85%",
-          end: "top 15%",
-          scrub: true,
-        },
-      }
-    );
-  });
 
   // ===== TEXT REVEAL =====
   document.querySelectorAll(".intro-right p").forEach((p) => {

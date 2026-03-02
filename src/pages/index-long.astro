@@ -53,8 +53,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           <span class="line"
             >As a freelance web designer and developer in Berlin, I build high-performance websites
             using modern frameworks like React and Next.js, as well as scalable WordPress solutions
-            — tailored to your business goals.</span
-          >
+            — tailored to your business goals.</span>
         </p>
         <div class="hero-buttons reveal">
           <a href="/contact" class="btn-primary magnetic">Let's talk about your project</a>
@@ -153,32 +152,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     <div id="scroll-content">
       <!-- Services -->
       <section class="services-wrapper" id="services">
-        <!-- SVG Zigzag Line Background -->
-        <svg
-          class="services-line"
-          viewBox="0 0 100 1000"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            class="services-line__path"
-            d="M50 0 L50 100 L20 250 L50 400 L80 550 L50 700 L20 850 L50 1000"
-            stroke="url(#services-line-grad)"
-            stroke-width="0.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            fill="none"></path>
-          <circle class="services-line__dot" cx="50" cy="0" r="1.5" fill="#3b82f6" opacity="0"
-          ></circle>
-          <defs>
-            <linearGradient id="services-line-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1"></stop>
-              <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.5"></stop>
-              <stop offset="100%" stop-color="#3b82f6" stop-opacity="1"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-
         <div class="section-header">
           <span class="section-label masking-text"><span class="line">What We Do</span></span>
           <h2 class="section-title parallax-text" data-speed="0.08">Services</h2>
@@ -208,11 +181,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
             </div>
             <div class="service-visual reveal-right">
               <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_01.png"
-                  alt="Website Audit & Technical SEO"
-                  class="service-image"
-                />
+                <div class="css-art art-rings">
+                  <div class="ring ring-1"></div>
+                  <div class="ring ring-2"></div>
+                  <div class="ring ring-3"></div>
+                  <div class="ring-dot"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -223,11 +197,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           <div class="service-grid">
             <div class="service-visual reveal-left">
               <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_02.png"
-                  alt="Website Performance Optimization"
-                  class="service-image"
-                />
+                <div class="css-art art-bars">
+                  <div class="bar bar-1"></div>
+                  <div class="bar bar-2"></div>
+                  <div class="bar bar-3"></div>
+                  <div class="bar bar-4"></div>
+                  <div class="bar bar-5"></div>
+                </div>
               </div>
             </div>
             <div class="service-text reveal-right">
@@ -277,11 +253,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
             </div>
             <div class="service-visual reveal-right">
               <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_03.png"
-                  alt="Custom Web Development"
-                  class="service-image"
-                />
+                <div class="css-art art-grid-squares">
+                  <div class="sq sq-1"></div>
+                  <div class="sq sq-2"></div>
+                  <div class="sq sq-3"></div>
+                  <div class="sq sq-4"></div>
+                  <div class="sq sq-5"></div>
+                  <div class="sq sq-6"></div>
+                  <div class="sq sq-7"></div>
+                  <div class="sq sq-8"></div>
+                  <div class="sq sq-9"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -292,7 +274,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           <div class="service-grid">
             <div class="service-visual reveal-left">
               <div class="visual-card shutter-reveal">
-                <img src="/images/service_03.png" alt="WordPress Websites" class="service-image" />
+                <div class="css-art art-cards">
+                  <div class="stack-card card-1"></div>
+                  <div class="stack-card card-2"></div>
+                  <div class="stack-card card-3"></div>
+                </div>
               </div>
             </div>
             <div class="service-text reveal-right">
@@ -340,7 +326,20 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
             </div>
             <div class="service-visual reveal-right">
               <div class="visual-card shutter-reveal">
-                <img src="/images/service_03.png" alt="Backend Integration" class="service-image" />
+                <div class="css-art art-nodes">
+                  <div class="node node-1"></div>
+                  <div class="node node-2"></div>
+                  <div class="node node-3"></div>
+                  <div class="node node-4"></div>
+                  <div class="node node-5"></div>
+                  <svg class="node-lines" viewBox="0 0 200 200">
+                    <line x1="100" y1="40" x2="40" y2="100"></line>
+                    <line x1="100" y1="40" x2="160" y2="100"></line>
+                    <line x1="40" y1="100" x2="80" y2="160"></line>
+                    <line x1="160" y1="100" x2="120" y2="160"></line>
+                    <line x1="80" y1="160" x2="120" y2="160"></line>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -351,11 +350,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           <div class="service-grid">
             <div class="service-visual reveal-left">
               <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_01.png"
-                  alt="Technical Consulting"
-                  class="service-image"
-                />
+                <div class="css-art art-vbars">
+                  <div class="vbar vbar-1"></div>
+                  <div class="vbar vbar-2"></div>
+                  <div class="vbar vbar-3"></div>
+                  <div class="vbar vbar-4"></div>
+                  <div class="vbar vbar-5"></div>
+                  <div class="vbar vbar-6"></div>
+                  <div class="vbar vbar-7"></div>
+                </div>
               </div>
             </div>
             <div class="service-text reveal-right">
@@ -1264,14 +1267,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     background: #0a0a0a;
   }
 
-  /* ===== Services — layered background & expanding setup ===== */
+  /* ===== Services — layered background ===== */
   .services-wrapper {
     padding: 8rem 0 4rem;
+    /* background:
+			radial-gradient(ellipse 120% 60% at 15% 30%, rgba(18, 16, 40, 0.85) 0%, transparent 55%),
+			radial-gradient(ellipse 80% 50% at 85% 70%, rgba(10, 14, 30, 0.7) 0%, transparent 50%),
+			radial-gradient(ellipse 100% 80% at 50% 100%, rgba(6, 8, 18, 0.9) 0%, transparent 60%),
+			#070709; */
     isolation: isolate;
-
-    /* Reveal Expansion Setup */
-    width: 100%;
-    will-change: clip-path; /* optimize animation */
   }
 
   .services-wrapper::before {
@@ -1388,55 +1392,27 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     color: #fff;
   }
 
-  /* ===== Services SVG Zigzag Line ===== */
-  .services-line {
-    position: absolute;
-    top: 10%;
-    left: 10%; /* Place it off-center so it flows across the grid */
-    width: 80%;
-    height: 90%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.5; /* Subtle background glow */
-  }
-
-  /* Visual Cards & Images */
+  /* ===== Visual Cards ===== */
   .visual-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px; /* Slightly taller for the images */
+    min-height: 350px;
     background: #111111;
     border-radius: 12px;
     border: 1px solid #1a1a1a;
     overflow: hidden;
-    position: relative;
     transition: border-color 0.3s ease;
   }
 
-  .visual-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.1) 0%,
-      transparent 50%,
-      rgba(59, 130, 246, 0.05) 100%
-    );
-    pointer-events: none;
+  .visual-card:hover {
+    border-color: #262626;
   }
 
-  .service-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.01);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .visual-card:hover .service-image {
-    transform: scale(1.05); /* Soft zoom on hover */
+  .css-art {
+    width: 200px;
+    height: 200px;
+    position: relative;
   }
 
   /* Art 1: Concentric Rings */
@@ -1637,6 +1613,130 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     }
     50% {
       transform: var(--card-transform, rotate(0deg)) translateY(-8px);
+    }
+  }
+
+  /* Art 5: Nodes */
+  .art-nodes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .node {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+    animation: nodePulse 2s ease-in-out infinite;
+  }
+
+  .node-1 {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+  }
+  .node-2 {
+    top: 50%;
+    left: 20%;
+    animation-delay: 0.2s;
+  }
+  .node-3 {
+    top: 50%;
+    right: 20%;
+    animation-delay: 0.4s;
+  }
+  .node-4 {
+    bottom: 20%;
+    left: 35%;
+    animation-delay: 0.6s;
+  }
+  .node-5 {
+    bottom: 20%;
+    right: 35%;
+    animation-delay: 0.8s;
+  }
+
+  .node-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .node-lines line {
+    stroke: #262626;
+    stroke-width: 1;
+  }
+
+  @keyframes nodePulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  /* Art 6: Vertical Bars */
+  .art-vbars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    height: 100%;
+  }
+
+  .vbar {
+    width: 14px;
+    background: linear-gradient(to top, #3b82f6, rgba(59, 130, 246, 0.1));
+    border-radius: 3px 3px 0 0;
+    animation: vbarRise 2s ease-in-out infinite alternate;
+  }
+
+  .vbar-1 {
+    height: 40%;
+    animation-delay: 0s;
+  }
+  .vbar-2 {
+    height: 65%;
+    animation-delay: 0.1s;
+  }
+  .vbar-3 {
+    height: 50%;
+    animation-delay: 0.2s;
+  }
+  .vbar-4 {
+    height: 85%;
+    animation-delay: 0.3s;
+  }
+  .vbar-5 {
+    height: 55%;
+    animation-delay: 0.4s;
+  }
+  .vbar-6 {
+    height: 75%;
+    animation-delay: 0.5s;
+  }
+  .vbar-7 {
+    height: 45%;
+    animation-delay: 0.6s;
+  }
+
+  @keyframes vbarRise {
+    0% {
+      opacity: 0.4;
+      transform: scaleY(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
     }
   }
 
@@ -2503,31 +2603,6 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       });
     }
   }
-
-  // ===== CLIP PATH EXPANSION (Antigravity video style) =====
-  let mm = gsap.matchMedia();
-
-  mm.add("(min-width: 768px)", () => {
-    // Expand services wrapper on scroll.
-    // Starts narrow with rounded corners, expands to container width.
-    // We use fromTo to guarantee GSAP interpolates the string values smoothly.
-    gsap.fromTo(
-      ".services-wrapper",
-      {
-        clipPath: "inset(0% 15% 0% 15% round 40px)",
-      },
-      {
-        clipPath: "inset(0% 0% 0% 0% round 0px)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".services-wrapper",
-          start: "top 85%",
-          end: "top 15%",
-          scrub: true,
-        },
-      }
-    );
-  });
 
   // ===== TEXT REVEAL =====
   document.querySelectorAll(".intro-right p").forEach((p) => {
