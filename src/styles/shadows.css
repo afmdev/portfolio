@@ -1,0 +1,17 @@
+/**
+ * Shadow Design Tokens
+ * AFM.DEV — brutalist offset-shadow system
+ */
+
+:root {
+  --shadow-xs:           2px 2px 0 0 var(--color-on-background);
+  --shadow-sm:           4px 4px 0 0 var(--color-on-background);
+  --shadow-md:           8px 8px 0 0 var(--color-on-background);
+  --shadow-lg:           12px 12px 0 0 var(--color-on-background);
+  --shadow-xl:           10px 10px 0 0 var(--color-on-background);
+  --shadow-fab:          6px 6px 0 0 var(--color-on-background);
+  --shadow-white-sm:     4px 4px 0 0 var(--color-on-primary);
+  --shadow-white-md:     8px 8px 0 0 var(--color-on-primary);
+  --shadow-secondary-sm: 4px 4px 0 0 var(--color-secondary);
+  --shadow-secondary-md: 8px 8px 0 0 var(--color-secondary);
+}

@@ -1,2558 +1,332 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Layout from '../layouts/Layout.astro';
+import '../styles/pages/index.css';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" is:inline></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" is:inline
-    ></script>
-  </head>
-  <body>
-    <div id="cursor"></div>
-    <Header />
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <canvas id="gradient-canvas"></canvas>
-      <div class="hero-grid"></div>
-      <div class="hero-content">
-        <div class="award-badge reveal">
-          <div class="award-badge__border"></div>
-          <div class="award-badge__inner">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                stroke="#3b82f6"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            <span>Webdesign Freelancer in Berlin</span>
-          </div>
-        </div>
-        <h1 class="masking-text">
-          <span class="line">Webdesign in <span class="text-accent">Berlin</span></span>
-        </h1>
-        <p class="hero-subtitle masking-text">
-          <span class="line"
-            >As a freelance web designer and developer in Berlin, I build high-performance websites
-            using modern frameworks like React and Next.js, as well as scalable WordPress solutions
-            — tailored to your business goals.</span
-          >
-        </p>
-        <div class="hero-buttons reveal">
-          <a href="/contact" class="btn-primary magnetic">Let's talk about your project</a>
-          <a href="#services" class="btn-outline magnetic">View services</a>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- Marquee -->
-    <div class="marquee">
-      <div class="marquee__wrapper">
-        <div class="marquee__group" aria-hidden="true">
-          <span>Strategy</span><canvas class="dot-canvas"></canvas>
-          <span>Development</span><canvas class="dot-canvas"></canvas>
-          <span>Performance</span><canvas class="dot-canvas"></canvas>
-          <span>SEO</span><canvas class="dot-canvas"></canvas>
-          <span>Design</span><canvas class="dot-canvas"></canvas>
-          <span>Consulting</span><canvas class="dot-canvas"></canvas>
-        </div>
-        <div class="marquee__group">
-          <span>Strategy</span><canvas class="dot-canvas"></canvas>
-          <span>Development</span><canvas class="dot-canvas"></canvas>
-          <span>Performance</span><canvas class="dot-canvas"></canvas>
-          <span>SEO</span><canvas class="dot-canvas"></canvas>
-          <span>Design</span><canvas class="dot-canvas"></canvas>
-          <span>Consulting</span><canvas class="dot-canvas"></canvas>
-        </div>
-        <div class="marquee__group" aria-hidden="true">
-          <span>Strategy</span><canvas class="dot-canvas"></canvas>
-          <span>Development</span><canvas class="dot-canvas"></canvas>
-          <span>Performance</span><canvas class="dot-canvas"></canvas>
-          <span>SEO</span><canvas class="dot-canvas"></canvas>
-          <span>Design</span><canvas class="dot-canvas"></canvas>
-          <span>Consulting</span><canvas class="dot-canvas"></canvas>
-        </div>
+<Layout
+  title="AFM.DEV | WEBDESIGN IN BERLIN"
+  description="Freelance Design & Development for Modern Creators. Berlin-based web design studio."
+>
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="hero brutalist-grid">
+    <div class="hero__content">
+      <h1 class="hero__title">WEBDESIGN<br />IN BERLIN</h1>
+      <p class="hero__subtitle">
+        Freelance Design &amp; Development for Modern Creators.
+      </p>
+      <div class="hero__actions">
+        <button class="hero__btn hero__btn--primary">START A PROJECT</button>
+        <button class="hero__btn hero__btn--secondary">VIEW WORK</button>
       </div>
     </div>
 
-    <!-- Intro / Value Proposition -->
-    <section class="intro-section">
-      <div class="intro-grid">
-        <div class="intro-left">
-          <h2 class="intro-title reveal">
-            Looking for professional web design and development in Berlin?
-          </h2>
+    <div class="hero__image">
+      <div class="hero__image-inner">
+        <img
+          alt="Brutalist concrete building in Berlin with sharp geometric shadows"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAh_47G1TJFASTBGt9VRP2AJHBXxF7G0iAz0egJy_jlkvxG2s7zTkenxqJ4Lvky8ELHVNWfl1XndhsrJREj5FEXKTWB01cX6thUVq7tl_xBUz6iA3tR3wbrQTvvY-ZG2fqIE57YcItV8aJmgEtAbjl1Z75eqZ43Qb3gL_StMNGB78ZSA8ltp5lJNa6JKXvf-9NlKZzN6uxTJJh5DfrB6OachjnCIJeEws2CnhNnoF8Nk8fZMUreOOeqXFbgjrCkBOr_CAr9kFY18e_"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Marquee ───────────────────────────────────────────── -->
+  <section class="marquee-section">
+    <div class="marquee-section__container">
+      <div class="marquee-section__track">
+        <span class="marquee-section__word">STRATEGY</span>
+        <span class="marquee-section__divider"></span>
+        <span class="marquee-section__word">DEVELOPMENT</span>
+        <span class="marquee-section__divider"></span>
+        <span class="marquee-section__word">SEO</span>
+        <span class="marquee-section__divider"></span>
+        <span class="marquee-section__word">DESIGN</span>
+        <span class="marquee-section__divider"></span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-section__word">STRATEGY</span>
+        <span class="marquee-section__divider"></span>
+        <span class="marquee-section__word">DEVELOPMENT</span>
+        <span class="marquee-section__divider"></span>
+        <span class="marquee-section__word">SEO</span>
+        <span class="marquee-section__divider"></span>
+        <span class="marquee-section__word">DESIGN</span>
+        <span class="marquee-section__divider"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Value Prop ────────────────────────────────────────── -->
+  <section class="value-prop">
+    <div class="value-prop__card value-prop__card--left">
+      <h2 class="value-prop__title">OUR PHILOSOPHY</h2>
+      <p class="value-prop__text">
+        We believe in the raw honesty of structure. Design is not just decoration;
+        it is the skeleton upon which your brand lives. We strip away the
+        unnecessary to reveal the core of your digital identity.
+      </p>
+    </div>
+    <div class="value-prop__card value-prop__card--right">
+      <h2 class="value-prop__title">DIGITAL PRECISION</h2>
+      <p class="value-prop__text">
+        Every pixel is an architectural decision. We craft digital spaces with the
+        same rigor as Berlin's most iconic monoliths. High-performance development
+        meets unapologetic visual curation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Services ─────────────────────────────────────────────── -->
+  <section class="services">
+    <div class="services__heading-area">
+      <h2 class="services__title">ARCHITECTING<br/>DIGITAL<br/>EXPERIENCES</h2>
+      <p class="services__subtitle">Botanical brutality meets industrial precision. We build robust systems for the modern web with an uncompromising aesthetic.</p>
+    </div>
+
+    <div class="services__grid">
+      <article class="service-card">
+        <div class="service-card__icon service-card__icon--1">
+          <img src="https://www.figma.com/api/mcp/asset/913363c3-62e7-4317-85f8-ed617ec51de5" alt="" />
         </div>
-        <!-- Flowing line that draws on scroll -->
-        <svg
-          class="intro-line"
-          viewBox="0 0 40 600"
-          fill="none"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            class="intro-line__path"
-            d="M20 0 C20 40, 8 60, 8 100 S32 160, 32 200 S8 260, 8 300 S32 360, 32 400 S8 460, 8 500 S20 560, 20 600"
-            stroke="url(#intro-line-grad)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            fill="none"></path>
-          <circle class="intro-line__dot" cx="20" cy="600" r="3" fill="#3b82f6" opacity="0"
-          ></circle>
-          <defs>
-            <linearGradient id="intro-line-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"></stop>
-              <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.4"></stop>
-              <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.6"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="intro-right">
-          <p class="reveal">
-            Building a successful website today requires more than good design. Businesses in Berlin
-            need high-performance web development, modern UX design, and technical SEO architecture
-            that drive measurable growth.
-          </p>
-          <p class="reveal">
-            Many companies struggle with slow websites, low conversion rates, and outdated
-            technology. At the same time, AI-driven search and evolving user behavior are changing
-            how digital products are discovered and evaluated.
-          </p>
-          <p class="reveal">
-            I design and develop fast, scalable, and AI-ready websites using React, Next.js, and
-            modern WordPress or headless CMS architectures — focused on performance, search
-            visibility, and increasing sales impact.
-          </p>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Web Development</h3>
+          <p class="service-card__desc">Hard-coded excellence using modern frameworks. Scalable, secure, and structurally sound infrastructure.</p>
+        </div>
+        <a href="/services/web-development" class="service-card__link">LEARN MORE →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon service-card__icon--2">
+          <img src="https://www.figma.com/api/mcp/asset/f0521e04-9a14-48c9-b7f8-3fa713bed22a" alt="" />
+        </div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">UI/UX Design</h3>
+          <p class="service-card__desc">Mathematical layouts and botanical color systems. Interfaces that feel like a digital greenhouse.</p>
+        </div>
+        <a href="/services/ui-ux-design" class="service-card__link">LEARN MORE →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon service-card__icon--3">
+          <img src="https://www.figma.com/api/mcp/asset/c6ea64fb-35f3-4973-93fe-c6487b931325" alt="" />
+        </div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">SEO Optimization</h3>
+          <p class="service-card__desc">Visibility as a structural requirement. We optimize for search algorithms and human intent.</p>
+        </div>
+        <a href="/services/seo-optimization" class="service-card__link">LEARN MORE →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon service-card__icon--4">
+          <img src="https://www.figma.com/api/mcp/asset/5cf01c57-4626-4af8-b7b4-8e5423d00ff7" alt="" />
+        </div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Website Audit</h3>
+          <p class="service-card__desc">Rigorous technical inspection. We identify structural weaknesses and performance bottlenecks.</p>
+        </div>
+        <a href="/services" class="service-card__link">LEARN MORE →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon service-card__icon--5">
+          <img src="https://www.figma.com/api/mcp/asset/ba043164-ce2d-41e9-8c93-5b9f57267fcd" alt="" />
+        </div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Performance Optimization</h3>
+          <p class="service-card__desc">Lightning-fast load times. We trim the fat and prioritize vital rendering paths.</p>
+        </div>
+        <a href="/services" class="service-card__link">LEARN MORE →</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon service-card__icon--6">
+          <img src="https://www.figma.com/api/mcp/asset/78cc90fc-70e3-484e-9eec-e8c767b9a44a" alt="" />
+        </div>
+        <div class="service-card__body">
+          <h3 class="service-card__title">Consulting</h3>
+          <p class="service-card__desc">Strategic guidance for digital growth. Architectural advice for your next big product launch.</p>
+        </div>
+        <a href="/services" class="service-card__link">LEARN MORE →</a>
+      </article>
+    </div>
+
+    <div class="services__cta">
+      <div class="services__cta-content">
+        <h3 class="services__cta-title">READY TO START BUILDING?</h3>
+        <p class="services__cta-text">Every project begins with a blueprint. Let's discuss your architectural vision and bring it to life with precision.</p>
+      </div>
+      <button class="services__cta-btn">WE ARE READY</button>
+    </div>
+  </section>
+
+  <!-- ── Blog Articles ────────────────────────────────────────── -->
+  <section class="blog-articles">
+    <div class="blog-articles__inner">
+      <span class="blog-articles__label">BLOG</span>
+      <h2 class="blog-articles__title">SOME BORING ARTICLES</h2>
+
+      <div class="blog-articles__grid">
+
+        <article class="article-card">
+          <div class="article-card__image-wrap">
+            <img class="article-card__image" src="https://www.figma.com/api/mcp/asset/ab0ce6bd-196e-426c-9ef5-8b11c3f523f2" alt="Retro-Tech article hero" />
+            <span class="article-card__badge article-card__badge--purple">TECH</span>
+          </div>
+          <div class="article-card__body">
+            <p class="article-card__date">Oct 14, 2024</p>
+            <h3 class="article-card__title">RETRO-TECH: WHY ANALOG MATTERS IN DIGITAL</h3>
+            <a class="article-card__link" href="#">READ ENTRY</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__image-wrap">
+            <img class="article-card__image" src="https://www.figma.com/api/mcp/asset/ae674d3f-a789-483b-8065-ae6a9ab0d652" alt="Web Dev article hero" />
+            <span class="article-card__badge article-card__badge--mint">WEB DEV</span>
+          </div>
+          <div class="article-card__body">
+            <p class="article-card__date">Oct 12, 2024</p>
+            <h3 class="article-card__title">OPTIMIZING FOR THE SPEED OF LIGHT</h3>
+            <a class="article-card__link" href="#">READ ENTRY</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__image-wrap">
+            <img class="article-card__image" src="https://www.figma.com/api/mcp/asset/a88b7175-8b75-427f-80f0-24bfbc016299" alt="SEO article hero" />
+            <span class="article-card__badge article-card__badge--purple">SEO</span>
+          </div>
+          <div class="article-card__body">
+            <p class="article-card__date">Oct 09, 2024</p>
+            <h3 class="article-card__title">ALGORITHMIC POETRY AND SEARCH RANKINGS</h3>
+            <a class="article-card__link" href="#">READ ENTRY</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__image-wrap">
+            <img class="article-card__image" src="https://www.figma.com/api/mcp/asset/f8069dfb-2341-4e41-82e8-e6613505f0ae" alt="Design article hero" />
+            <span class="article-card__badge article-card__badge--mint">DESIGN</span>
+          </div>
+          <div class="article-card__body">
+            <p class="article-card__date">Oct 05, 2024</p>
+            <h3 class="article-card__title">STRUCTURAL INTEGRITY IN UI LAYOUTS</h3>
+            <a class="article-card__link" href="#">READ ENTRY</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__image-wrap">
+            <img class="article-card__image" src="https://www.figma.com/api/mcp/asset/ed59985c-9716-439a-8aab-82df6d89d441" alt="Tech article hero" />
+            <span class="article-card__badge article-card__badge--purple">TECH</span>
+          </div>
+          <div class="article-card__body">
+            <p class="article-card__date">Sep 28, 2024</p>
+            <h3 class="article-card__title">HARDWARE AS A MEDIUM FOR CREATIVITY</h3>
+            <a class="article-card__link" href="#">READ ENTRY</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-card__image-wrap">
+            <img class="article-card__image" src="https://www.figma.com/api/mcp/asset/bea24cc3-ae28-42cd-ae8a-0be0c9f32ee5" alt="Strategy article hero" />
+            <span class="article-card__badge article-card__badge--mint">STRATEGY</span>
+          </div>
+          <div class="article-card__body">
+            <p class="article-card__date">Sep 22, 2024</p>
+            <h3 class="article-card__title">THE GEOMETRY OF CONSUMER ATTENTION</h3>
+            <a class="article-card__link" href="#">READ ENTRY</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ──────────────────────────────────────── -->
+  <section class="testimonials">
+    <h3 class="testimonials__title">VOICES OF THE CURATED</h3>
+
+    <div class="testimonials__grid">
+      <div class="testimonial-card testimonial-card--1">
+        <p class="testimonial-card__quote">
+          "AFM.DEV didn't just build a website; they built a fortress for my
+          brand. The aesthetic is raw, powerful, and unique."
+        </p>
+        <div class="testimonial-card__footer">
+          <div class="testimonial-card__avatar">
+            <img
+              alt="Marcus Vogel"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbUGmzhXtYcE_csR_E64WOd3rkWcxZAsvg2IuOXy9OH9C138msAvGzoaCr0lnm_aHxoLRjjFmHvGrWNGSsgVAn2uqAewEYA-ePcX7_MvZM8jM0I8RYqw9wujmV4BXba1VdhGZGAxgKFNoUPmLAq9hknWeuivGhY3I-sx7Kht6HrIz1vPO8tw3XeR5J5sDi6pohb-Xzvke9eYncAtBFMWVA6VyZm5UvJKE0tujw3ewFBPzBQRs-fL2r5Yj5OikiO1x6hR7ICHHzFZpP"
+            />
+          </div>
+          <div>
+            <p class="testimonial-card__name">MARCUS VOGEL</p>
+            <p class="testimonial-card__role">Founder, Neo Gallery</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <div id="scroll-content">
-      <!-- Services -->
-      <section class="services-wrapper" id="services">
-        <!-- SVG Zigzag Line Background -->
-        <svg
-          class="services-line"
-          viewBox="0 0 100 1000"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            class="services-line__path"
-            d="M50 0 L50 100 L20 250 L50 400 L80 550 L50 700 L20 850 L50 1000"
-            stroke="url(#services-line-grad)"
-            stroke-width="0.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            fill="none"></path>
-          <circle class="services-line__dot" cx="50" cy="0" r="1.5" fill="#3b82f6" opacity="0"
-          ></circle>
-          <defs>
-            <linearGradient id="services-line-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.1"></stop>
-              <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.5"></stop>
-              <stop offset="100%" stop-color="#3b82f6" stop-opacity="1"></stop>
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <div class="section-header">
-          <span class="section-label masking-text"><span class="line">What We Do</span></span>
-          <h2 class="section-title parallax-text" data-speed="0.08">Services</h2>
-        </div>
-
-        <!-- Service 1 -->
-        <div class="service-block">
-          <div class="service-grid">
-            <div class="service-text reveal-left">
-              <span class="service-number">01</span>
-              <h3>Website Audit & Technical SEO Review Services</h3>
-              <p class="service-intro">
-                Our website audit and technical SEO review services identify SEO, performance, and
-                usability issues that limit business growth. You receive clear, prioritized audit
-                insights to improve rankings, speed, and technical stability.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Common searches / problems users have:</h4>
-                <ul class="problems-list">
-                  <li>Why is my website not ranking on Google despite good content?</li>
-                  <li>How to identify technical SEO issues on a business website?</li>
-                  <li>How do I know if my website has SEO or performance problems?</li>
-                  <li>Why does my website traffic keep dropping over time?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Get Your Free Audit Report</a>
-            </div>
-            <div class="service-visual reveal-right">
-              <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_01.png"
-                  alt="Website Audit & Technical SEO"
-                  class="service-image"
-                />
-              </div>
-            </div>
+      <div class="testimonial-card testimonial-card--2">
+        <p class="testimonial-card__quote">
+          "The level of digital precision is unmatched. Our conversion rates
+          tripled because the design commands respect immediately."
+        </p>
+        <div class="testimonial-card__footer">
+          <div class="testimonial-card__avatar">
+            <img
+              alt="Elena Rossi"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpHhTs2YXrZuMryPxJNEyekNq_j4B_3gKQ0s6c9vvNc-bhKcHCYG7k8XN8zNsblRXVKuaqWGLANWjDCxPLswvsBGJd4HErlmpMuwd8Yo215SMy3O0OFAXIdyT2_0s8-NlCcnJWUHGgtn0DtSDysNnK9E7bTJss2gmJ9wPh5ImOa7WppD7pz_IZNPPIVV37QnNEhqUUZc2FvUbeyg-Yn--zZGBOA5JsSWzuJ-R88i10hYHiYktKUpaC4TdSd8A4RMSqLtY7ljTtHVzu"
+            />
+          </div>
+          <div>
+            <p class="testimonial-card__name">ELENA ROSSI</p>
+            <p class="testimonial-card__role">Tech Lead, Flow-State</p>
           </div>
         </div>
+      </div>
 
-        <!-- Service 2 -->
-        <div class="service-block reverse">
-          <div class="service-grid">
-            <div class="service-visual reveal-left">
-              <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_02.png"
-                  alt="Website Performance Optimization"
-                  class="service-image"
-                />
-              </div>
-            </div>
-            <div class="service-text reveal-right">
-              <span class="service-number">02</span>
-              <h3>Website Performance Optimization in Berlin</h3>
-              <p class="service-intro">
-                Our website performance and page speed optimization services in Berlin help
-                businesses fix slow websites and improve Core Web Vitals and Lighthouse scores. We
-                optimize loading times, assets, and architecture to deliver faster, SEO-friendly
-                websites.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>How to fix Core Web Vitals in Berlin?</li>
-                  <li>Why is my website slow in Germany?</li>
-                  <li>Who offers Lighthouse audits in Berlin?</li>
-                  <li>How to speed up an existing website?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Fix My Website Speed</a>
-            </div>
+      <div class="testimonial-card testimonial-card--3">
+        <p class="testimonial-card__quote">
+          "Berlin brutalism at its finest. If you want to stand out from the sea
+          of soft-rounded SaaS designs, this is the place."
+        </p>
+        <div class="testimonial-card__footer">
+          <div class="testimonial-card__avatar">
+            <img
+              alt="Jakob Schmidt"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB219GJAnEjcC3lCqolYEbI6YiPAVNtOAe7oKf30Xofy3KrJy-pQBAQZo09FypuT2TE5xQI1dci1Jcw_973UzdvC37Cgs9EgvxJLem3mQmJ2-09sunWaJgLCWQddQYfQ4itHfiREy2-AxJI4lgsh8uEKKgPYPMkjRK1WJdL0Zv7R5tXav-INd4bGRu55JTwmoq_h8N90ILfPMZGDUYzfeSNalcLLHezTPvZFvmypH9cYcgvmCXIBQd6-odrZSjuP1nDLILRLeCx2Ubw"
+            />
+          </div>
+          <div>
+            <p class="testimonial-card__name">JAKOB SCHMIDT</p>
+            <p class="testimonial-card__role">Creative Director, B-SIDE</p>
           </div>
         </div>
-
-        <!-- Service 3 -->
-        <div class="service-block">
-          <div class="service-grid">
-            <div class="service-text reveal-left">
-              <span class="service-number">03</span>
-              <h3>Custom Web Development in Berlin</h3>
-              <p class="service-intro">
-                Our custom web development services in Berlin help startups and growing businesses
-                build scalable, SEO-optimized websites using React, Next.js, and modern
-                architecture.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Who builds custom React websites in Berlin?</li>
-                  <li>How to find a reliable web developer in Berlin?</li>
-                  <li>What is the cost of custom web development in Berlin?</li>
-                  <li>How to rebuild a company website in Berlin without losing SEO?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Start My Berlin Web Project</a>
-            </div>
-            <div class="service-visual reveal-right">
-              <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_03.png"
-                  alt="Custom Web Development"
-                  class="service-image"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-block reverse">
-          <div class="service-grid">
-            <div class="service-visual reveal-left">
-              <div class="visual-card shutter-reveal">
-                <img src="/images/service_03.png" alt="WordPress Websites" class="service-image" />
-              </div>
-            </div>
-            <div class="service-text reveal-right">
-              <span class="service-number">04</span>
-              <h3>WordPress Websites in Berlin</h3>
-              <p class="service-intro">
-                Our WordPress development services in Berlin deliver custom, performance-optimized
-                WordPress websites — not bloated themes. We build scalable architectures, custom
-                themes, and clean implementations tailored to your business goals.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Who builds custom WordPress websites in Berlin?</li>
-                  <li>How to make WordPress fast and SEO-friendly?</li>
-                  <li>Best WordPress developer in Berlin for business sites?</li>
-                  <li>How to customize WordPress without breaking updates?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Build My WordPress Site</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-block">
-          <div class="service-grid">
-            <div class="service-text reveal-left">
-              <span class="service-number">05</span>
-              <h3>Backend Integration & Headless CMS in Berlin</h3>
-              <p class="service-intro">
-                We implement headless CMS solutions and backend integrations in Berlin using
-                Contentful, Storyblok, and Payload for flexible and scalable content workflows.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Best headless CMS developer in Berlin?</li>
-                  <li>How to integrate Contentful with Next.js?</li>
-                  <li>CMS setup for startups in Berlin?</li>
-                  <li>How to improve content management without slowing the site?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Integrate My CMS</a>
-            </div>
-            <div class="service-visual reveal-right">
-              <div class="visual-card shutter-reveal">
-                <img src="/images/service_03.png" alt="Backend Integration" class="service-image" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="service-block reverse">
-          <div class="service-grid">
-            <div class="service-visual reveal-left">
-              <div class="visual-card shutter-reveal">
-                <img
-                  src="/images/service_01.png"
-                  alt="Technical Consulting"
-                  class="service-image"
-                />
-              </div>
-            </div>
-            <div class="service-text reveal-right">
-              <span class="service-number">06</span>
-              <h3>Technical Consulting for Digital Teams in Berlin</h3>
-              <p class="service-intro">
-                Our technical consulting services in Berlin support product teams with architecture
-                decisions, code reviews, and scalability planning.
-              </p>
-              <div class="problems-section stagger-children">
-                <h4>Search-type questions:</h4>
-                <ul class="problems-list">
-                  <li>Who offers web architecture consulting in Berlin?</li>
-                  <li>Code review services for startups Berlin?</li>
-                  <li>Should we refactor or rebuild our platform?</li>
-                  <li>How to scale a React application properly?</li>
-                </ul>
-              </div>
-              <a href="/contact" class="service-cta magnetic">Get Expert Advice</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Process / How We Work -->
-      <section class="process-section" id="process">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">How We Work</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">Our Process</h2>
-          </div>
-          <div class="process-steps stagger-children">
-            <div class="process-step">
-              <span class="step-number">01</span>
-              <h3>Discovery</h3>
-              <p>
-                We analyze your current situation, goals, and target audience to define a clear
-                roadmap.
-              </p>
-            </div>
-            <div class="process-step">
-              <span class="step-number">02</span>
-              <h3>Strategy</h3>
-              <p>
-                We design the technical architecture, content strategy, and performance benchmarks.
-              </p>
-            </div>
-            <div class="process-step">
-              <span class="step-number">03</span>
-              <h3>Build</h3>
-              <p>We develop with modern tools, clean code, and continuous feedback loops.</p>
-            </div>
-            <div class="process-step">
-              <span class="step-number">04</span>
-              <h3>Launch & Optimize</h3>
-              <p>We deploy, monitor performance, and iterate based on real data and analytics.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Tech Stack -->
-      <section class="tech-section">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Technology</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">Tools We Use</h2>
-          </div>
-          <div class="tech-grid stagger-children">
-            <div class="tech-item">React</div>
-            <div class="tech-item">Next.js</div>
-            <div class="tech-item">Astro</div>
-            <div class="tech-item">TypeScript</div>
-            <div class="tech-item">Node.js</div>
-            <div class="tech-item">WordPress</div>
-            <div class="tech-item">Contentful</div>
-            <div class="tech-item">Tailwind CSS</div>
-            <div class="tech-item">Figma</div>
-            <div class="tech-item">Vercel</div>
-            <div class="tech-item">AWS</div>
-            <div class="tech-item">PostgreSQL</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section class="projects-section" id="projects">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Our Work</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">Featured Projects</h2>
-          </div>
-          <div class="projects-showcase stagger-children">
-            <div class="project-item shutter-reveal">
-              <div class="project-preview">🛒</div>
-              <h3>E-Commerce Platform</h3>
-              <p>
-                Full-featured e-commerce platform with custom checkout and inventory management.
-              </p>
-            </div>
-            <div class="project-item shutter-reveal">
-              <div class="project-preview">📊</div>
-              <h3>Analytics Dashboard</h3>
-              <p>
-                Real-time data dashboard with interactive visualizations and automated reporting.
-              </p>
-            </div>
-          </div>
-          <a href="/projects" class="link-button">View all projects →</a>
-        </div>
-      </section>
-
-      <!-- Testimonials / Social Proof -->
-      <section class="testimonials-section" id="testimonials">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Testimonials</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">What Clients Say</h2>
-          </div>
-          <div class="testimonials-grid stagger-children">
-            <blockquote class="testimonial">
-              <p>
-                "They transformed our outdated website into a high-performance platform. Page speed
-                improved by 300% and organic traffic doubled within three months."
-              </p>
-              <footer>
-                <strong>Anna M.</strong>
-                <span>CEO, TechStart Berlin</span>
-              </footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>
-                "Professional, efficient, and genuinely invested in our success. The custom CMS
-                integration saved our team hours of manual work every week."
-              </p>
-              <footer>
-                <strong>Marcus K.</strong>
-                <span>CTO, GreenLeaf GmbH</span>
-              </footer>
-            </blockquote>
-            <blockquote class="testimonial">
-              <p>
-                "The SEO audit revealed critical issues we had no idea about. After implementing
-                their recommendations, we jumped from page 3 to page 1 on Google."
-              </p>
-              <footer>
-                <strong>Laura S.</strong>
-                <span>Marketing Director, UrbanFlow</span>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section class="about-section" id="about">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Who We Are</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">About Us</h2>
-          </div>
-          <div class="about-content reveal">
-            <p>
-              We are developers passionate about building exceptional web experiences. With years of
-              frontend and backend expertise, we help businesses achieve their digital goals.
-            </p>
-            <p>
-              Specialized in modern technologies like React, Astro, Node.js and more. Based in
-              Berlin, working worldwide.
-            </p>
-          </div>
-          <a href="/about" class="link-button">Learn more →</a>
-        </div>
-      </section>
-
-      <!-- FAQ Section (SEO) -->
-      <section class="faq-section" id="faq">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">FAQ</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <div class="faq-list stagger-children">
-            <details class="faq-item">
-              <summary>What types of websites do you build?</summary>
-              <p>
-                We build custom websites, e-commerce platforms, landing pages, headless CMS
-                solutions, and WordPress sites. Every project is tailored to your specific business
-                needs and growth goals.
-              </p>
-            </details>
-            <details class="faq-item">
-              <summary>How long does a typical web project take?</summary>
-              <p>
-                A standard website takes 4-8 weeks from discovery to launch. Complex platforms with
-                custom integrations may take 8-16 weeks. We provide a detailed timeline during the
-                strategy phase.
-              </p>
-            </details>
-            <details class="faq-item">
-              <summary>Do you work with clients outside Berlin?</summary>
-              <p>
-                Yes. While we are based in Berlin, we work with clients across Germany and
-                internationally. We use modern collaboration tools and async workflows to ensure
-                smooth communication.
-              </p>
-            </details>
-            <details class="faq-item">
-              <summary>What is included in a website audit?</summary>
-              <p>
-                Our audits cover technical SEO, Core Web Vitals, accessibility, security, content
-                structure, mobile usability, and competitive analysis. You receive a prioritized
-                report with actionable recommendations.
-              </p>
-            </details>
-            <details class="faq-item">
-              <summary>How much does a website cost?</summary>
-              <p>
-                Pricing depends on scope, complexity, and timeline. A simple landing page starts at
-                a different range than a full e-commerce platform. Contact us for a free initial
-                consultation and quote.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="contact-section" id="contact">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label masking-text"><span class="line">Get In Touch</span></span>
-            <h2 class="section-title parallax-text" data-speed="0.08">Contact</h2>
-          </div>
-          <p class="contact-intro reveal">Have a project in mind? Let's talk.</p>
-          <div class="contact-info stagger-children">
-            <div class="info-item">
-              <span class="icon">📧</span>
-              <a href="mailto:hello@example.com">hello@example.com</a>
-            </div>
-            <div class="info-item">
-              <span class="icon">📱</span>
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </div>
-          </div>
-          <a href="/contact" class="btn-primary magnetic">Get in touch →</a>
-        </div>
-      </section>
-    </div><!-- /#scroll-content -->
-
-    <!-- FAQ Schema (JSON-LD) -->
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What types of websites do you build?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "We build custom websites, e-commerce platforms, landing pages, headless CMS solutions, and WordPress sites. Every project is tailored to your specific business needs and growth goals.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How long does a typical web project take?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "A standard website takes 4-8 weeks from discovery to launch. Complex platforms with custom integrations may take 8-16 weeks. We provide a detailed timeline during the strategy phase.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you work with clients outside Berlin?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. While we are based in Berlin, we work with clients across Germany and internationally. We use modern collaboration tools and async workflows to ensure smooth communication.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "What is included in a website audit?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Our audits cover technical SEO, Core Web Vitals, accessibility, security, content structure, mobile usability, and competitive analysis. You receive a prioritized report with actionable recommendations.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How much does a website cost?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Pricing depends on scope, complexity, and timeline. A simple landing page starts at a different range than a full e-commerce platform. Contact us for a free initial consultation and quote.",
-            },
-          },
-        ],
-      })}
-    ></script>
-  </body>
-</html>
-
-<style>
-  /* ===== Base Reset ===== */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    background: #0a0a0a;
-  }
-
-  body {
-    overflow-x: hidden;
-    background: #0a0a0a;
-    color: #a3a3a3;
-    font-family: system-ui, -apple-system, sans-serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Satoshi", sans-serif;
-    font-weight: 700;
-    color: #fafafa;
-  }
-
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  /* ===== Masking Text Animation (elementis-style line reveal) ===== */
-  .masking-text {
-    overflow: hidden;
-    display: block;
-  }
-
-  .masking-text .line {
-    display: block;
-    transform: translateY(120%);
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .masking-text.is-visible .line {
-    transform: translateY(0);
-  }
-
-  /* Stagger lines within same masking-text */
-  .masking-text.is-visible .line:nth-child(2) {
-    transition-delay: 0.1s;
-  }
-  .masking-text.is-visible .line:nth-child(3) {
-    transition-delay: 0.2s;
-  }
-
-  /* ===== Parallax Text (moves with scroll) ===== */
-  .parallax-text {
-    will-change: transform;
-    transition: none;
-  }
-
-  /* ===== Shutter/Blind Reveal ===== */
-  .shutter-reveal {
-    --shutter-progress: 0;
-    -webkit-mask-image: repeating-linear-gradient(
-      to bottom,
-      black 0px,
-      black calc(var(--shutter-progress) * 100%),
-      transparent calc(var(--shutter-progress) * 100%),
-      transparent 20px
-    );
-    mask-image: repeating-linear-gradient(
-      to bottom,
-      black 0px,
-      black calc(var(--shutter-progress) * 100%),
-      transparent calc(var(--shutter-progress) * 100%),
-      transparent 20px
-    );
-    -webkit-mask-size: 100% 20px;
-    mask-size: 100% 20px;
-  }
-
-  .shutter-reveal.is-visible {
-    animation: shutterOpen 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  @keyframes shutterOpen {
-    0% {
-      --shutter-progress: 0;
-      opacity: 0;
-    }
-    100% {
-      --shutter-progress: 1;
-      opacity: 1;
-      -webkit-mask-image: none;
-      mask-image: none;
-    }
-  }
-
-  /* ===== Standard Reveal Animations ===== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-60px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(60px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .reveal.is-visible,
-  .reveal-left.is-visible,
-  .reveal-right.is-visible {
-    opacity: 1;
-    transform: translate(0);
-  }
-
-  .stagger-children > * {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .stagger-children.is-visible > * {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .stagger-children.is-visible > *:nth-child(1) {
-    transition-delay: 0s;
-  }
-  .stagger-children.is-visible > *:nth-child(2) {
-    transition-delay: 0.08s;
-  }
-  .stagger-children.is-visible > *:nth-child(3) {
-    transition-delay: 0.16s;
-  }
-  .stagger-children.is-visible > *:nth-child(4) {
-    transition-delay: 0.24s;
-  }
-  .stagger-children.is-visible > *:nth-child(5) {
-    transition-delay: 0.32s;
-  }
-  .stagger-children.is-visible > *:nth-child(6) {
-    transition-delay: 0.4s;
-  }
-  .stagger-children.is-visible > *:nth-child(7) {
-    transition-delay: 0.48s;
-  }
-  .stagger-children.is-visible > *:nth-child(8) {
-    transition-delay: 0.56s;
-  }
-  .stagger-children.is-visible > *:nth-child(9) {
-    transition-delay: 0.64s;
-  }
-  .stagger-children.is-visible > *:nth-child(10) {
-    transition-delay: 0.72s;
-  }
-  .stagger-children.is-visible > *:nth-child(11) {
-    transition-delay: 0.8s;
-  }
-  .stagger-children.is-visible > *:nth-child(12) {
-    transition-delay: 0.88s;
-  }
-
-  /* ===== Reduced Motion ===== */
-  @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .reveal-left,
-    .reveal-right,
-    .stagger-children > *,
-    .masking-text .line {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-
-    .shutter-reveal {
-      -webkit-mask-image: none;
-      mask-image: none;
-      animation: none !important;
-    }
-
-    .scroll-line,
-    .ring,
-    .bar,
-    .sq,
-    .stack-card,
-    .node,
-    .vbar {
-      animation: none !important;
-    }
-
-    #gradient-canvas {
-      display: none;
-    }
-    .parallax-text {
-      transform: none !important;
-    }
-  }
-
-  /* ===== Section Headers ===== */
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .section-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #3b82f6;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: #fafafa;
-    line-height: 1.1;
-  }
-
-  /* ===== Award Badge ===== */
-  .award-badge {
-    position: relative;
-    display: inline-flex;
-    border-radius: 9999px;
-    padding: 1px;
-    margin-bottom: 2rem;
-    overflow: hidden;
-  }
-
-  .award-badge__border {
-    position: absolute;
-    inset: -100%;
-    width: 300%;
-    height: 300%;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      rgba(59, 130, 246, 0.9) 60deg,
-      rgba(147, 197, 253, 0.6) 90deg,
-      transparent 150deg
-    );
-    animation: rotateBadgeBorder 8s linear infinite;
-  }
-
-  @keyframes rotateBadgeBorder {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .award-badge__inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(10, 10, 10, 0.9);
-    border-radius: 9999px;
-    padding: 0.375rem 0.875rem;
-  }
-
-  .award-badge__inner span {
-    font-size: 0.8rem;
-    color: rgba(250, 250, 250, 0.7);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
-
-  /* ===== Hero Section ===== */
-  .hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    overflow: hidden;
-    padding: 8rem 2rem 4rem;
-  }
-
-  #gradient-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 80px 80px;
-    z-index: 0;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    max-width: 900px;
-  }
-
-  .hero-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #3b82f6;
-    margin-bottom: 2rem;
-  }
-
-  .hero-section h1 {
-    font-size: clamp(2.8rem, 7vw, 5rem);
-    line-height: 1.08;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    color: #fafafa;
-    overflow: hidden;
-    padding-bottom: 10px;
-  }
-
-  .text-accent {
-    color: #3b82f6;
-  }
-
-  .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: #737373;
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* ===== Buttons ===== */
-  .btn-primary {
-    display: inline-block;
-    padding: 0.9rem 2.25rem;
-    background: #fafafa;
-    color: #0a0a0a;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .btn-primary:hover {
-    background: #3b82f6;
-    color: #fff;
-  }
-
-  .btn-outline {
-    display: inline-block;
-    padding: 0.9rem 2.25rem;
-    background: transparent;
-    color: #d4d4d4;
-    border: 1px solid #404040;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: border-color 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .btn-outline:hover {
-    border-color: #3b82f6;
-    color: #3b82f6;
-  }
-
-  /* ===== Scroll Indicator ===== */
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    z-index: 1;
-  }
-
-  .scroll-indicator span {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #525252;
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 48px;
-    background: linear-gradient(to bottom, #525252, transparent);
-    animation: scrollPulse 2.5s ease-in-out infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%,
-    100% {
-      opacity: 0.2;
-      transform: scaleY(0.4);
-      transform-origin: top;
-    }
-    50% {
-      opacity: 1;
-      transform: scaleY(1);
-      transform-origin: top;
-    }
-  }
-
-  /* ===== Marquee ===== */
-  .marquee {
-    padding: 2.5rem 0;
-    overflow: hidden;
-    border-top: 1px solid #1a1a1a;
-    border-bottom: 1px solid #1a1a1a;
-    background: #0a0a0a;
-    position: relative;
-    z-index: 2;
-  }
-
-  .marquee__wrapper {
-    display: flex;
-    white-space: nowrap;
-  }
-
-  .marquee__group {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-shrink: 0;
-    padding-right: 2rem;
-  }
-
-  .marquee__group span {
-    font-family: "Satoshi", sans-serif;
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    font-weight: 500;
-    color: #525252;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-
-  .dot-canvas {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-    vertical-align: middle;
-    opacity: 0.85;
-  }
-
-  /* ===== Intro Section ===== */
-  .intro-section {
-    position: relative;
-    z-index: 2;
-    background: #0a0a0a;
-    padding: 8rem 2rem;
-  }
-
-  .intro-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 40px 1fr;
-    gap: 2rem;
-    align-items: start;
-    position: relative;
-  }
-
-  .intro-left {
-    position: sticky;
-    top: 8rem;
-  }
-
-  .intro-title {
-    font-family: "Satoshi", sans-serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 400;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    color: #fafafa;
-    margin: 0;
-  }
-
-  .intro-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .intro-right p {
-    font-size: clamp(1rem, 2.5vw, 1.875rem);
-    line-height: clamp(1rem, 2.5vw, 1.875rem);
-    color: #404040;
-    margin: 0;
-  }
-
-  .reveal-word {
-    display: inline;
-  }
-
-  .intro-line {
-    width: 40px;
-    height: 100%;
-    pointer-events: none;
-    justify-self: center;
-  }
-
-  .intro-line__path {
-    stroke-dasharray: var(--line-length, 1000);
-    stroke-dashoffset: var(--line-length, 1000);
-  }
-
-  @media (max-width: 768px) {
-    .intro-section {
-      padding: 4rem 1.5rem;
-    }
-    .intro-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .intro-left {
-      position: static;
-    }
-    .intro-line {
-      display: none;
-    }
-  }
-
-  /* Pause decorative CSS animations when off-screen */
-  .visual-card {
-    content-visibility: auto;
-  }
-  .visual-card .ring,
-  .visual-card .bar,
-  .visual-card .sq,
-  .visual-card .stack-card,
-  .visual-card .node,
-  .visual-card .vbar {
-    animation-play-state: paused;
-  }
-  .visual-card.is-animating .ring,
-  .visual-card.is-animating .bar,
-  .visual-card.is-animating .sq,
-  .visual-card.is-animating .stack-card,
-  .visual-card.is-animating .node,
-  .visual-card.is-animating .vbar {
-    animation-play-state: running;
-  }
-
-  /* ===== Stacking sections (cover hero) ===== */
-  .services-wrapper,
-  .process-section,
-  .tech-section,
-  .projects-section,
-  .testimonials-section,
-  .about-section,
-  .faq-section,
-  .contact-section {
-    position: relative;
-    z-index: 2;
-    background: #0a0a0a;
-  }
-
-  /* ===== Services — layered background & expanding setup ===== */
-  .services-wrapper {
-    padding: 8rem 0 4rem;
-    isolation: isolate;
-
-    /* Reveal Expansion Setup */
-    width: 100%;
-    will-change: clip-path; /* optimize animation */
-  }
-
-  .services-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 256px 256px;
-    background-repeat: repeat;
-    opacity: 0.055;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .service-block {
-    padding: 6rem 2rem;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .service-block:last-child {
-    border-bottom: 1px solid #1a1a1a;
-  }
-
-  .service-grid {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: center;
-  }
-
-  .reverse .service-grid {
-    grid-template-columns: 2fr 3fr;
-  }
-
-  .service-text {
-    text-align: left;
-  }
-
-  .service-number {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    letter-spacing: 2px;
-    color: #3b82f6;
-  }
-
-  .service-block h3 {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    margin-bottom: 1.25rem;
-    line-height: 1.15;
-    color: #fafafa;
-  }
-
-  .service-intro {
-    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    color: #737373;
-  }
-
-  .problems-section {
-    margin-bottom: 2rem;
-  }
-
-  .problems-section h4 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    color: #a3a3a3;
-    font-weight: 600;
-  }
-
-  .problems-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .problems-list li {
-    padding: 0.4rem 0;
-    padding-left: 1.75rem;
-    position: relative;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #737373;
-  }
-
-  .problems-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #3b82f6;
-    font-weight: bold;
-  }
-
-  .service-cta {
-    display: inline-block;
-    padding: 0.8rem 1.75rem;
-    background: transparent;
-    border: 1px solid #404040;
-    color: #d4d4d4;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .service-cta:hover {
-    background: #3b82f6;
-    border-color: #3b82f6;
-    color: #fff;
-  }
-
-  /* ===== Services SVG Zigzag Line ===== */
-  .services-line {
-    position: absolute;
-    top: 10%;
-    left: 10%; /* Place it off-center so it flows across the grid */
-    width: 80%;
-    height: 90%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.5; /* Subtle background glow */
-  }
-
-  /* Visual Cards & Images */
-  .visual-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px; /* Slightly taller for the images */
-    background: #111111;
-    border-radius: 12px;
-    border: 1px solid #1a1a1a;
-    overflow: hidden;
-    position: relative;
-    transition: border-color 0.3s ease;
-  }
-
-  .visual-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.1) 0%,
-      transparent 50%,
-      rgba(59, 130, 246, 0.05) 100%
-    );
-    pointer-events: none;
-  }
-
-  .service-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.01);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .visual-card:hover .service-image {
-    transform: scale(1.05); /* Soft zoom on hover */
-  }
-
-  /* Art 1: Concentric Rings */
-  .art-rings {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ring {
-    position: absolute;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 50%;
-    animation: ringPulse 3s ease-in-out infinite;
-  }
-
-  .ring-1 {
-    width: 160px;
-    height: 160px;
-    animation-delay: 0s;
-  }
-  .ring-2 {
-    width: 110px;
-    height: 110px;
-    animation-delay: 0.5s;
-  }
-  .ring-3 {
-    width: 60px;
-    height: 60px;
-    animation-delay: 1s;
-  }
-
-  .ring-dot {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #3b82f6;
-    border-radius: 50%;
-    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
-  }
-
-  @keyframes ringPulse {
-    0%,
-    100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.06);
-    }
-  }
-
-  /* Art 2: Horizontal Bars */
-  .art-bars {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px;
-  }
-
-  .bar {
-    height: 6px;
-    background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0.1));
-    border-radius: 3px;
-    animation: barGrow 2s ease-in-out infinite alternate;
-  }
-
-  .bar-1 {
-    width: 90%;
-    animation-delay: 0s;
-  }
-  .bar-2 {
-    width: 70%;
-    animation-delay: 0.15s;
-  }
-  .bar-3 {
-    width: 95%;
-    animation-delay: 0.3s;
-  }
-  .bar-4 {
-    width: 60%;
-    animation-delay: 0.45s;
-  }
-  .bar-5 {
-    width: 80%;
-    animation-delay: 0.6s;
-  }
-
-  @keyframes barGrow {
-    0% {
-      opacity: 0.4;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* Art 3: Grid Squares */
-  .art-grid-squares {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    padding: 20px;
-  }
-
-  .sq {
-    aspect-ratio: 1;
-    border: 1px solid #262626;
-    border-radius: 4px;
-    background: #141414;
-    animation: sqFade 2.5s ease-in-out infinite alternate;
-  }
-
-  .sq-5 {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: #3b82f6;
-  }
-
-  .sq-1 {
-    animation-delay: 0s;
-  }
-  .sq-2 {
-    animation-delay: 0.1s;
-  }
-  .sq-3 {
-    animation-delay: 0.2s;
-  }
-  .sq-4 {
-    animation-delay: 0.3s;
-  }
-  .sq-5 {
-    animation-delay: 0.4s;
-  }
-  .sq-6 {
-    animation-delay: 0.5s;
-  }
-  .sq-7 {
-    animation-delay: 0.6s;
-  }
-  .sq-8 {
-    animation-delay: 0.7s;
-  }
-  .sq-9 {
-    animation-delay: 0.8s;
-  }
-
-  @keyframes sqFade {
-    0% {
-      opacity: 0.3;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* Art 4: Stacked Cards */
-  .art-cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .stack-card {
-    position: absolute;
-    width: 120px;
-    height: 160px;
-    border: 1px solid #262626;
-    border-radius: 8px;
-    background: #141414;
-    animation: cardFloat 4s ease-in-out infinite;
-  }
-
-  .card-1 {
-    --card-transform: rotate(-8deg) translateX(-20px);
-    transform: var(--card-transform);
-    animation-delay: 0s;
-  }
-  .card-2 {
-    --card-transform: rotate(0deg);
-    transform: var(--card-transform);
-    animation-delay: 0.3s;
-    border-color: #3b82f6;
-  }
-  .card-3 {
-    --card-transform: rotate(8deg) translateX(20px);
-    transform: var(--card-transform);
-    animation-delay: 0.6s;
-  }
-
-  @keyframes cardFloat {
-    0%,
-    100% {
-      transform: var(--card-transform, rotate(0deg)) translateY(0);
-    }
-    50% {
-      transform: var(--card-transform, rotate(0deg)) translateY(-8px);
-    }
-  }
-
-  /* ===== Process Section ===== */
-  .process-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-
-  .process-step {
-    padding: 2rem;
-    border: 1px solid #1a1a1a;
-    border-radius: 8px;
-    background: #111111;
-    transition: border-color 0.3s ease;
-  }
-
-  .process-step:hover {
-    border-color: #262626;
-  }
-
-  .step-number {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #3b82f6;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-  }
-
-  .process-step h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    color: #e5e5e5;
-  }
-
-  .process-step p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #737373;
-  }
-
-  /* ===== Tech Section ===== */
-  .tech-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem;
-  }
-
-  .tech-item {
-    padding: 1.25rem 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #a3a3a3;
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
-    background: #111111;
-    transition: border-color 0.3s ease, color 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .tech-item:hover {
-    border-color: #3b82f6;
-    color: #fafafa;
-  }
-
-  /* ===== Projects Section ===== */
-  .projects-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .projects-showcase {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .project-item {
-    background: #111111;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid #1a1a1a;
-    transition: border-color 0.3s ease;
-    text-align: left;
-  }
-
-  .project-item:hover {
-    border-color: #262626;
-  }
-
-  .project-preview {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .project-item h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    color: #e5e5e5;
-  }
-
-  .project-item p {
-    color: #737373;
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-
-  /* ===== Testimonials Section ===== */
-  .testimonials-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .testimonial {
-    background: #111111;
-    border: 1px solid #1a1a1a;
-    border-radius: 8px;
-    padding: 2rem;
-    transition: border-color 0.3s ease;
-  }
-
-  .testimonial:hover {
-    border-color: #262626;
-  }
-
-  .testimonial p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #a3a3a3;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-  }
-
-  .testimonial footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .testimonial strong {
-    color: #e5e5e5;
-    font-size: 0.95rem;
-  }
-
-  .testimonial footer span {
-    color: #525252;
-    font-size: 0.85rem;
-  }
-
-  /* ===== About Section ===== */
-  .about-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-    text-align: center;
-  }
-
-  .about-content {
-    max-width: 650px;
-    margin: 0 auto 2rem;
-  }
-
-  .about-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    color: #737373;
-  }
-
-  /* ===== FAQ Section ===== */
-  .faq-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-  }
-
-  .faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid #1a1a1a;
-    padding: 1.5rem 0;
-  }
-
-  .faq-item summary {
-    cursor: pointer;
-    font-family: "Satoshi", sans-serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #e5e5e5;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 0.2s ease;
-  }
-
-  .faq-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .faq-item summary::after {
-    content: "+";
-    font-size: 1.4rem;
-    color: #525252;
-    transition: transform 0.3s ease, color 0.3s ease;
-    flex-shrink: 0;
-    margin-left: 1rem;
-  }
-
-  .faq-item[open] summary::after {
-    transform: rotate(45deg);
-    color: #3b82f6;
-  }
-
-  .faq-item summary:hover {
-    color: #3b82f6;
-  }
-
-  .faq-item p {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #737373;
-    padding-right: 2rem;
-  }
-
-  /* ===== Contact Section ===== */
-  .contact-section {
-    padding: 8rem 2rem;
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a;
-    text-align: center;
-  }
-
-  .contact-intro {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-    color: #737373;
-  }
-
-  .contact-info {
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-  }
-
-  .info-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.05rem;
-  }
-
-  .info-item .icon {
-    font-size: 1.5rem;
-  }
-
-  .info-item a {
-    color: #a3a3a3;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  .info-item a:hover {
-    color: #3b82f6;
-  }
-
-  .link-button {
-    display: inline-block;
-    color: #a3a3a3;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .link-button:hover {
-    color: #3b82f6;
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 1024px) {
-    .service-grid,
-    .reverse .service-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-
-    .service-visual {
-      order: -1;
-    }
-    .visual-card {
-      min-height: 260px;
-    }
-
-    .process-steps {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 6rem 1.5rem 3rem;
-    }
-
-    .hero-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .btn-primary,
-    .btn-outline {
-      width: 100%;
-      max-width: 320px;
-      text-align: center;
-    }
-
-    .service-block {
-      padding: 4rem 1.5rem;
-    }
-
-    .process-steps {
-      grid-template-columns: 1fr;
-    }
-
-    .projects-section,
-    .about-section,
-    .contact-section,
-    .testimonials-section,
-    .faq-section,
-    .tech-section,
-    .process-section {
-      padding: 5rem 1.5rem;
-    }
-
-    .projects-showcase,
-    .testimonials-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-info {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .service-cta {
-      width: 100%;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 8vw, 3rem);
-    }
-  }
-  /* === Custom cursor === */
-  @media (hover: hover) {
-    * {
-      cursor: none !important;
-    }
-  }
-
-  #cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background: #ffffff;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    z-index: 99999;
-    will-change: transform;
-    contain: layout style size;
-    transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
-      height 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  #cursor.magnet {
-    width: 90px;
-    height: 90px;
-    background: transparent;
-    border: 1px solid #ffffff;
-  }
-
-  #cursor.magnet::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #ffffff;
-    border-radius: 50%;
-  }
-
-  /* Magnetic spring-back on leave */
-  .magnetic {
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease,
-      color 0.3s ease, border-color 0.3s ease;
-  }
-
-  /* Scroll-content wrapper */
-  #scroll-content {
-    position: relative;
-    z-index: 2;
-  }
-</style>
-
-<script>
-  // ===== Intersection Observer for reveal animations =====
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
-  );
-
-  document
-    .querySelectorAll(
-      ".reveal, .reveal-left, .reveal-right, .stagger-children, .masking-text, .shutter-reveal"
-    )
-    .forEach((el) => revealObserver.observe(el));
-
-  // ===== Pause/resume CSS animations on visual cards when off-screen =====
-  const cardObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle("is-animating", entry.isIntersecting);
-      });
-    },
-    { rootMargin: "100px" }
-  );
-
-  document.querySelectorAll(".visual-card").forEach((card) => cardObserver.observe(card));
-
-  // ===== Marquee (driven by main RAF via global) =====
-  const marqueeWrapper = document.querySelector(".marquee__wrapper") as HTMLElement | null;
-  const marqueeGroup = document.querySelector(".marquee__group") as HTMLElement | null;
-  let marqueeVisible = false;
-  let marqueeX = 0;
-  let marqueeGroupWidth = 0;
-  let marqueeSpeed = 0.4;
-  let marqueeDirection = 1;
-  let marqueeScrolling = false;
-  let marqueeScrollTimer: ReturnType<typeof setTimeout>;
-
-  if (marqueeWrapper && marqueeGroup) {
-    marqueeGroupWidth = marqueeGroup.getBoundingClientRect().width;
-    marqueeX = -marqueeGroupWidth;
-
-    new ResizeObserver(() => {
-      marqueeGroupWidth = marqueeGroup!.getBoundingClientRect().width;
-    }).observe(marqueeGroup);
-
-    const marqueeEl = document.querySelector(".marquee") as HTMLElement;
-    new IntersectionObserver(
-      ([entry]) => {
-        marqueeVisible = entry.isIntersecting;
-      },
-      { threshold: 0 }
-    ).observe(marqueeEl);
-  }
-
-  // ===== Dot canvases — CSS animation replaces Three.js =====
-  // Instead of loading Three.js (700KB+) for 3 line segments,
-  // use lightweight CSS-animated SVG inline in each canvas slot.
-  document.querySelectorAll(".dot-canvas").forEach((c) => {
-    const canvas = c as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    canvas.width = 60;
-    canvas.height = 60;
-    const cx = 30,
-      cy = 30,
-      len = 16;
-    let angle = Math.random() * Math.PI * 2;
-    const speed = 0.008 + Math.random() * 0.004;
-
-    function drawCross() {
-      ctx!.clearRect(0, 0, 60, 60);
-      ctx!.strokeStyle = "#3b82f6";
-      ctx!.lineWidth = 1;
-      ctx!.beginPath();
-      // X axis
-      ctx!.moveTo(cx - len * Math.cos(angle), cy - len * Math.sin(angle));
-      ctx!.lineTo(cx + len * Math.cos(angle), cy + len * Math.sin(angle));
-      // Y axis
-      const a2 = angle + Math.PI / 3;
-      ctx!.moveTo(cx - len * Math.cos(a2), cy - len * Math.sin(a2));
-      ctx!.lineTo(cx + len * Math.cos(a2), cy + len * Math.sin(a2));
-      // Z axis
-      const a3 = angle + (2 * Math.PI) / 3;
-      ctx!.moveTo(cx - len * Math.cos(a3), cy - len * Math.sin(a3));
-      ctx!.lineTo(cx + len * Math.cos(a3), cy + len * Math.sin(a3));
-      ctx!.stroke();
-      angle += speed;
-    }
-    // Draw once initially; tick() updates it when marquee is visible
-    drawCross();
-    (canvas as any)._draw = drawCross;
-  });
-
-  const dotCanvases = Array.from(document.querySelectorAll(".dot-canvas")) as HTMLCanvasElement[];
-
-  // ===== WebGL Gradient Shader =====
-  function compileShader(gl: WebGL2RenderingContext, type: number, source: string) {
-    const shader = gl.createShader(type);
-    if (!shader) return null;
-    gl.shaderSource(shader, source);
-    gl.compileShader(shader);
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      gl.deleteShader(shader);
-      return null;
-    }
-    return shader;
-  }
-
-  function createProgram(gl: WebGL2RenderingContext, vs: string, fs: string) {
-    const v = compileShader(gl, gl.VERTEX_SHADER, vs);
-    const f = compileShader(gl, gl.FRAGMENT_SHADER, fs);
-    if (!v || !f) return null;
-    const p = gl.createProgram();
-    if (!p) return null;
-    gl.attachShader(p, v);
-    gl.attachShader(p, f);
-    gl.linkProgram(p);
-    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) {
-      gl.deleteProgram(p);
-      return null;
-    }
-    gl.detachShader(p, v);
-    gl.detachShader(p, f);
-    gl.deleteShader(v);
-    gl.deleteShader(f);
-    return p;
-  }
-
-  let glRender: ((t: number) => void) | null = null;
-  let glVisible = true;
-
-  const glCanvas = document.getElementById("gradient-canvas") as HTMLCanvasElement;
-  if (glCanvas) {
-    const gl = glCanvas.getContext("webgl2");
-    if (gl) {
-      const vsSrc = `#version 300 es
-				layout(location=0) in vec4 a_position;
-				void main() { gl_Position = a_position; }`;
-      const fsSrc = `#version 300 es
-				precision highp float;
-				uniform float u_time, u_pixelRatio, u_scale, u_rotation, u_proportion, u_softness, u_shape, u_shapeScale, u_distortion, u_swirl, u_swirlIterations;
-				uniform vec2 u_resolution;
-				uniform vec4 u_color1, u_color2, u_color3;
-				out vec4 fragColor;
-				#define TWO_PI 6.28318530718
-				#define PI 3.14159265358979323846
-				vec2 rot(vec2 uv, float th) { return mat2(cos(th),sin(th),-sin(th),cos(th))*uv; }
-				float hash(vec2 st) { return fract(sin(dot(st,vec2(12.9898,78.233)))*43758.5453); }
-				float noise(vec2 st) {
-					vec2 i=floor(st), f=fract(st); vec2 u=f*f*(3.-2.*f);
-					return mix(mix(hash(i),hash(i+vec2(1,0)),u.x), mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x), u.y);
-				}
-				vec4 blend3(vec4 c1,vec4 c2,vec4 c3,float m,float ew,float eb) {
-					vec3 a=c1.rgb*c1.a, b=c2.rgb*c2.a, c=c3.rgb*c3.a;
-					float r1=smoothstep(.35*ew,.7-.35*ew+.5*eb,m), r2=smoothstep(.3+.35*ew,1.-.35*ew+eb,m);
-					vec3 col=mix(mix(a,b,r1),c,r2); float o=mix(mix(c1.a,c2.a,r1),c3.a,r2);
-					return vec4(col,o);
-				}
-				void main() {
-					vec2 uv=gl_FragCoord.xy/u_resolution; float t=.5*u_time;
-					float ns=.0005+.006*u_scale; uv-=.5; uv*=ns*u_resolution;
-					uv=rot(uv,u_rotation*.5*PI); uv/=u_pixelRatio; uv+=.5;
-					float n1=noise(uv+t), n2=noise(uv*2.-t), ang=n1*TWO_PI;
-					uv.x+=4.*u_distortion*n2*cos(ang); uv.y+=4.*u_distortion*n2*sin(ang);
-					float iters=ceil(clamp(u_swirlIterations,1.,30.));
-					for(float i=1.;i<=iters;i++){uv.x+=clamp(u_swirl,0.,2.)/i*cos(t+i*1.5*uv.y);uv.y+=clamp(u_swirl,0.,2.)/i*cos(t+i*uv.x);}
-					float prop=clamp(u_proportion,0.,1.), shape=0., mixer=0.;
-					if(u_shape<.5){vec2 cuv=uv*(.5+3.5*u_shapeScale);shape=.5+.5*sin(cuv.x)*cos(cuv.y);mixer=shape+.48*sign(prop-.5)*pow(abs(prop-.5),.5);}
-					else if(u_shape<1.5){vec2 suv=uv*(.25+3.*u_shapeScale);float f=fract(suv.y);shape=smoothstep(0.,.55,f)*smoothstep(1.,.45,f);mixer=shape+.48*sign(prop-.5)*pow(abs(prop-.5),.5);}
-					else{float sh=1.-uv.y; sh-=.5; sh/=ns*u_resolution.y; sh+=.5; float ss=.2*(1.-u_shapeScale);shape=smoothstep(.45-ss,.55+ss,sh+.3*(prop-.5));mixer=shape;}
-					fragColor=blend3(u_color1,u_color2,u_color3,mixer,1.-clamp(u_softness,0.,1.),.01+.01*u_scale);
-				}`;
-
-      const program = createProgram(gl, vsSrc, fsSrc);
-      if (program) {
-        gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
-        gl.bufferData(
-          gl.ARRAY_BUFFER,
-          new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
-          gl.STATIC_DRAW
-        );
-        gl.enableVertexAttribArray(0);
-        gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
-
-        const loc = (n: string) => gl.getUniformLocation(program, n);
-        const uTime = loc("u_time"),
-          uPR = loc("u_pixelRatio"),
-          uRes = loc("u_resolution");
-
-        gl.useProgram(program);
-        gl.uniform1f(loc("u_scale"), 0.48);
-        gl.uniform1f(loc("u_rotation"), 0);
-        gl.uniform4fv(loc("u_color1"), [0.04, 0.04, 0.04, 1]);
-        gl.uniform4fv(loc("u_color2"), [0.23, 0.51, 0.96, 1]);
-        gl.uniform4fv(loc("u_color3"), [0.03, 0.03, 0.06, 1]);
-        gl.uniform1f(loc("u_proportion"), 0.33);
-        gl.uniform1f(loc("u_softness"), 1);
-        gl.uniform1f(loc("u_shape"), 1.5);
-        gl.uniform1f(loc("u_shapeScale"), 0.9);
-        gl.uniform1f(loc("u_distortion"), 0.04);
-        gl.uniform1f(loc("u_swirl"), 0.65);
-        gl.uniform1f(loc("u_swirlIterations"), 5);
-
-        function resize() {
-          const pr = Math.min(devicePixelRatio, 1.5);
-          glCanvas.width = glCanvas.clientWidth * pr;
-          glCanvas.height = glCanvas.clientHeight * pr;
-          gl!.viewport(0, 0, gl!.canvas.width, gl!.canvas.height);
-          gl!.useProgram(program);
-          gl!.uniform1f(uPR, pr);
-          gl!.uniform2f(uRes, gl!.canvas.width, gl!.canvas.height);
-        }
-        resize();
-        new ResizeObserver(resize).observe(glCanvas);
-
-        const t0 = performance.now();
-        glRender = () => {
-          gl!.useProgram(program);
-          gl!.uniform1f(uTime, (performance.now() - t0) * 0.00025);
-          gl!.drawArrays(gl!.TRIANGLES, 0, 6);
-        };
-      }
-    }
-  }
-
-  // ===== Smooth scroll for internal anchors =====
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (this: HTMLAnchorElement, e: Event) {
-      e.preventDefault();
-      const href = this.getAttribute("href");
-      if (href)
-        document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
-
-  // ===== SINGLE UNIFIED RAF =====
-  // All animation in ONE requestAnimationFrame — cursor, parallax, marquee, WebGL, dot canvases.
-  // No duplicate rAF loops. No DOM reads inside the loop. Scroll position captured via event listener.
-
-  const cursor = document.getElementById("cursor") as HTMLElement;
-  const heroContent = document.querySelector(".hero-content") as HTMLElement | null;
-  const heroGrid = document.querySelector(".hero-grid") as HTMLElement | null;
-
-  function lerp(a: number, b: number, f: number) {
-    return a + (b - a) * f;
-  }
-
-  let mouseX = 0,
-    mouseY = 0,
-    cursorX = 0,
-    cursorY = 0,
-    prevCX = -1,
-    prevCY = -1;
-  let scrollY = window.scrollY;
-  let lastScrollY = scrollY;
-
-  window.addEventListener(
-    "mousemove",
-    (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    },
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      scrollY = window.scrollY;
-      // Marquee direction tracking
-      const delta = scrollY - marqueeLastScrollY;
-      marqueeLastScrollY = scrollY;
-      if (delta > 0) marqueeDirection = 1;
-      else if (delta < 0) marqueeDirection = -1;
-      marqueeScrolling = true;
-      clearTimeout(marqueeScrollTimer);
-      marqueeScrollTimer = setTimeout(() => {
-        marqueeScrolling = false;
-      }, 120);
-
-      // WebGL visibility (hero is 100vh, covered by z-index:2 content after that)
-      const nowVisible = scrollY < window.innerHeight;
-      if (nowVisible !== glVisible) glVisible = nowVisible;
-    },
-    { passive: true }
-  );
-
-  let marqueeLastScrollY = scrollY;
-
-  // Pre-read parallax positions (no getBoundingClientRect in loop)
-  const parallaxItems = Array.from(document.querySelectorAll(".parallax-text")).map((el) => ({
-    el: el as HTMLElement,
-    speed: parseFloat((el as HTMLElement).dataset.speed || "0.1"),
-    top: el.getBoundingClientRect().top + scrollY,
-  }));
-  window.addEventListener(
-    "resize",
-    () => {
-      parallaxItems.forEach((item) => {
-        item.top = item.el.getBoundingClientRect().top + window.scrollY;
-      });
-    },
-    { passive: true }
-  );
-
-  // Frame counter for throttling less important updates
-  let frame = 0;
-
-  (function tick() {
-    frame++;
-
-    // ── Scroll delta ──
-    const delta = scrollY - lastScrollY;
-    lastScrollY = scrollY;
-
-    // ── Cursor (every frame for smooth tracking) ──
-    cursorX = lerp(cursorX, mouseX, 0.4);
-    cursorY = lerp(cursorY, mouseY, 0.4);
-    if (Math.abs(cursorX - prevCX) > 0.1 || Math.abs(cursorY - prevCY) > 0.1) {
-      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-      prevCX = cursorX;
-      prevCY = cursorY;
-    }
-
-    // ── Hero parallax (only when scrolling) ──
-    if (delta !== 0) {
-      if (heroContent) heroContent.style.transform = `translateY(${-scrollY * 0.35}px)`;
-      if (heroGrid) heroGrid.style.transform = `translateY(${-scrollY * 0.15}px)`;
-    }
-
-    // ── Section parallax (every 2nd frame — titles move slowly, no one notices) ──
-    if (frame % 2 === 0) {
-      const vh = window.innerHeight;
-      parallaxItems.forEach(({ el, speed, top }) => {
-        el.style.transform = `translateY(${(top - scrollY - vh * 0.5) * speed}px)`;
-      });
-    }
-
-    // ── Marquee (only when visible) ──
-    if (marqueeVisible && marqueeWrapper) {
-      const target = (marqueeScrolling ? 1.4 : 0.4) * marqueeDirection;
-      marqueeSpeed += (target - marqueeSpeed) * 0.04;
-      marqueeX -= marqueeSpeed;
-      if (marqueeX <= -2 * marqueeGroupWidth) marqueeX += marqueeGroupWidth;
-      if (marqueeX >= 0) marqueeX -= marqueeGroupWidth;
-      marqueeWrapper.style.transform = `translateX(${marqueeX}px)`;
-
-      // Dot canvas crosses — update every 3rd frame (they're tiny, 60px)
-      if (frame % 3 === 0) {
-        dotCanvases.forEach((c) => (c as any)._draw?.());
-      }
-    }
-
-    // ── WebGL gradient (only when hero visible) ──
-    if (glVisible && glRender) glRender(0);
-
-    requestAnimationFrame(tick);
-  })();
-
-  // ── Magnetic effect ──
-  document.querySelectorAll(".magnetic").forEach((el) => {
-    let rect: DOMRect;
-    el.addEventListener("mouseenter", () => {
-      rect = (el as HTMLElement).getBoundingClientRect();
-    });
-    el.addEventListener("mousemove", (e: Event) => {
-      const me = e as MouseEvent;
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      (el as HTMLElement).style.transform = `translate(${(me.clientX - cx) * 0.5}px, ${
-        (me.clientY - cy) * 0.5
-      }px)`;
-      cursor.classList.add("magnet");
-    });
-    el.addEventListener("mouseleave", () => {
-      (el as HTMLElement).style.transform = "translate(0, 0)";
-      cursor.classList.remove("magnet");
-    });
-  });
-
-  // ===== GSAP TEXT REVEAL =====
-  gsap.registerPlugin(ScrollTrigger);
-
-  // ===== FLOWING LINE DRAW =====
-  const introLinePath = document.querySelector(".intro-line__path") as SVGPathElement | null;
-  const introLineDot = document.querySelector(".intro-line__dot") as SVGCircleElement | null;
-  const introSection = document.querySelector(".intro-section") as HTMLElement | null;
-
-  if (introLinePath && introSection) {
-    const lineLength = introLinePath.getTotalLength();
-    introLinePath.style.strokeDasharray = `${lineLength}`;
-    introLinePath.style.strokeDashoffset = `${lineLength}`;
-
-    gsap.to(introLinePath, {
-      strokeDashoffset: 0,
-      ease: "none",
-      scrollTrigger: {
-        trigger: introSection,
-        start: "top 60%",
-        end: "bottom 40%",
-        scrub: 1.5,
-      },
-    });
-
-    if (introLineDot) {
-      gsap.to(introLineDot, {
-        opacity: 1,
-        scale: 1.2,
-        transformOrigin: "center center",
-        scrollTrigger: {
-          trigger: introSection,
-          start: "bottom 50%",
-          end: "bottom 35%",
-          scrub: true,
-        },
-      });
-    }
-  }
-
-  // ===== CLIP PATH EXPANSION (Antigravity video style) =====
-  let mm = gsap.matchMedia();
-
-  mm.add("(min-width: 768px)", () => {
-    // Expand services wrapper on scroll.
-    // Starts narrow with rounded corners, expands to container width.
-    // We use fromTo to guarantee GSAP interpolates the string values smoothly.
-    gsap.fromTo(
-      ".services-wrapper",
-      {
-        clipPath: "inset(0% 15% 0% 15% round 40px)",
-      },
-      {
-        clipPath: "inset(0% 0% 0% 0% round 0px)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".services-wrapper",
-          start: "top 85%",
-          end: "top 15%",
-          scrub: true,
-        },
-      }
-    );
-  });
-
-  // ===== TEXT REVEAL =====
-  document.querySelectorAll(".intro-right p").forEach((p) => {
-    const text = p.textContent?.trim() || "";
-    p.innerHTML = text
-      .split(" ")
-      .filter(Boolean)
-      .map((word) => `<span class="reveal-word">${word}</span>`)
-      .join(" ");
-
-    const words = p.querySelectorAll(".reveal-word");
-
-    gsap.fromTo(
-      words,
-      { color: "#404040" },
-      {
-        color: "#fafafa",
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: p,
-          start: "top 85%",
-          end: "top 20%",
-          scrub: true,
-        },
-      }
-    );
-  });
-</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="cta">
+    <div class="cta__bg brutalist-grid"></div>
+    <div class="cta__content">
+      <h2 class="cta__title">READY TO<br />BUILD?</h2>
+      <p class="cta__text">
+        We take on a limited number of projects each quarter to ensure
+        architectural excellence. Secure your slot in the studio today.
+      </p>
+      <div class="cta__actions">
+        <button class="cta__btn cta__btn--primary">INITIATE PROJECT</button>
+        <button class="cta__btn cta__btn--secondary">SEND AN EMAIL</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAB ───────────────────────────────────────────────── -->
+  <div class="fab">
+    <button class="fab__button" aria-label="Open chat">
+      <span class="material-symbols-outlined fab__icon">chat_bubble</span>
+    </button>
+  </div>
+</Layout>

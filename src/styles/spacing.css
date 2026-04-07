@@ -1,0 +1,43 @@
+/**
+ * Spacing Design Tokens
+ * AFM.DEV — spacing scale + responsive section/container tokens
+ */
+
+:root {
+  /* ── Base scale ────────────────────────────────────────────── */
+  --spacing-1:  0.25rem;  /*  4px */
+  --spacing-2:  0.5rem;   /*  8px */
+  --spacing-3:  0.75rem;  /* 12px */
+  --spacing-4:  1rem;     /* 16px */
+  --spacing-6:  1.5rem;   /* 24px */
+  --spacing-7:  1.75rem;  /* 28px */
+  --spacing-8:  2rem;     /* 32px */
+  --spacing-9:  2.25rem;  /* 36px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-13: 3.25rem;  /* 52px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+
+  /* ── Section padding (responsive) ─────────────────────────── */
+  --spacing-section-x: 2rem;   /* horizontal padding for all sections */
+  --spacing-section-y: 4rem;   /* vertical padding — mobile */
+
+  /* ── Container ─────────────────────────────────────────────── */
+  --max-width-content: 1216px;
+  --max-width-wide:    1440px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-section-y: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-section-x: 4rem;
+    --spacing-section-y: 6rem;
+  }
+}

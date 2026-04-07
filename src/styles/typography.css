@@ -1,0 +1,10 @@
+/**
+ * Typography Design Tokens
+ * AFM.DEV — font families & roles
+ */
+
+:root {
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-body:     'Manrope', sans-serif;
+  --font-label:    'Space Grotesk', sans-serif;
+}

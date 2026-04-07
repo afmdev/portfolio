@@ -6,7 +6,10 @@
       "WebFetch(domain:elementis.co)",
       "WebFetch(domain:thinkforwardsummit.framer.website)",
       "Bash(cd:*)",
-      "WebFetch(domain:www.cedric.design)"
+      "WebFetch(domain:www.cedric.design)",
+      "Bash(python3 -c \":*)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_screenshot"
     ]
   }
 }
