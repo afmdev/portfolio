@@ -1,0 +1,31 @@
+---
+interface Props {
+  variant: 1 | 2 | 3;
+  quote: string;
+  name: string;
+  role: string;
+  avatarSrc: string;
+  avatarAlt: string;
+}
+
+const { variant, quote, name, role, avatarSrc, avatarAlt } = Astro.props;
+---
+
+<div class={`testimonial-card testimonial-card--${variant}`}>
+  <p class="testimonial-card__quote">"{quote}"</p>
+  <div class="testimonial-card__footer">
+    <div class="testimonial-card__avatar">
+      <img
+        src={avatarSrc}
+        alt={avatarAlt}
+        width="64"
+        height="64"
+        loading="lazy"
+      />
+    </div>
+    <div>
+      <p class="testimonial-card__name">{name}</p>
+      <p class="testimonial-card__role">{role}</p>
+    </div>
+  </div>
+</div>

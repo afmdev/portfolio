@@ -1,0 +1,25 @@
+---
+interface Props {
+  icon: string;
+  color: string;
+  title: string;
+  tagline: string;
+  desc: string;
+  href: string;
+  cta: string;
+}
+
+const { icon, color, title, tagline, desc, href, cta } = Astro.props;
+---
+
+<article class="service-card">
+  <div class="service-card__icon" style={`background-color: ${color}`} set:html={icon} />
+  <div class="service-card__body">
+    <h3 class="service-card__title">{title}</h3>
+    <div class="service-card__tagline-wrap" aria-hidden="true">
+      <span class="service-card__tagline">{tagline}</span>
+    </div>
+    <p class="service-card__desc">{desc}</p>
+  </div>
+  <a href={href} class="service-card__link">{cta}</a>
+</article>

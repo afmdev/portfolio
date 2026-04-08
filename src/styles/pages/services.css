@@ -1,0 +1,79 @@
+/* ===================================================================
+   AFM.DEV — services page styles
+   =================================================================== */
+
+/* ===================================================================
+   HERO — services-specific overrides
+   =================================================================== */
+.hero__eyebrow {
+  display: inline-block;
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__image-inner--stats {
+  background-color: var(--color-on-background);
+  padding: 2.5rem;
+  align-items: flex-start;
+}
+
+.hero__stats-block {
+  width: 100%;
+  color: var(--color-background);
+  font-family: var(--font-headline);
+}
+
+.hero__stats-number {
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.hero__stats-label {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero__stats-divider {
+  height: 3px;
+  background-color: var(--color-primary);
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.hero__stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero__stats-list li {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-primary);
+  opacity: 0.85;
+}
+
+.hero__stats-more {
+  opacity: 0.5 !important;
+  border-left-color: transparent !important;
+  padding-left: 0 !important;
+  margin-top: 0.25rem;
+}

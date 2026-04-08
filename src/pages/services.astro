@@ -2,16 +2,42 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import ArticleCard from '../components/ArticleCard.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import '../styles/pages/index.css';
+import '../styles/pages/services.css';
 import { SERVICES as services, SERVICES_HEADING, SERVICES_SUBTITLE } from '../constants/services';
-import { TESTIMONIALS as testimonials } from '../constants/testimonials';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 6);
+
+const testimonials = [
+  {
+    variant: 1 as const,
+    quote: 'AFM.DEV didn\'t just build a website; they built a fortress for my brand. The aesthetic is raw, powerful, and unique.',
+    name: 'MARCUS VOGEL',
+    role: 'Founder, Neo Gallery',
+    avatarSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBbUGmzhXtYcE_csR_E64WOd3rkWcxZAsvg2IuOXy9OH9C138msAvGzoaCr0lnm_aHxoLRjjFmHvGrWNGSsgVAn2uqAewEYA-ePcX7_MvZM8jM0I8RYqw9wujmV4BXba1VdhGZGAxgKFNoUPmLAq9hknWeuivGhY3I-sx7Kht6HrIz1vPO8tw3XeR5J5sDi6pohb-Xzvke9eYncAtBFMWVA6VyZm5UvJKE0tujw3ewFBPzBQRs-fL2r5Yj5OikiO1x6hR7ICHHzFZpP',
+    avatarAlt: 'Marcus Vogel',
+  },
+  {
+    variant: 2 as const,
+    quote: 'The level of digital precision is unmatched. Our conversion rates tripled because the design commands respect immediately.',
+    name: 'ELENA ROSSI',
+    role: 'Tech Lead, Flow-State',
+    avatarSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDpHhTs2YXrZuMryPxJNEyekNq_j4B_3gKQ0s6c9vvNc-bhKcHCYG7k8XN8zNsblRXVKuaqWGLANWjDCxPLswvsBGJd4HErlmpMuwd8Yo215SMy3O0OFAXIdyT2_0s8-NlCcnJWUHGgtn0DtSDysNnK9E7bTJss2gmJ9wPh5ImOa7WppD7pz_IZNPPIVV37QnNEhqUUZc2FvUbeyg-Yn--zZGBOA5JsSWzuJ-R88i10hYHiYktKUpaC4TdSd8A4RMSqLtY7ljTtHVzu',
+    avatarAlt: 'Elena Rossi',
+  },
+  {
+    variant: 3 as const,
+    quote: 'Berlin brutalism at its finest. If you want to stand out from the sea of soft-rounded SaaS designs, this is the place.',
+    name: 'JAKOB SCHMIDT',
+    role: 'Creative Director, B-SIDE',
+    avatarSrc: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB219GJAnEjcC3lCqolYEbI6YiPAVNtOAe7oKf30Xofy3KrJy-pQBAQZo09FypuT2TE5xQI1dci1Jcw_973UzdvC37Cgs9EgvxJLem3mQmJ2-09sunWaJgLCWQddQYfQ4itHfiREy2-AxJI4lgsh8uEKKgPYPMkjRK1WJdL0Zv7R5tXav-INd4bGRu55JTwmoq_h8N90ILfPMZGDUYzfeSNalcLLHezTPvZFvmypH9cYcgvmCXIBQd6-odrZSjuP1nDLILRLeCx2Ubw',
+    avatarAlt: 'Jakob Schmidt',
+  },
+];
 
 const badgeVariants: ('purple' | 'mint')[] = ['purple', 'mint', 'purple', 'mint', 'purple', 'mint'];
 ---
@@ -23,16 +49,16 @@ const badgeVariants: ('purple' | 'mint')[] = ['purple', 'mint', 'purple', 'mint'
   <!-- ── Hero ──────────────────────────────────────────────── -->
   <section class="hero brutalist-grid" aria-label="Hero">
     <div class="hero__content">
-      <h1 class="hero__title">WEBDESIGN<br />IN BERLIN</h1>
+      <!-- <span class="hero__eyebrow">FREELANCE STUDIO · BERLIN</span> -->
+      <h1 class="hero__title">DIGITAL SERVICES<br />THAT SCALE</h1>
       <p class="hero__subtitle">
-        Freelance Design &amp; Development for Modern Creators
+        Web Development, UX Design & SEO Optimization in Berlin
       </p>
       <div class="hero__actions">
         <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
-        <a href="/services" class="hero__btn hero__btn--secondary">VIEW WORK</a>
+        <a href="/contact" class="hero__btn hero__btn--secondary">HOW WE WORK</a>
       </div>
     </div>
-
     <div class="hero__image" aria-hidden="true">
       <div class="hero__image-inner">
         <img
@@ -72,26 +98,6 @@ const badgeVariants: ('purple' | 'mint')[] = ['purple', 'mint', 'purple', 'mint'
     </div>
   </section>
 
-  <!-- ── Value Prop ────────────────────────────────────────── -->
-  <section class="value-prop" aria-label="Our philosophy">
-    <div class="value-prop__card value-prop__card--left">
-      <h2 class="value-prop__title">OUR PHILOSOPHY</h2>
-      <p class="value-prop__text">
-        We believe in the raw honesty of structure. Design is not just decoration;
-        it is the skeleton upon which your brand lives. We strip away the
-        unnecessary to reveal the core of your digital identity.
-      </p>
-    </div>
-    <div class="value-prop__card value-prop__card--right">
-      <h2 class="value-prop__title">DIGITAL PRECISION</h2>
-      <p class="value-prop__text">
-        Every pixel is an architectural decision. We craft digital spaces with the
-        same rigor as Berlin's most iconic monoliths. High-performance development
-        meets unapologetic visual curation.
-      </p>
-    </div>
-  </section>
-
   <!-- ── Services ─────────────────────────────────────────────── -->
   <section class="services" aria-labelledby="services-heading">
     <div class="services__heading-area">
@@ -101,7 +107,15 @@ const badgeVariants: ('purple' | 'mint')[] = ['purple', 'mint', 'purple', 'mint'
 
     <div class="services__grid">
       {services.slice(0, 6).map((s) => (
-        <ServiceCard color={s.color} icon={s.icon} title={s.title} tagline={s.tagline} desc={s.desc} href={s.href} cta={s.cta} />
+        <ServiceCard
+          color={s.color}
+          icon={s.icon}
+          title={s.title}
+          tagline={s.tagline}
+          desc={s.desc}
+          href={s.href}
+          cta={s.cta}
+        />
       ))}
     </div>
 
@@ -111,28 +125,6 @@ const badgeVariants: ('purple' | 'mint')[] = ['purple', 'mint', 'purple', 'mint'
         <p class="services__cta-text">Every project begins with a blueprint. Let's discuss your architectural vision and bring it to life with precision.</p>
       </div>
       <a href="/contact" class="services__cta-btn">WE ARE READY</a>
-    </div>
-  </section>
-
-  <!-- ── Blog Articles ────────────────────────────────────────── -->
-  <section class="blog-articles" aria-labelledby="blog-heading">
-    <div class="blog-articles__inner">
-      <span class="blog-articles__label">BLOG</span>
-      <h2 id="blog-heading" class="blog-articles__title">SOME BORING ARTICLES</h2>
-
-      <div class="blog-articles__grid">
-        {posts.map((post, i) => (
-          <ArticleCard
-            image={post.data.heroImage ?? '/placeholder.jpg'}
-            imageAlt={post.data.title}
-            badge={post.data.description.split(' ')[0].toUpperCase()}
-            badgeVariant={badgeVariants[i % badgeVariants.length]}
-            date={post.data.pubDate}
-            title={post.data.title.toUpperCase()}
-            href={`/blog/${post.id}`}
-          />
-        ))}
-      </div>
     </div>
   </section>
 

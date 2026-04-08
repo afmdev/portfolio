@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  image: ImageMetadata | string;
+  imageAlt: string;
+  badge: string;
+  badgeVariant: 'purple' | 'mint';
+  date: Date;
+  title: string;
+  href: string;
+}
+
+const { image, imageAlt, badge, badgeVariant, date, title, href } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<article class="article-card">
+  <a href={href} class="article-card__image-wrap" tabindex="-1" aria-hidden="true">
+    {typeof image === 'string' ? (
+      <img
+        class="article-card__image"
+        src={image}
+        alt=""
+        width="600"
+        height="256"
+        loading="lazy"
+      />
+    ) : (
+      <Image
+        class="article-card__image"
+        src={image}
+        alt=""
+        width={600}
+        height={256}
+        loading="lazy"
+      />
+    )}
+    <span class={`article-card__badge article-card__badge--${badgeVariant}`}>{badge}</span>
+  </a>
+  <div class="article-card__body">
+    <p class="article-card__date">
+      <time datetime={date.toISOString()}>{formattedDate}</time>
+    </p>
+    <h3 class="article-card__title">{title}</h3>
+    <a class="article-card__link" href={href}>READ ENTRY</a>
+  </div>
+</article>

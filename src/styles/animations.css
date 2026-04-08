@@ -8,6 +8,12 @@
   to   { transform: translateX(-50%); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee-section__track {
+    animation-play-state: paused;
+  }
+}
+
 .brutalist-grid {
   background-size: 40px 40px;
   background-image: radial-gradient(circle, var(--color-on-background) 1px, transparent 1px);

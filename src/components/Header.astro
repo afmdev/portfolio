@@ -1,22 +1,34 @@
 ---
-// Header / TopNavBar
+const navLinks = [
+  { href: '/',         label: 'HOME'     },
+  { href: '/services', label: 'SERVICES' },
+  { href: '/palette',  label: 'PALETTE'  },
+  { href: '/tools',    label: 'TOOLS'    },
+  { href: '/blog',     label: 'BLOG'     },
+];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header">
-  <nav class="nav-container">
-    <div class="nav-logo">PORTFOLIO</div>
+  <nav class="nav-container" aria-label="Primary navigation">
+    <a class="nav-logo" href="/">AFM.DEV</a>
 
     <div class="nav-links" id="nav-links">
-      <a class="nav-link" href="/">HOME</a>
-      <a class="nav-link nav-link--active" href="/services">SERVICES</a>
-      <a class="nav-link" href="/palette">PALETTE</a>
-      <a class="nav-link" href="/tools">TOOLS</a>
-      <a class="nav-link" href="/blog">BLOG</a>
+      {navLinks.map(({ href, label }) => (
+        <a
+          class={`nav-link${currentPath === href ? ' nav-link--active' : ''}`}
+          href={href}
+          aria-current={currentPath === href ? 'page' : undefined}
+        >
+          {label}
+        </a>
+      ))}
     </div>
 
     <div class="nav-actions">
-      <button class="nav-icon-btn" aria-label="Toggle theme">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button class="nav-icon-btn" type="button" aria-label="Toggle theme">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="11" cy="11" r="4" stroke="#191c1c" stroke-width="1.5"/>
           <line x1="11" y1="1" x2="11" y2="3" stroke="#191c1c" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="11" y1="19" x2="11" y2="21" stroke="#191c1c" stroke-width="1.5" stroke-linecap="round"/>
@@ -28,8 +40,15 @@
           <line x1="5.34" y1="16.66" x2="3.93" y2="18.07" stroke="#191c1c" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
-      <button class="nav-cta">HIRE ME</button>
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <a href="/contact" class="nav-cta">HIRE ME</a>
+      <button
+        class="nav-hamburger"
+        id="hamburger"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -37,12 +56,16 @@
     </div>
   </nav>
 
-  <div class="nav-mobile" id="mobile-menu">
-    <a class="nav-link" href="/">HOME</a>
-    <a class="nav-link nav-link--active" href="/services">SERVICES</a>
-    <a class="nav-link" href="/palette">PALETTE</a>
-    <a class="nav-link" href="/tools">TOOLS</a>
-    <a class="nav-link" href="/blog">BLOG</a>
+  <div class="nav-mobile" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    {navLinks.map(({ href, label }) => (
+      <a
+        class={`nav-link${currentPath === href ? ' nav-link--active' : ''}`}
+        href={href}
+        aria-current={currentPath === href ? 'page' : undefined}
+      >
+        {label}
+      </a>
+    ))}
   </div>
 </header>
 
@@ -76,6 +99,7 @@
     font-family: var(--font-headline);
     text-transform: uppercase;
     flex-shrink: 0;
+    text-decoration: none;
   }
 
   .nav-links {
@@ -101,6 +125,7 @@
     transition: background-color 0.075s, color 0.075s;
     line-height: 1.5rem;
     white-space: nowrap;
+    text-decoration: none;
   }
 
   .nav-link--active {
@@ -111,6 +136,11 @@
   .nav-link:hover:not(.nav-link--active) {
     background-color: #191c1c;
     color: #ffffff;
+  }
+
+  .nav-link:focus-visible {
+    outline: 3px solid #3f6355;
+    outline-offset: 2px;
   }
 
   .nav-actions {
@@ -137,6 +167,11 @@
     }
   }
 
+  .nav-icon-btn:focus-visible {
+    outline: 3px solid #3f6355;
+    outline-offset: 2px;
+  }
+
   .nav-cta {
     display: none;
     background-color: #3f6355;
@@ -152,6 +187,7 @@
     cursor: pointer;
     transition: transform 0.075s, box-shadow 0.075s;
     white-space: nowrap;
+    text-decoration: none;
   }
 
   @media (min-width: 768px) {
@@ -170,6 +206,11 @@
     box-shadow: none;
   }
 
+  .nav-cta:focus-visible {
+    outline: 3px solid #191c1c;
+    outline-offset: 3px;
+  }
+
   /* Hamburger */
   .nav-hamburger {
     display: flex;
@@ -185,6 +226,11 @@
     .nav-hamburger {
       display: none;
     }
+  }
+
+  .nav-hamburger:focus-visible {
+    outline: 3px solid #3f6355;
+    outline-offset: 2px;
   }
 
   .nav-hamburger span {
@@ -216,10 +262,11 @@
 </style>
 
 <script>
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobile-menu");
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-  hamburger?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("is-open");
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('is-open');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
   });
 </script>

@@ -80,4 +80,6 @@
   --color-icon-audit:                 var(--color-terracotta);
   --color-icon-performance:           var(--color-primary);
   --color-icon-consulting:            var(--color-violet);
+  --color-icon-support:               var(--color-secondary-container);
+  --color-icon-digital:               var(--color-tertiary-container);
 }

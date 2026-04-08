@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import '../styles/pages/index.css';
+import '../styles/pages/blog.css';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const [featuredPost, ...restPosts] = posts;
+
+const badgeVariants: ('purple' | 'mint')[] = ['purple', 'mint'];
+---
+
+<Layout
+  title="Blog — AFM.DEV"
+  description="Articles on web development, SEO, design and digital strategy from Berlin."
+>
+  <div class="blog-page brutalist-grid">
+
+    <!-- ── Hero Post ─────────────────────────────────────────── -->
+    {featuredPost && (
+      <section class="blog-hero" aria-label="Featured post">
+        <div class="blog-hero__wrapper">
+          <div class="blog-hero__bg" aria-hidden="true"></div>
+          <article class="blog-hero__article">
+            <a href={`/blog/${featuredPost.id}/`} class="blog-hero__image-wrap" tabindex="-1" aria-hidden="true">
+              {featuredPost.data.heroImage && (
+                <img
+                  class="blog-hero__image"
+                  src={typeof featuredPost.data.heroImage === 'string'
+                    ? featuredPost.data.heroImage
+                    : featuredPost.data.heroImage.src}
+                  alt=""
+                  width="800"
+                  height="600"
+                  loading="eager"
+                />
+              )}
+            </a>
+            <div class="blog-hero__content">
+              <span class="blog-hero__badge">FEATURED</span>
+              <h1 class="blog-hero__title">{featuredPost.data.title}</h1>
+              <p class="blog-hero__excerpt">{featuredPost.data.description}</p>
+              <a class="blog-hero__link" href={`/blog/${featuredPost.id}/`}>
+                READ THE ENTRY
+                <span class="blog-hero__link-arrow" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    )}
+
+    <!-- ── Filters ───────────────────────────────────────────── -->
+    <section class="blog-filters" aria-label="Post filters">
+      <div class="blog-filters__bar">
+        <span class="blog-filters__label">Filters:</span>
+        <button class="blog-filters__btn blog-filters__btn--active" data-filter="all">ALL POSTS</button>
+        <button class="blog-filters__btn" data-filter="webdev">WEB DEV</button>
+        <button class="blog-filters__btn" data-filter="seo">SEO</button>
+        <button class="blog-filters__btn" data-filter="tech">TECH</button>
+        <button class="blog-filters__btn" data-filter="strategy">STRATEGY</button>
+      </div>
+    </section>
+
+    <!-- ── Post Grid ─────────────────────────────────────────── -->
+    <section class="blog-grid" aria-label="Blog posts">
+      {restPosts.map((post, i) => (
+        <ArticleCard
+          image={post.data.heroImage ?? 'https://placehold.co/600x256/1a1a2e/ffffff?text=BLOG'}
+          imageAlt={post.data.title}
+          badge={post.data.title.length > 20 ? 'ARTICLE' : 'POST'}
+          badgeVariant={badgeVariants[i % 2]}
+          date={post.data.pubDate}
+          title={post.data.title}
+          href={`/blog/${post.id}/`}
+        />
+      ))}
+    </section>
+
+    <!-- ── Newsletter ────────────────────────────────────────── -->
+    <section class="blog-newsletter" aria-labelledby="newsletter-heading">
+      <div class="blog-newsletter__outer">
+        <div class="blog-newsletter__inner">
+          <div class="blog-newsletter__watermark" aria-hidden="true">JOIN</div>
+          <h2 id="newsletter-heading" class="blog-newsletter__title">
+            STAY RAW.<br />STAY UPDATED.
+          </h2>
+          <p class="blog-newsletter__text">
+            Curated design insights, directly from the heart of Berlin's concrete jungle.
+          </p>
+          <form class="blog-newsletter__form">
+            <input
+              class="blog-newsletter__input"
+              type="email"
+              placeholder="YOUR@EMAIL.COM"
+              required
+            />
+            <button class="blog-newsletter__submit" type="submit">SUBSCRIBE</button>
+          </form>
+          <div class="blog-newsletter__meta">
+            <span>NO SPAM</span>
+            <span>WEEKLY DROP</span>
+            <span>UNSUBSCRIBE ANYTIME</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
