@@ -74,12 +74,10 @@
   --color-terracotta:                 #c4856a;
 
   /* ── Service icon backgrounds ──────────────────────────────── */
-  --color-icon-webdev:                var(--color-primary-container);
-  --color-icon-design:                var(--color-tertiary-container);
-  --color-icon-seo:                   var(--color-mint-muted);
-  --color-icon-audit:                 var(--color-terracotta);
-  --color-icon-performance:           var(--color-primary);
-  --color-icon-consulting:            var(--color-violet);
-  --color-icon-support:               var(--color-secondary-container);
-  --color-icon-digital:               var(--color-tertiary-container);
+  --color-icon-webdev:                #c4ebd9;
+  --color-icon-design:                #e8deff;
+  --color-icon-seo:                   #b8dff8;
+  --color-icon-audit:                 #ffdad6;
+  --color-icon-performance:           #fef3c2;
+  --color-icon-consulting:            #f0c8e8;
 }
