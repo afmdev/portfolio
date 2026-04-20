@@ -1,6 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
 ---
 
 <Layout title="UI/UX Design | AFM.DEV" description="Intuitive, conversion-driven, accessible interfaces that turn visitors into customers.">
+  <section class="hero hero--grid" aria-label="UI/UX Design">
+    <h1 class="hero__title">
+      UI/UX<br /><span class="hero__title-highlight">DESIGN</span>
+    </h1>
+    <p class="hero__subtitle">Intuitive · Conversion-Driven · Accessible Interfaces</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Design tools and wireframes for UI/UX design"
+          src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
 </Layout>

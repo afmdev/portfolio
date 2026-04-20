@@ -1,6 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
 ---
 
 <Layout title="Digital Consulting | AFM.DEV" description="Strategy, architecture and scalable growth for your digital product.">
+  <section class="hero hero--grid" aria-label="Digital Consulting">
+    <h1 class="hero__title">
+      DIGITAL<br /><span class="hero__title-highlight">CONSULTING</span>
+    </h1>
+    <p class="hero__subtitle">Strategy · Architecture · Scalable Growth</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Strategy and consulting session for digital products"
+          src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
 </Layout>

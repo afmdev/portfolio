@@ -1,6 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
 ---
 
 <Layout title="Performance Optimization | AFM.DEV" description="Sub-2s load times, Core Web Vitals and faster UX for your website.">
+  <section class="hero hero--grid" aria-label="Performance Optimization">
+    <h1 class="hero__title">
+      PERFORMANCE<br /><span class="hero__title-highlight">OPTIMIZATION</span>
+    </h1>
+    <p class="hero__subtitle">Sub-2s Load Times · Core Web Vitals · Faster UX</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Speed and performance metrics on a developer dashboard"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
 </Layout>

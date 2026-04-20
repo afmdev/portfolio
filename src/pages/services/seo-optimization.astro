@@ -1,6 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
 ---
 
 <Layout title="SEO Optimization | AFM.DEV" description="Higher rankings, organic traffic and visibility boost for your website.">
+  <section class="hero hero--grid" aria-label="SEO Optimization">
+    <h1 class="hero__title">
+      SEO<br /><span class="hero__title-highlight">OPTIMIZATION</span>
+    </h1>
+    <p class="hero__subtitle">Rankings · Organic Traffic · Visibility</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Analytics dashboard showing SEO growth and rankings"
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
 </Layout>

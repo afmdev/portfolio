@@ -1,6 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
 ---
 
 <Layout title="Maintenance & Support | AFM.DEV" description="Updates, security and client loyalty with our ongoing support plans.">
+  <section class="hero hero--grid" aria-label="Maintenance & Support">
+    <h1 class="hero__title">
+      MAINTENANCE<br /><span class="hero__title-highlight">& SUPPORT</span>
+    </h1>
+    <p class="hero__subtitle">Updates · Security · Ongoing Reliability</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Support team providing ongoing website maintenance"
+          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
 </Layout>

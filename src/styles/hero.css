@@ -5,7 +5,7 @@
 
 .hero {
   position: relative;
-  min-height: 921px;
+  min-height: max(calc(100svh - 80px), 500px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -186,12 +186,6 @@
 
 /* ── Mobile adjustments ──────────────────────────────────────── */
 @media (max-width: 480px) {
-  .hero {
-    min-height: 100svh;
-    padding-top: var(--spacing-16);
-    padding-bottom: var(--spacing-16);
-  }
-
   .hero__btn {
     font-size: 1rem;
     padding: var(--spacing-5) var(--spacing-8);

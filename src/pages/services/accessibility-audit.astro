@@ -1,6 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
 ---
 
 <Layout title="Accessibility Audit | AFM.DEV" description="Compliance, inclusive UX and legal differentiator for your website.">
+  <section class="hero hero--grid" aria-label="Accessibility Audit">
+    <h1 class="hero__title">
+      ACCESSIBILITY<br /><span class="hero__title-highlight">AUDIT</span>
+    </h1>
+    <p class="hero__subtitle">Compliance · Inclusive UX · Legal Differentiator</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Person using assistive technology on a computer"
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
 </Layout>
