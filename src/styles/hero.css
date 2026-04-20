@@ -1,0 +1,199 @@
+/* ===================================================================
+   AFM.DEV — shared hero styles
+   Used by: index, all service pages
+   =================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 921px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--spacing-20) var(--spacing-section-x);
+  overflow: hidden;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, var(--color-on-background) 1px, transparent 1px);
+}
+
+.hero--grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-on-background) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-on-background) 10%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Optional wrapper used in index.astro */
+.hero__content {
+  position: relative;
+  z-index: 10;
+  max-width: 64rem;
+}
+
+/* Small label above the title — service pages only */
+.hero__label {
+  font-size: 0.75rem;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+  border: 2px solid var(--color-on-background);
+  padding: var(--spacing-1) var(--spacing-4);
+  display: inline-block;
+  margin-bottom: var(--spacing-6);
+  position: relative;
+  z-index: 10;
+}
+
+.hero__title {
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 900;
+  font-family: var(--font-headline);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  margin-bottom: var(--spacing-8);
+  color: var(--color-on-background);
+  position: relative;
+  z-index: 10;
+}
+
+/* Highlighted word inside the title — service pages */
+.hero__title-highlight {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 0 var(--spacing-3);
+  display: inline-block;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 4px solid var(--color-on-background);
+  margin-bottom: var(--spacing-12);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 10;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-6);
+  position: relative;
+  z-index: 10;
+}
+
+.hero__btn {
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: 1.25rem;
+  padding: var(--spacing-6) var(--spacing-10);
+  border: 4px solid var(--color-on-background);
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.hero__btn:hover {
+  transform: translate(4px, 4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.hero__btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.hero__btn--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-on-background);
+}
+
+.hero__image {
+  position: absolute;
+  right: -5%;
+  top: 15%;
+  width: 50%;
+  height: 60%;
+  display: none;
+  transform: rotate(-12deg);
+  z-index: 0;
+}
+
+@media (min-width: 1024px) {
+  .hero__image {
+    display: block;
+  }
+}
+
+.hero__image-inner {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-mint-muted);
+  border: 3px solid var(--color-on-background);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__image-inner img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  border: 4px solid var(--color-on-background);
+}
+
+/* Badge bottom-right — service pages only */
+.hero__badge {
+  position: absolute;
+  bottom: var(--spacing-10);
+  right: var(--spacing-section-x);
+  background-color: var(--color-on-background);
+  color: var(--color-surface);
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: var(--spacing-3) var(--spacing-6);
+  z-index: 20;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero__badge {
+    display: block;
+  }
+}
+
+/* ── Mobile adjustments ──────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 100svh;
+    padding-top: var(--spacing-16);
+    padding-bottom: var(--spacing-16);
+  }
+
+  .hero__btn {
+    font-size: 1rem;
+    padding: var(--spacing-5) var(--spacing-8);
+  }
+}

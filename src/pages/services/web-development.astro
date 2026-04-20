@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/hero.css';
+---
+
+<Layout title="Web Development | AFM.DEV" description="Scalable, secure, high-performance websites crafted for growth.">
+  <section class="hero hero--grid" aria-label="Web Development">
+    <h1 class="hero__title">
+      WEB<br /><span class="hero__title-highlight">DEVELOPMENT</span>
+    </h1>
+    <p class="hero__subtitle">Scalable · Secure · High-Performance</p>
+    <div class="hero__actions">
+      <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
+      <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
+    </div>
+
+    <div class="hero__image" aria-hidden="true">
+      <div class="hero__image-inner">
+        <img
+          alt="Code editor with modern web development interface"
+          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
+          width="800"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+
+  </section>
+</Layout>
