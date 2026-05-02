@@ -1,0 +1,142 @@
+---
+import type { Differentiator } from '../../../constants/webDevelopment';
+
+interface Props {
+  items: Differentiator[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="wd-section wd-value" aria-labelledby="why-choose-heading">
+  <div class="wd-section__intro">
+    <p class="wd-section__eyebrow">Why Teams Choose AFM.DEV</p>
+    <h2 id="why-choose-heading" class="wd-section__title">Engineering for Growth and Conversion</h2>
+    <p class="wd-section__description">
+      From strategy to launch, we connect product experience, technical quality, and search visibility in one delivery model.
+      If you need a React developer, Next.js product engineering, Astro expertise, TypeScript standards, or SolidJS optimization,
+      this process is designed to drive outcomes that matter.
+    </p>
+  </div>
+
+  <div class="wd-value__grid">
+    {items.map((item) => (
+      <article class="wd-value__card">
+        <h3 class="wd-value__title">{item.title}</h3>
+        <p class="wd-value__text">{item.description}</p>
+        <p class="wd-value__outcome">{item.outcome}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .wd-section {
+    padding: var(--spacing-20) var(--spacing-section-x);
+    border-top: var(--spacing-1) solid var(--color-on-background);
+  }
+
+  .wd-section__intro {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--spacing-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-section__eyebrow {
+    width: fit-content;
+    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    background-color: var(--color-primary-fixed);
+    color: var(--color-on-primary-fixed);
+    font-family: var(--font-headline);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--spacing-1) var(--spacing-4);
+  }
+
+  .wd-section__title {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+  }
+
+  .wd-section__description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--color-on-surface-variant);
+    max-width: 70ch;
+  }
+
+  .wd-value {
+    background-color: var(--color-surface-container-lowest);
+  }
+
+  .wd-value__grid {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+
+  .wd-value__card {
+    border: var(--spacing-1) solid var(--color-on-background);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .wd-value__card:hover {
+    transform: translate(var(--spacing-1), var(--spacing-1));
+    box-shadow: var(--shadow-sm);
+  }
+
+  .wd-value__card:nth-child(4n + 1) { background-color: var(--color-primary-fixed); }
+  .wd-value__card:nth-child(4n + 2) { background-color: var(--color-secondary-fixed); }
+  .wd-value__card:nth-child(4n + 3) { background-color: var(--color-tertiary-fixed); }
+  .wd-value__card:nth-child(4n + 4) { background-color: var(--color-icon-seo); }
+
+  .wd-value__title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .wd-value__text {
+    font-family: var(--font-body);
+    color: var(--color-on-surface-variant);
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .wd-value__outcome {
+    margin-top: auto;
+    border-top: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    padding-top: var(--spacing-3);
+    font-family: var(--font-headline);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .wd-value__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+import type { CaseStudy } from '../../../constants/webDevelopment';
+
+interface Props {
+  studies: CaseStudy[];
+}
+
+const { studies } = Astro.props;
+---
+
+<section class="wd-section wd-case-studies" aria-labelledby="case-studies-heading">
+  <div class="wd-section__intro">
+    <p class="wd-section__eyebrow">Case Studies</p>
+    <h2 id="case-studies-heading" class="wd-section__title">Recent Web Development Projects and Outcomes</h2>
+    <p class="wd-section__description">
+      Proof over promises. These snapshots highlight how focused implementation in React, Astro, TypeScript, and SolidJS translates into measurable growth.
+    </p>
+  </div>
+
+  <div class="wd-case-studies__grid">
+    {studies.map((study) => (
+      <article class="wd-case-studies__card">
+        <img
+          class="wd-case-studies__image"
+          src={study.imageSrc}
+          alt={study.imageAlt}
+          width="900"
+          height="700"
+          loading="lazy"
+        />
+        <div class="wd-case-studies__content">
+          <p class="wd-case-studies__category">{study.category}</p>
+          <h3 class="wd-case-studies__title">{study.title}</h3>
+          <p class="wd-case-studies__summary">{study.summary}</p>
+          <p class="wd-case-studies__result">{study.result}</p>
+          <a href={study.href} class="wd-case-studies__link">Discuss a Similar Project</a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .wd-section {
+    padding: var(--spacing-20) var(--spacing-section-x);
+    border-top: var(--spacing-1) solid var(--color-on-background);
+  }
+
+  .wd-section__intro {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--spacing-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-section__eyebrow {
+    width: fit-content;
+    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    background-color: var(--color-secondary-fixed);
+    color: var(--color-on-secondary-fixed);
+    font-family: var(--font-headline);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--spacing-1) var(--spacing-4);
+  }
+
+  .wd-section__title {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+  }
+
+  .wd-section__description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--color-on-surface-variant);
+    max-width: 68ch;
+  }
+
+  .wd-case-studies {
+    background-color: var(--color-surface-container-lowest);
+  }
+
+  .wd-case-studies__grid {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+
+  .wd-case-studies__card {
+    border: var(--spacing-1) solid var(--color-on-background);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-surface-container-low);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .wd-case-studies__card:hover {
+    transform: translate(var(--spacing-1), var(--spacing-1));
+    box-shadow: var(--shadow-sm);
+  }
+
+  .wd-case-studies__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: var(--spacing-1) solid var(--color-on-background);
+  }
+
+  .wd-case-studies__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    padding: var(--spacing-8);
+  }
+
+  .wd-case-studies__category {
+    font-family: var(--font-headline);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  .wd-case-studies__title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 900;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .wd-case-studies__summary {
+    font-family: var(--font-body);
+    color: var(--color-on-surface-variant);
+    line-height: 1.7;
+  }
+
+  .wd-case-studies__result {
+    border-left: var(--spacing-1) solid var(--color-primary);
+    padding-left: var(--spacing-3);
+    font-family: var(--font-headline);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  .wd-case-studies__link {
+    margin-top: var(--spacing-3);
+    width: fit-content;
+    font-family: var(--font-headline);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--color-secondary);
+    border-bottom: calc(var(--spacing-1) / 2) solid var(--color-secondary);
+    padding-bottom: var(--spacing-1);
+  }
+
+  .wd-case-studies__link:focus-visible {
+    outline: calc(var(--spacing-1) - var(--spacing-2)) solid var(--color-secondary);
+    outline-offset: var(--spacing-1);
+  }
+
+  @media (min-width: 1024px) {
+    .wd-case-studies__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

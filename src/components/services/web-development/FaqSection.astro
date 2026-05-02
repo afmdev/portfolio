@@ -1,0 +1,127 @@
+---
+import type { FaqItem } from '../../../constants/webDevelopment';
+
+interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="wd-section wd-faq" aria-labelledby="faq-heading">
+  <div class="wd-section__intro">
+    <p class="wd-section__eyebrow">FAQ</p>
+    <h2 id="faq-heading" class="wd-section__title">Frequently Asked Questions About React, Next.js, Astro, TypeScript, and SolidJS Projects</h2>
+    <p class="wd-section__description">
+      Clear answers to common questions about framework choice, delivery scope, technical SEO, and performance.
+    </p>
+  </div>
+
+  <div class="wd-faq__list">
+    {items.map((item) => (
+      <details class="wd-faq__item">
+        <summary class="wd-faq__question">{item.question}</summary>
+        <p class="wd-faq__answer">{item.answer}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .wd-section {
+    padding: var(--spacing-20) var(--spacing-section-x);
+    border-top: var(--spacing-1) solid var(--color-on-background);
+  }
+
+  .wd-section__intro {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--spacing-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-section__eyebrow {
+    width: fit-content;
+    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    background-color: var(--color-icon-seo);
+    color: var(--color-on-background);
+    font-family: var(--font-headline);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--spacing-1) var(--spacing-4);
+  }
+
+  .wd-section__title {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+  }
+
+  .wd-section__description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--color-on-surface-variant);
+    max-width: 68ch;
+  }
+
+  .wd-faq {
+    background-color: var(--color-surface-container-highest);
+  }
+
+  .wd-faq__list {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-faq__item {
+    border: var(--spacing-1) solid var(--color-on-background);
+    background-color: var(--color-surface-container-lowest);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-5) var(--spacing-6);
+  }
+
+  .wd-faq__question {
+    list-style: none;
+    font-family: var(--font-headline);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+  }
+
+  .wd-faq__question::after {
+    content: '+';
+    font-size: 1.3em;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+  }
+
+  .wd-faq__item[open] .wd-faq__question::after {
+    content: '-';
+  }
+
+  .wd-faq__answer {
+    margin-top: var(--spacing-4);
+    border-top: calc(var(--spacing-1) / 2) solid var(--color-outline-variant);
+    padding-top: var(--spacing-4);
+    font-family: var(--font-body);
+    color: var(--color-on-surface-variant);
+    line-height: 1.75;
+  }
+</style>

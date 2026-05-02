@@ -1,0 +1,167 @@
+---
+import type { ProcessStep } from '../../../constants/webDevelopment';
+
+interface Props {
+  steps: ProcessStep[];
+}
+
+const { steps } = Astro.props;
+---
+
+<section class="wd-section wd-process" aria-labelledby="process-heading">
+  <div class="wd-section__intro">
+    <p class="wd-section__eyebrow">How We Work</p>
+    <h2 id="process-heading" class="wd-section__title">A Structured Delivery Process from Discovery to Launch</h2>
+    <p class="wd-section__description">
+      A clear timeline keeps scope, quality, and velocity aligned. You always know what happens next, why it matters, and how it supports your goals.
+    </p>
+  </div>
+
+  <ol class="wd-process__timeline">
+    {steps.map((step) => (
+      <li class="wd-process__item">
+        <article class="wd-process__card">
+          <p class="wd-process__step">Step {step.step}</p>
+          <h3 class="wd-process__title">{step.title}</h3>
+          <p class="wd-process__description">{step.description}</p>
+        </article>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .wd-section {
+    padding: var(--spacing-20) var(--spacing-section-x);
+    border-top: var(--spacing-1) solid var(--color-on-background);
+  }
+
+  .wd-section__intro {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--spacing-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-section__eyebrow {
+    width: fit-content;
+    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    background-color: var(--color-icon-performance);
+    color: var(--color-on-background);
+    font-family: var(--font-headline);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--spacing-1) var(--spacing-4);
+  }
+
+  .wd-section__title {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+  }
+
+  .wd-section__description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--color-on-surface-variant);
+    max-width: 68ch;
+  }
+
+  .wd-process {
+    background-color: var(--color-surface-dim);
+  }
+
+  .wd-process__timeline {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    counter-reset: process;
+  }
+
+  .wd-process__item {
+    position: relative;
+    min-width: 0;
+  }
+
+  .wd-process__card {
+    border: var(--spacing-1) solid var(--color-on-background);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-surface-container-lowest);
+    padding: var(--spacing-9);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    min-height: 100%;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .wd-process__card:hover {
+    transform: translate(var(--spacing-1), var(--spacing-1));
+    box-shadow: var(--shadow-sm);
+  }
+
+  .wd-process__step {
+    font-family: var(--font-headline);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+  }
+
+  .wd-process__title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .wd-process__description {
+    font-family: var(--font-body);
+    color: var(--color-on-surface-variant);
+    line-height: 1.65;
+  }
+
+  @media (min-width: 768px) {
+    .wd-process__timeline {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--spacing-6);
+    }
+
+    .wd-process__card {
+      min-height: 18rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .wd-process__timeline {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: var(--spacing-7);
+    }
+
+    .wd-process__item {
+      grid-column: span 2;
+    }
+
+    .wd-process__item:nth-child(4),
+    .wd-process__item:nth-child(5) {
+      grid-column: span 3;
+    }
+
+    .wd-process__card {
+      min-height: 19rem;
+    }
+  }
+</style>

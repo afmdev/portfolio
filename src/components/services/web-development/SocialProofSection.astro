@@ -1,0 +1,137 @@
+---
+import type { TrustSignal } from '../../../constants/webDevelopment';
+
+interface Props {
+  signals: TrustSignal[];
+}
+
+const { signals } = Astro.props;
+---
+
+<section class="wd-section wd-proof" aria-labelledby="social-proof-heading">
+  <div class="wd-section__intro">
+    <p class="wd-section__eyebrow">Trust Signals</p>
+    <h2 id="social-proof-heading" class="wd-section__title">How We Build Trust Without Client Logos</h2>
+    <p class="wd-section__description">
+      If you do not want to publish testimonials yet, credibility can come from transparent delivery standards, quality controls, and clear ownership.
+    </p>
+  </div>
+
+  <div class="wd-proof__signals">
+    {signals.map((signal) => (
+      <article class="wd-proof__card">
+        <h3 class="wd-proof__title">{signal.title}</h3>
+        <p class="wd-proof__description">{signal.description}</p>
+        <p class="wd-proof__detail">{signal.detail}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .wd-section {
+    padding: var(--spacing-20) var(--spacing-section-x);
+    border-top: var(--spacing-1) solid var(--color-on-background);
+  }
+
+  .wd-section__intro {
+    max-width: var(--max-width-content);
+    margin: 0 auto var(--spacing-12);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-section__eyebrow {
+    width: fit-content;
+    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    background-color: var(--color-primary-fixed);
+    color: var(--color-on-primary-fixed);
+    font-family: var(--font-headline);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--spacing-1) var(--spacing-4);
+  }
+
+  .wd-section__title {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+  }
+
+  .wd-section__description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--color-on-surface-variant);
+    max-width: 68ch;
+  }
+
+  .wd-proof {
+    background-color: var(--color-surface-container-high);
+  }
+
+  .wd-proof__signals {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+
+  .wd-proof__card {
+    border: var(--spacing-1) solid var(--color-on-background);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-surface-container-lowest);
+    padding: var(--spacing-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .wd-proof__title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+  }
+
+  .wd-proof__description {
+    font-family: var(--font-body);
+    color: var(--color-on-surface-variant);
+    line-height: 1.7;
+  }
+
+  .wd-proof__detail {
+    margin-top: auto;
+    border-top: calc(var(--spacing-1) / 2) solid var(--color-outline-variant);
+    padding-top: var(--spacing-3);
+    font-family: var(--font-headline);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .wd-proof__signals {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .wd-proof__signals {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--spacing-6);
+    }
+  }
+</style>

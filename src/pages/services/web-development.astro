@@ -1,23 +1,68 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/hero.css';
+import ValuePropositionSection from '../../components/services/web-development/ValuePropositionSection.astro';
+import ServicesOfferedSection from '../../components/services/web-development/ServicesOfferedSection.astro';
+import TechStackSection from '../../components/services/web-development/TechStackSection.astro';
+import ProcessSection from '../../components/services/web-development/ProcessSection.astro';
+import SocialProofSection from '../../components/services/web-development/SocialProofSection.astro';
+import CaseStudiesSection from '../../components/services/web-development/CaseStudiesSection.astro';
+import FaqSection from '../../components/services/web-development/FaqSection.astro';
+import CtaSection from '../../components/services/web-development/CtaSection.astro';
+import {
+  WEB_DEV_DIFFERENTIATORS,
+  WEB_DEV_SERVICES,
+  WEB_DEV_STACK,
+  WEB_DEV_PROCESS,
+  WEB_DEV_TRUST_SIGNALS,
+  WEB_DEV_CASE_STUDIES,
+  WEB_DEV_FAQS,
+  WEB_DEV_FINAL_CTA,
+} from '../../constants/webDevelopment';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: WEB_DEV_FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
-<Layout title="Web Development | AFM.DEV" description="Scalable, secure, high-performance websites crafted for growth.">
-  <section class="hero hero--grid" aria-label="Web Development">
+<Layout
+  title="Web Development Services | React, Next.js, Astro, TypeScript, SolidJS | AFM.DEV"
+  description="Conversion-focused website and product engineering in React, Next.js, Astro, TypeScript, and SolidJS, built for SEO visibility, speed, and growth."
+>
+  <section class="hero hero--grid web-hero" aria-label="Web Development Services">
+    <p class="hero__label">Web Development and Product Engineering</p>
     <h1 class="hero__title">
       WEB<br /><span class="hero__title-highlight">DEVELOPMENT</span>
     </h1>
-    <p class="hero__subtitle">Scalable · Secure · High-Performance Websites</p>
+    <p class="hero__subtitle">React · Next.js · Astro · TypeScript · SolidJS</p>
+    <p class="web-hero__description">
+      We help teams build conversion-focused websites and web applications with strong technical SEO, resilient architecture,
+      and performance-first frontend execution across modern JavaScript frameworks.
+    </p>
     <div class="hero__actions">
       <a href="/contact" class="hero__btn hero__btn--primary">START A PROJECT</a>
       <a href="/services" class="hero__btn hero__btn--secondary">ALL SERVICES</a>
     </div>
+    <ul class="web-hero__highlights" aria-label="Core delivery strengths">
+      <li>Business-driven discovery and architecture</li>
+      <li>SEO-ready semantic implementation</li>
+      <li>Performance and Core Web Vitals optimization</li>
+      <li>Accessible interfaces and clean maintainable code</li>
+    </ul>
 
     <div class="hero__image" aria-hidden="true">
       <div class="hero__image-inner">
         <img
-          alt="Code editor with modern web development interface"
+          alt="Senior web developer reviewing React and TypeScript architecture on multiple displays"
           src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&q=80"
           width="800"
           height="600"
@@ -26,6 +71,64 @@ import '../../styles/hero.css';
         />
       </div>
     </div>
-
+    <p class="hero__badge">Web Development Services That Scale</p>
   </section>
+
+  <ValuePropositionSection items={WEB_DEV_DIFFERENTIATORS} />
+  <ServicesOfferedSection services={WEB_DEV_SERVICES} />
+  <TechStackSection stack={WEB_DEV_STACK} />
+  <ProcessSection steps={WEB_DEV_PROCESS} />
+  <SocialProofSection signals={WEB_DEV_TRUST_SIGNALS} />
+  <CaseStudiesSection studies={WEB_DEV_CASE_STUDIES} />
+  <FaqSection items={WEB_DEV_FAQS} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+  <CtaSection cta={WEB_DEV_FINAL_CTA} />
 </Layout>
+
+<style>
+  .web-hero {
+    gap: var(--spacing-4);
+    background-color: var(--color-surface-container-lowest);
+  }
+
+  .web-hero__description {
+    max-width: 65ch;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--color-on-surface-variant);
+    position: relative;
+    z-index: 10;
+  }
+
+  .web-hero__highlights {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+    max-width: 52rem;
+    margin-top: var(--spacing-3);
+    position: relative;
+    z-index: 10;
+  }
+
+  .web-hero__highlights li {
+    width: fit-content;
+    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    background-color: var(--color-surface-container-high);
+    font-family: var(--font-headline);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--spacing-2) var(--spacing-4);
+  }
+
+  @media (min-width: 768px) {
+    .web-hero__highlights {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
