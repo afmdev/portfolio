@@ -16,46 +16,57 @@ const logoMonograms: Record<string, string> = {
 };
 ---
 
-<section class="wd-section wd-stack" aria-labelledby="tech-stack-heading">
-  <div class="wd-section__intro">
-    <p class="wd-section__eyebrow">Technology Stack</p>
-    <h2 id="tech-stack-heading" class="wd-section__title">Framework Expertise for High-Performance Websites and Apps</h2>
-    <p class="wd-section__description">
-      We choose technology based on product requirements, team capacity, and long-term maintainability. These are the core stacks we use to ship reliable outcomes.
+<section class="wd-stack" aria-labelledby="tech-stack-heading">
+  <div class="wd-stack__header">
+    <div class="wd-stack__header-left">
+      <p class="wd-stack__eyebrow">Technology Stack</p>
+      <h2 id="tech-stack-heading" class="wd-stack__heading">The Frameworks We Ship With</h2>
+    </div>
+    <p class="wd-stack__subheading">
+      We match framework to product requirements — performance targets, team capacity, and long-term maintainability.
     </p>
   </div>
 
-  <div class="wd-stack__grid" role="list">
+  <div class="wd-stack__rows" role="list">
     {stack.map((item) => (
-      <article class="wd-stack__card" role="listitem">
-        <div class="wd-stack__logo" style={`background-color: ${item.accent};`} aria-hidden="true">{logoMonograms[item.name] ?? item.name.slice(0, 1)}</div>
-        <div class="wd-stack__content">
-          <h3 class="wd-stack__title">{item.name}</h3>
-          <p class="wd-stack__role">{item.role}</p>
-          <p class="wd-stack__description">{item.description}</p>
+      <article class="wd-stack__row" role="listitem">
+        <div class="wd-stack__row-badge" style={`background-color: ${item.accent};`} aria-hidden="true">
+          {logoMonograms[item.name] ?? item.name.slice(0, 1)}
         </div>
+        <h3 class="wd-stack__row-name">{item.name}</h3>
+        <p class="wd-stack__row-role">{item.role}</p>
+        <p class="wd-stack__row-desc">{item.description}</p>
       </article>
     ))}
   </div>
 </section>
 
 <style>
-  .wd-section {
-    padding: var(--spacing-20) var(--spacing-section-x);
-    border-top: var(--spacing-1) solid var(--color-on-background);
+  .wd-stack {
+    border-top: 4px solid var(--color-on-background);
+    background-color: var(--color-surface-container-lowest);
   }
 
-  .wd-section__intro {
+  /* ---- Header ---- */
+  .wd-stack__header {
     max-width: var(--max-width-content);
-    margin: 0 auto var(--spacing-12);
+    margin: 0 auto;
+    padding: var(--spacing-16) var(--spacing-section-x) var(--spacing-10);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-4);
+    gap: var(--spacing-6);
+    border-bottom: 2px solid var(--color-on-background);
   }
 
-  .wd-section__eyebrow {
+  .wd-stack__header-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .wd-stack__eyebrow {
     width: fit-content;
-    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+    border: 2px solid var(--color-on-background);
     background-color: var(--color-secondary-fixed);
     color: var(--color-on-secondary-fixed);
     font-family: var(--font-headline);
@@ -66,104 +77,138 @@ const logoMonograms: Record<string, string> = {
     padding: var(--spacing-1) var(--spacing-4);
   }
 
-  .wd-section__title {
+  .wd-stack__heading {
     font-family: var(--font-headline);
     font-size: clamp(2rem, 5vw, 3.75rem);
     font-weight: 900;
     line-height: 1.05;
     text-transform: uppercase;
     letter-spacing: -0.04em;
-    max-width: 18ch;
   }
 
-  .wd-section__description {
+  .wd-stack__subheading {
     font-family: var(--font-body);
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     line-height: 1.7;
     color: var(--color-on-surface-variant);
-    max-width: 68ch;
+    max-width: 44ch;
   }
 
-  .wd-stack {
-    background-color: var(--color-surface-container-lowest);
-  }
-
-  .wd-stack__grid {
+  /* ---- Rows ---- */
+  .wd-stack__rows {
     max-width: var(--max-width-content);
     margin: 0 auto;
+    padding-bottom: var(--spacing-20);
+  }
+
+  .wd-stack__row {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-7);
+    grid-template-columns: 3rem 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--spacing-2) var(--spacing-6);
+    align-items: start;
+    padding: var(--spacing-6) var(--spacing-section-x);
+    border-bottom: 2px solid var(--color-outline-variant);
+    transition: background-color 0.15s;
   }
 
-  .wd-stack__card {
-    border: var(--spacing-1) solid var(--color-on-background);
-    box-shadow: var(--shadow-md);
-    background-color: var(--color-surface);
-    padding: var(--spacing-8);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-6);
-    transition: transform 0.15s, box-shadow 0.15s;
+  .wd-stack__row:hover {
+    background-color: var(--color-surface-container-low);
   }
 
-  .wd-stack__card:hover {
-    transform: translate(var(--spacing-1), var(--spacing-1));
-    box-shadow: var(--shadow-sm);
-  }
-
-  .wd-stack__logo {
-    width: var(--spacing-16);
-    min-width: var(--spacing-16);
-    height: var(--spacing-16);
-    border: calc(var(--spacing-1) / 2) solid var(--color-on-background);
+  .wd-stack__row-badge {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid var(--color-on-background);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-headline);
-    font-size: 1.1rem;
     font-weight: 900;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    align-self: center;
+    flex-shrink: 0;
   }
 
-  .wd-stack__content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-3);
-  }
-
-  .wd-stack__title {
+  .wd-stack__row-name {
+    grid-row: 1;
+    grid-column: 2;
     font-family: var(--font-headline);
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: -0.03em;
     line-height: 1.2;
   }
 
-  .wd-stack__role {
+  .wd-stack__row-role {
+    grid-row: 2;
+    grid-column: 2;
     font-family: var(--font-headline);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--color-secondary);
   }
 
-  .wd-stack__description {
+  .wd-stack__row-desc {
+    grid-row: 3;
+    grid-column: 1 / -1;
     font-family: var(--font-body);
-    line-height: 1.65;
     color: var(--color-on-surface-variant);
+    line-height: 1.65;
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-outline-variant);
+    margin-top: var(--spacing-3);
   }
 
+  /* ---- Desktop: 4-column row layout ---- */
   @media (min-width: 768px) {
-    .wd-stack__grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .wd-stack__header {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
     }
 
-    .wd-stack__card {
-      flex-direction: row;
-      align-items: flex-start;
+    .wd-stack__subheading {
+      max-width: 36ch;
+      text-align: right;
+    }
+
+    .wd-stack__row {
+      grid-template-columns: 3rem 12rem 14rem 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      padding: var(--spacing-8) var(--spacing-section-x);
+    }
+
+    .wd-stack__row-badge {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .wd-stack__row-name {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    .wd-stack__row-role {
+      grid-row: 1;
+      grid-column: 3;
+    }
+
+    .wd-stack__row-desc {
+      grid-row: 1;
+      grid-column: 4;
+      border-top: none;
+      border-left: 2px solid var(--color-outline-variant);
+      padding-top: 0;
+      padding-left: var(--spacing-6);
+      margin-top: 0;
     }
   }
 </style>
