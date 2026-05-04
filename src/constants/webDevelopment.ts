@@ -56,85 +56,85 @@ export interface FinalCta {
 
 export const WEB_DEV_DIFFERENTIATORS: Differentiator[] = [
   {
-    title: 'Business-First Delivery Model',
+    title: 'You talk directly to the person building your site',
     description:
-      'Every build starts with your conversion targets, not with random templates. We connect product goals, analytics events, and user journeys before a single component ships.',
-    outcome: 'KPI-aligned delivery from sprint one',
+      `When you work with me, I'm the one answering your messages, joining the calls, and writing the code. No account managers, no juniors executing what we agreed — just a direct line to the work.`,
+    outcome: 'Clear communication from day one',
   },
   {
-    title: 'Senior React and Next.js Execution',
+    title: 'Proven tech, not the framework of the week',
     description:
-      'You get architecture-level support from an experienced React developer and Next.js implementation partner who understands rendering strategy, app routing, and maintainable component systems for growth-stage products.',
-    outcome: 'Faster releases with fewer regressions',
+      `I work with React, Next.js, and Astro because they're mature, well-supported, and easy to maintain long-term. Your site won't need a full rewrite in two years because I chased a trend.`,
+    outcome: 'Technology that grows with your business',
   },
   {
-    title: 'Astro Framework SEO Performance',
+    title: 'Fast sites that show up on Google',
     description:
-      'With the Astro framework, we ship content-heavy pages that load quickly and rank cleanly. Islands architecture keeps interactivity where it matters and static output where it wins.',
-    outcome: 'Higher visibility and lower bounce rate',
+      'I use Astro for business websites and landing pages. The result loads quickly on any device and gives Google exactly what it needs to rank your pages.',
+    outcome: 'More organic traffic, less paid advertising',
   },
   {
-    title: 'TypeScript Development Quality Guardrails',
+    title: `Code that doesn't break when you add something new`,
     description:
-      'Our TypeScript development workflow enforces clear contracts, predictable APIs, and safer refactors so your codebase scales with confidence across teams.',
-    outcome: 'Sustainable code quality at scale',
+      `I use TypeScript on every project to catch errors before they reach your visitors. Adding a new feature shouldn't break something that was already working.`,
+    outcome: 'Fewer bugs, safer updates',
   },
 ];
 
 export const WEB_DEV_SERVICES: ServiceOffer[] = [
   {
-    title: 'React Application Development',
-    subtitle: 'Product-focused React development',
+    title: 'Interactive interfaces with React',
+    subtitle: 'Custom, interactive web interfaces',
     summary:
-      'Build conversion-focused frontends, dashboards, and SaaS flows with robust component architecture and measurable performance budgets.',
+      'If your site needs a complex interactive section — a configurator, a client area, a booking flow — I build it in React so it stays fast, reliable, and easy to extend.',
     deliverables: [
-      'Reusable design-system components',
-      'State and data-fetching strategy',
-      'Accessibility and interaction QA',
+      'Interactive tools and user flows',
+      'Dashboards and private member areas',
+      'Clean, maintainable component structure',
     ],
   },
   {
-    title: 'Next.js Product Engineering',
-    subtitle: 'Hybrid rendering with Next.js',
+    title: 'Full sites with Next.js',
+    subtitle: 'Complete web with server-side logic',
     summary:
-      'Build scalable Next.js platforms that combine server rendering, static generation, and API integrations for high-conversion product experiences.',
+      'Next.js lets me build your site and the logic behind it in one project. Ideal when you need contact forms, dynamic content, protected pages, or connections to external APIs.',
     deliverables: [
-      'Routing and data strategy with App Router',
-      'SEO and metadata optimization patterns',
-      'Typed API and backend integration workflows',
+      'Dynamic pages and protected routes',
+      'Forms, integrations, and APIs',
+      'SEO and performance built in from the start',
     ],
   },
   {
-    title: 'Astro Website Engineering',
-    subtitle: 'SEO-ready Astro framework sites',
+    title: 'Business websites with Astro',
+    subtitle: 'Fast, rankable marketing sites',
     summary:
-      'Launch blazing-fast marketing websites and documentation hubs with CMS integration and technical SEO baked in from day one.',
+      'For company sites, landing pages, and blogs. Astro loads instantly, makes content easy to update, and gives your site the best possible head start in search.',
     deliverables: [
-      'Static-first architecture setup',
-      'Schema markup and metadata strategy',
-      'Page-speed and Core Web Vitals optimization',
+      'Very fast page load times',
+      'CMS integration and easy content editing',
+      'Correct SEO structure from day one',
     ],
   },
   {
-    title: 'TypeScript Architecture',
-    subtitle: 'Reliable TypeScript development systems',
+    title: 'Solid code with TypeScript',
+    subtitle: 'Foundations that hold up over time',
     summary:
-      'Design resilient code foundations that support feature velocity, onboarding, and long-term maintenance without fragile rewrites.',
+      'I write every project in TypeScript so errors show up during development, not in front of your users. Your code stays understandable as it grows.',
     deliverables: [
-      'Domain-driven interface contracts',
-      'Shared utility and validation layers',
-      'Typed API and content models',
+      'Type-safe data models and interfaces',
+      'Safer refactors and feature additions',
+      'Code any developer can pick up later',
     ],
   },
   {
-    title: 'SolidJS Performance Builds',
-    subtitle: 'Reactive interfaces for speed-critical products',
+    title: 'High-speed interfaces with SolidJS',
+    subtitle: 'When performance is critical',
     summary:
-      'Implement SolidJS performance patterns for interfaces that stay responsive under real traffic and complex UI states.',
+      'When your interface does a lot — real-time data, complex filters, continuous updates — SolidJS keeps it responsive without the overhead of larger frameworks.',
     deliverables: [
-      'Fine-grained reactive rendering',
-      'Hydration and bundle optimization',
-      'Real-user monitoring integration',
+      'Fine-grained reactivity for data-heavy UIs',
+      'Minimal bundle, maximum responsiveness',
+      'Performance profiling and optimization',
     ],
   },
 ];
@@ -142,37 +142,37 @@ export const WEB_DEV_SERVICES: ServiceOffer[] = [
 export const WEB_DEV_STACK: TechStackItem[] = [
   {
     name: 'React',
-    role: 'Frontend Applications',
+    role: 'Interactive Interfaces',
     description:
-      'For complex interfaces, product dashboards, and scalable UI systems where a dedicated React developer mindset is essential.',
+      `For sites with lots of interaction: client portals, dashboards, custom tools. When there's a lot happening on screen.`,
     accent: 'var(--color-primary-fixed)',
   },
   {
     name: 'Next.js',
-    role: 'Full-Stack Web Products',
+    role: 'Full-Stack Web',
     description:
-      'For hybrid rendering, API-driven experiences, and scalable product delivery where performance and flexibility must coexist.',
+      'For sites that also need server-side logic — forms, registered users, dynamic content, or API connections.',
     accent: 'var(--color-icon-webdev)',
   },
   {
     name: 'Astro',
-    role: 'SEO and Content Websites',
+    role: 'Business Sites and SEO',
     description:
-      'For projects that prioritize speed, content discoverability, and modern editorial workflows.',
+      'For company websites, landing pages, and blogs. Loads very fast and ranks well on Google.',
     accent: 'var(--color-secondary-fixed)',
   },
   {
     name: 'TypeScript',
-    role: 'Architecture and Stability',
+    role: 'Stable, Maintainable Code',
     description:
-      'For type-safe APIs, maintainable team collaboration, and predictable behavior across fast-moving releases.',
+      'For catching errors before launch and keeping the codebase easy to change and extend over time.',
     accent: 'var(--color-tertiary-fixed)',
   },
   {
     name: 'SolidJS',
-    role: 'Performance-Critical UIs',
+    role: 'Maximum Performance',
     description:
-      'For SolidJS performance gains in high-interaction experiences where reactivity and runtime efficiency matter.',
+      'For interfaces with real-time data, complex filters, or continuous updates where every millisecond counts.',
     accent: 'var(--color-icon-seo)',
   },
 ];
@@ -180,146 +180,146 @@ export const WEB_DEV_STACK: TechStackItem[] = [
 export const WEB_DEV_PROCESS: ProcessStep[] = [
   {
     step: '01',
-    title: 'Discovery and Technical Audit',
+    title: 'Discovery call',
     description:
-      'We map your goals, audience intent, existing stack constraints, and SEO opportunities across your acquisition funnel.',
+      `We talk about your business, your goals, and what's not working with your current site. No forms, no jargon — just a straightforward conversation.`,
   },
   {
     step: '02',
-    title: 'Architecture and Scope Blueprint',
+    title: 'Clear plan and quote',
     description:
-      'We define framework choice, information architecture, TypeScript contracts, and milestones so every sprint has clear outcomes.',
+      `I send you in writing exactly what we're building, what tools we'll use, the timeline, and the price. No surprises halfway through.`,
   },
   {
     step: '03',
-    title: 'Build and Iterate',
+    title: 'Build in stages',
     description:
-      'Implementation happens in transparent delivery cycles with weekly demos, QA checkpoints, and measurable performance targets.',
+      `I build in phases and show you the work as it progresses. You give feedback, I adjust. You'll see progress at every step.`,
   },
   {
     step: '04',
-    title: 'SEO and Performance Hardening',
+    title: 'Review and launch',
     description:
-      'Before launch, we validate metadata, structured data, accessibility, and Core Web Vitals to maximize discoverability and trust.',
+      'Before going live, we check that the site loads fast, looks right on all devices, and is correctly set up for Google.',
   },
   {
     step: '05',
-    title: 'Launch and Growth Support',
+    title: 'Available after launch',
     description:
-      'After go-live, we monitor results, refine UX bottlenecks, and support your roadmap with ongoing optimization.',
+      `I'm available after launch for fixes, updates, and improvements. You don't get left on your own once it's live.`,
   },
 ];
 
 export const WEB_DEV_TRUST_SIGNALS: TrustSignal[] = [
   {
-    title: 'Transparent Weekly Delivery',
+    title: `You'll always know what's happening`,
     description:
-      'You get clear sprint goals, demo checkpoints, and progress updates so stakeholders always know what is shipping next.',
-    detail: 'Predictable visibility from kickoff to launch',
+      `I send weekly updates with what I've built, what's coming next, and what I need from you. No radio silence.`,
+    detail: 'Weekly updates, no need to chase',
   },
   {
-    title: 'Performance and SEO Baseline',
+    title: 'Fast and rankable from the start',
     description:
-      'Every project includes technical SEO, semantic structure, and performance checks before release to reduce avoidable regressions.',
-    detail: 'Core Web Vitals and metadata validation included',
+      'Performance and basic SEO are included in every project — not extras you pay for separately.',
+    detail: 'Speed and SEO included, not add-ons',
   },
   {
-    title: 'Type-Safe Architecture',
+    title: 'Code anyone can pick up',
     description:
-      'TypeScript contracts and reusable patterns are applied from day one to keep your codebase maintainable as requirements evolve.',
-    detail: 'Safer refactors and lower technical debt over time',
+      `I write clean, well-structured TypeScript. If you work with another developer later, they won't have to start from scratch.`,
+    detail: 'No messy code that locks you in forever',
   },
   {
-    title: 'Post-Launch Iteration Support',
+    title: 'Still here after launch',
     description:
-      'After launch, we can continue with optimization cycles focused on conversion bottlenecks, speed improvements, and UX refinement.',
-    detail: 'Roadmap continuity instead of one-off delivery',
+      `A text change, a new section, an unexpected bug. I'm available after the project for whatever you need.`,
+    detail: `Support that doesn't end on launch day`,
   },
 ];
 
 
 export const WEB_DEV_CASE_STUDIES: CaseStudy[] = [
   {
-    title: 'SaaS Growth Site Rebuild',
-    category: 'Astro Framework + TypeScript Development',
+    title: 'B2B Software Growth Site Rebuild',
+    category: 'Astro + TypeScript',
     summary:
-      'Rebuilt a conversion path for a B2B SaaS brand with an Astro framework implementation and a typed content model for marketing velocity.',
-    result: '+62% qualified demo requests in 90 days',
+      'Rebuilt the marketing site for a B2B software company. New structure, faster load times, and content the team can update without touching code.',
+    result: '+62% demo requests in 90 days',
     imageSrc:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&h=700&fit=crop&q=80',
     imageAlt:
-      'Product team reviewing analytics dashboards during a website growth strategy session',
+      'Team reviewing website metrics during a growth strategy session',
     href: '/contact',
   },
   {
-    title: 'React Dashboard Modernization',
-    category: 'React Developer Delivery',
+    title: 'Product Team Dashboard Modernization',
+    category: 'React',
     summary:
-      'Refactored a legacy dashboard into a maintainable React architecture with clearer state boundaries and faster release cadence.',
-    result: '-38% time to deliver new product features',
+      'Turned a slow, hard-to-maintain dashboard into a clean React app with clear structure and shorter release cycles.',
+    result: '-38% time to ship new features',
     imageSrc:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=700&fit=crop&q=80',
     imageAlt:
-      'Developer monitoring frontend metrics and feature deployment charts on multiple displays',
+      'Developer monitoring frontend metrics and deployment charts on multiple displays',
     href: '/contact',
   },
   {
-    title: 'SolidJS Performance Overhaul',
-    category: 'SolidJS Performance Engineering',
+    title: 'High-Speed Interface for a Data-Heavy Tool',
+    category: 'SolidJS',
     summary:
-      'Built a speed-critical interface in SolidJS with fine-grained reactivity and runtime profiling for heavy data interactions.',
-    result: 'Sub-1.5s interaction readiness on mobile',
+      'Built a data-intensive interface in SolidJS that stays responsive even with complex filters and real-time updates.',
+    result: 'Under 1.5s to interactive on mobile',
     imageSrc:
       'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=700&fit=crop&q=80',
     imageAlt:
-      'Close-up of a high-performance workstation used for frontend optimization and profiling',
+      'High-performance workstation used for frontend optimization and profiling',
     href: '/contact',
   },
 ];
 
 export const WEB_DEV_FAQS: FaqItem[] = [
   {
-    question: 'What web development services do you offer for modern businesses?',
+    question: 'What kind of projects do you take on?',
     answer:
-      'We provide end-to-end web development services including strategy, UX architecture, frontend engineering, technical SEO, performance optimization, and launch support for business websites and digital products.',
+      `I work with small businesses, startups, and product teams that need a reliable web developer. That could be a new site, a redesign, a dashboard, an internal tool, or ongoing support. If you're not sure whether your project is a fit, just write me — I'll give you an honest answer.`,
   },
   {
-    question: 'Can you join our team as a dedicated React developer?',
+    question: 'Will I work directly with you or with a team?',
     answer:
-      'Yes. We can work as your dedicated React developer partner for architecture planning, component system implementation, code reviews, and sprint delivery in close collaboration with your product team.',
+      `Always with me. I'm the one answering your messages, joining the calls, and writing the code. I don't delegate or subcontract the work.`,
   },
   {
-    question: 'Why should we choose the Astro framework for marketing websites?',
+    question: 'Why do you use Astro for some sites and Next.js for others?',
     answer:
-      'The Astro framework is ideal for fast, SEO-friendly websites because it ships minimal JavaScript by default, improves Core Web Vitals, and still supports interactive islands when needed.',
+      `Astro is ideal for business websites, landing pages, and blogs — it loads very fast and ranks well in Google. Next.js works better when the site also needs server-side logic: user accounts, forms, dynamic content, or API connections. I'll recommend whichever fits your project best.`,
   },
   {
-    question: 'When should we choose Next.js instead of Astro?',
+    question: 'How do you decide which technology to use?',
     answer:
-      'Choose Next.js when your project needs hybrid rendering, authenticated application flows, and tight API integration. For content-first websites with minimal client JavaScript, Astro is often the better fit.',
+      'I ask what your site needs to do, who will use it, and what you want to add in the future. Then I pick the right tool — not whatever is trending. I explain the recommendation in plain terms before we start.',
   },
   {
-    question: 'How does your TypeScript development process reduce risk?',
+    question: 'Can I make changes once the project is done?',
     answer:
-      'Our TypeScript development process introduces strict typing, shared interfaces, and validation patterns that reduce runtime errors, improve developer confidence, and make refactoring safer over time.',
+      `Absolutely. I'm available for updates, new sections, fixes, and improvements after launch. We can handle it with a support agreement or case by case, depending on what you need.`,
   },
   {
-    question: 'When is SolidJS performance a better choice than React?',
+    question: 'What does TypeScript mean for my project?',
     answer:
-      'SolidJS performance is especially valuable for highly interactive interfaces where fine-grained reactivity can reduce unnecessary rerenders and deliver a faster runtime experience.',
+      `TypeScript is a way of writing code that catches errors during development, before they reach your visitors. It's invisible to your users, but it means fewer bugs, safer updates, and code that's easier to maintain over time.`,
   },
   {
-    question: 'Do you include SEO and structured data in delivery?',
+    question: 'Do you handle SEO?',
     answer:
-      'Yes. Every project includes technical SEO foundations, semantic HTML, metadata strategy, and structured data where relevant, including FAQ schema when search intent supports it.',
+      `Yes — the technical SEO basics are included in every project: fast load times, correct HTML structure, metadata, and pages Google can index properly. I don't manage ongoing SEO campaigns, but your site will be set up to be found.`,
   },
 ];
 
 export const WEB_DEV_FINAL_CTA: FinalCta = {
-  title: 'Need a Website or App That Converts and Scales?',
+  title: 'Got a project in mind?',
   description:
-    'Let us design and build your next React, Next.js, Astro, TypeScript, or SolidJS project with a clear roadmap and measurable outcomes.',
-  primaryLabel: 'BOOK A DISCOVERY CALL',
+    `Tell me what you need. I'll get back to you within one business day with honest feedback and clear next steps.`,
+  primaryLabel: 'GET IN TOUCH',
   primaryHref: '/contact',
   secondaryLabel: 'VIEW ALL SERVICES',
   secondaryHref: '/services',

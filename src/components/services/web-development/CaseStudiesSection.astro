@@ -10,10 +10,10 @@ const { studies } = Astro.props;
 
 <section class="wd-section wd-case-studies" aria-labelledby="case-studies-heading">
   <div class="wd-section__intro">
-    <p class="wd-section__eyebrow">Case Studies</p>
-    <h2 id="case-studies-heading" class="wd-section__title">Recent Web Development Projects and Outcomes</h2>
+    <p class="wd-section__eyebrow">Recent Projects</p>
+    <h2 id="case-studies-heading" class="wd-section__title">What I've built and what happened next</h2>
     <p class="wd-section__description">
-      Proof over promises. These snapshots highlight how focused implementation in React, Astro, TypeScript, and SolidJS translates into measurable growth.
+      A few real projects and their outcomes.
     </p>
   </div>
 
@@ -33,7 +33,7 @@ const { studies } = Astro.props;
           <h3 class="wd-cs__featured-title">{studies[0].title}</h3>
           <p class="wd-case-studies__summary">{studies[0].summary}</p>
           <p class="wd-case-studies__result">{studies[0].result}</p>
-          <a href={studies[0].href} class="wd-case-studies__link">Discuss a Similar Project</a>
+          <a href={studies[0].href} class="wd-case-studies__link">Got a similar project?</a>
         </div>
       </article>
     )}
@@ -55,7 +55,7 @@ const { studies } = Astro.props;
               <h3 class="wd-case-studies__title">{study.title}</h3>
               <p class="wd-case-studies__summary">{study.summary}</p>
               <p class="wd-case-studies__result">{study.result}</p>
-              <a href={study.href} class="wd-case-studies__link">Discuss a Similar Project</a>
+              <a href={study.href} class="wd-case-studies__link">Got a similar project?</a>
             </div>
           </article>
         ))}
